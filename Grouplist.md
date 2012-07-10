@@ -1,9 +1,9 @@
 # Grouplist
 
-	He Jincheng (ºÎ½ğ³Ç)
-	Li Yangliang (ÀîÑôÁ¼)
-	Lin Caizhao (ÁÖ²ÅîÈ)
-	He Jialiang (ºÎ¼ÎÁ¼)
-	Liu Lili (ÁõÀòÀò)
-	Liu Shujun (ÁõÊç¾ı)
-	Ye Jiayong £¨Ò¶¼ÎÓÂ£©
+	He Jincheng ï¼ˆä½•é‡‘åŸï¼‰
+	Li Yangliang ï¼ˆæé˜³è‰¯ï¼‰
+	Lin Caizhao ï¼ˆæ—æ‰é’Šï¼‰
+	He Jialiang ï¼ˆä½•å˜‰è‰¯ï¼‰
+	Liu Lili ï¼ˆåˆ˜è‰è‰ï¼‰
+	Liu Shujun ï¼ˆåˆ˜æ·‘å›ï¼‰
+	Ye Jiayong ï¼ˆå¶å˜‰å‹‡ï¼‰
