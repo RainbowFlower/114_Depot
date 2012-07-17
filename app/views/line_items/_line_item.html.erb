@@ -1,0 +1,5 @@
+<% if line_item == @current_item %>
+<li id="current_item">
+<% else %>
+<li>
+<% end %><%= line_item.product.title %></li>
