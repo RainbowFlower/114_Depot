@@ -9596,3 +9596,156 @@ Started GET "/products/3/who_bought.atom" for 127.0.0.1 at Sun Jul 22 23:03:49 +
   [1m[35mOrder Load (0.1ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 3))
 Rendered products/who_bought.atom.builder (36.1ms)
 Completed 200 OK in 44ms (Views: 37.5ms | ActiveRecord: 0.2ms)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 1', '2012-07-22 15:07:12.374148', '1 Main Street', '2012-07-22 15:07:12.374148', 'customer-1@example.com', 'Check')
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 2', '2012-07-22 15:07:12.378162', '2 Main Street', '2012-07-22 15:07:12.378162', 'customer-2@example.com', 'Check')[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 3', '2012-07-22 15:07:12.379278', '3 Main Street', '2012-07-22 15:07:12.379278', 'customer-3@example.com', 'Check')
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 4', '2012-07-22 15:07:12.380491', '4 Main Street', '2012-07-22 15:07:12.380491', 'customer-4@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 5', '2012-07-22 15:07:12.381280', '5 Main Street', '2012-07-22 15:07:12.381280', 'customer-5@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 6', '2012-07-22 15:07:12.381994', '6 Main Street', '2012-07-22 15:07:12.381994', 'customer-6@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 7', '2012-07-22 15:07:12.382685', '7 Main Street', '2012-07-22 15:07:12.382685', 'customer-7@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 8', '2012-07-22 15:07:12.383357', '8 Main Street', '2012-07-22 15:07:12.383357', 'customer-8@example.com', 'Check')[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 9', '2012-07-22 15:07:12.384029', '9 Main Street', '2012-07-22 15:07:12.384029', 'customer-9@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 10', '2012-07-22 15:07:12.384742', '10 Main Street', '2012-07-22 15:07:12.384742', 'customer-10@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 11', '2012-07-22 15:07:12.385422', '11 Main Street', '2012-07-22 15:07:12.385422', 'customer-11@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 12', '2012-07-22 15:07:12.386119', '12 Main Street', '2012-07-22 15:07:12.386119', 'customer-12@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 13', '2012-07-22 15:07:12.386753', '13 Main Street', '2012-07-22 15:07:12.386753', 'customer-13@example.com', 'Check')
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 14', '2012-07-22 15:07:12.387422', '14 Main Street', '2012-07-22 15:07:12.387422', 'customer-14@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 15', '2012-07-22 15:07:12.388467', '15 Main Street', '2012-07-22 15:07:12.388467', 'customer-15@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 16', '2012-07-22 15:07:12.389136', '16 Main Street', '2012-07-22 15:07:12.389136', 'customer-16@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 17', '2012-07-22 15:07:12.389806', '17 Main Street', '2012-07-22 15:07:12.389806', 'customer-17@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 18', '2012-07-22 15:07:12.390489', '18 Main Street', '2012-07-22 15:07:12.390489', 'customer-18@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 19', '2012-07-22 15:07:12.391140', '19 Main Street', '2012-07-22 15:07:12.391140', 'customer-19@example.com', 'Check')
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 20', '2012-07-22 15:07:12.391784', '20 Main Street', '2012-07-22 15:07:12.391784', 'customer-20@example.com', 'Check')[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 21', '2012-07-22 15:07:12.392969', '21 Main Street', '2012-07-22 15:07:12.392969', 'customer-21@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 22', '2012-07-22 15:07:12.394173', '22 Main Street', '2012-07-22 15:07:12.394173', 'customer-22@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 23', '2012-07-22 15:07:12.395649', '23 Main Street', '2012-07-22 15:07:12.395649', 'customer-23@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 24', '2012-07-22 15:07:12.396559', '24 Main Street', '2012-07-22 15:07:12.396559', 'customer-24@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 25', '2012-07-22 15:07:12.397435', '25 Main Street', '2012-07-22 15:07:12.397435', 'customer-25@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 26', '2012-07-22 15:07:12.398346', '26 Main Street', '2012-07-22 15:07:12.398346', 'customer-26@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 27', '2012-07-22 15:07:12.399178', '27 Main Street', '2012-07-22 15:07:12.399178', 'customer-27@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 28', '2012-07-22 15:07:12.400028', '28 Main Street', '2012-07-22 15:07:12.400028', 'customer-28@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 29', '2012-07-22 15:07:12.400929', '29 Main Street', '2012-07-22 15:07:12.400929', 'customer-29@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 30', '2012-07-22 15:07:12.401843', '30 Main Street', '2012-07-22 15:07:12.401843', 'customer-30@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 31', '2012-07-22 15:07:12.402812', '31 Main Street', '2012-07-22 15:07:12.402812', 'customer-31@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 32', '2012-07-22 15:07:12.403691', '32 Main Street', '2012-07-22 15:07:12.403691', 'customer-32@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 33', '2012-07-22 15:07:12.404572', '33 Main Street', '2012-07-22 15:07:12.404572', 'customer-33@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 34', '2012-07-22 15:07:12.405453', '34 Main Street', '2012-07-22 15:07:12.405453', 'customer-34@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 35', '2012-07-22 15:07:12.406355', '35 Main Street', '2012-07-22 15:07:12.406355', 'customer-35@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 36', '2012-07-22 15:07:12.407201', '36 Main Street', '2012-07-22 15:07:12.407201', 'customer-36@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 37', '2012-07-22 15:07:12.408058', '37 Main Street', '2012-07-22 15:07:12.408058', 'customer-37@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 38', '2012-07-22 15:07:12.408922', '38 Main Street', '2012-07-22 15:07:12.408922', 'customer-38@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 39', '2012-07-22 15:07:12.409794', '39 Main Street', '2012-07-22 15:07:12.409794', 'customer-39@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 40', '2012-07-22 15:07:12.410681', '40 Main Street', '2012-07-22 15:07:12.410681', 'customer-40@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 41', '2012-07-22 15:07:12.411536', '41 Main Street', '2012-07-22 15:07:12.411536', 'customer-41@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 42', '2012-07-22 15:07:12.412385', '42 Main Street', '2012-07-22 15:07:12.412385', 'customer-42@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 43', '2012-07-22 15:07:12.413237', '43 Main Street', '2012-07-22 15:07:12.413237', 'customer-43@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 44', '2012-07-22 15:07:12.414118', '44 Main Street', '2012-07-22 15:07:12.414118', 'customer-44@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 45', '2012-07-22 15:07:12.414964', '45 Main Street', '2012-07-22 15:07:12.414964', 'customer-45@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 46', '2012-07-22 15:07:12.415789', '46 Main Street', '2012-07-22 15:07:12.415789', 'customer-46@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 47', '2012-07-22 15:07:12.416615', '47 Main Street', '2012-07-22 15:07:12.416615', 'customer-47@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 48', '2012-07-22 15:07:12.417548', '48 Main Street', '2012-07-22 15:07:12.417548', 'customer-48@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 49', '2012-07-22 15:07:12.418436', '49 Main Street', '2012-07-22 15:07:12.418436', 'customer-49@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 50', '2012-07-22 15:07:12.419296', '50 Main Street', '2012-07-22 15:07:12.419296', 'customer-50@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 51', '2012-07-22 15:07:12.420166', '51 Main Street', '2012-07-22 15:07:12.420166', 'customer-51@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 52', '2012-07-22 15:07:12.421045', '52 Main Street', '2012-07-22 15:07:12.421045', 'customer-52@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 53', '2012-07-22 15:07:12.421921', '53 Main Street', '2012-07-22 15:07:12.421921', 'customer-53@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 54', '2012-07-22 15:07:12.422802', '54 Main Street', '2012-07-22 15:07:12.422802', 'customer-54@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 55', '2012-07-22 15:07:12.423647', '55 Main Street', '2012-07-22 15:07:12.423647', 'customer-55@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 56', '2012-07-22 15:07:12.424494', '56 Main Street', '2012-07-22 15:07:12.424494', 'customer-56@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 57', '2012-07-22 15:07:12.425324', '57 Main Street', '2012-07-22 15:07:12.425324', 'customer-57@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 58', '2012-07-22 15:07:12.426198', '58 Main Street', '2012-07-22 15:07:12.426198', 'customer-58@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 59', '2012-07-22 15:07:12.427039', '59 Main Street', '2012-07-22 15:07:12.427039', 'customer-59@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 60', '2012-07-22 15:07:12.427861', '60 Main Street', '2012-07-22 15:07:12.427861', 'customer-60@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 61', '2012-07-22 15:07:12.428690', '61 Main Street', '2012-07-22 15:07:12.428690', 'customer-61@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 62', '2012-07-22 15:07:12.429510', '62 Main Street', '2012-07-22 15:07:12.429510', 'customer-62@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 63', '2012-07-22 15:07:12.430403', '63 Main Street', '2012-07-22 15:07:12.430403', 'customer-63@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 64', '2012-07-22 15:07:12.431244', '64 Main Street', '2012-07-22 15:07:12.431244', 'customer-64@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 65', '2012-07-22 15:07:12.432104', '65 Main Street', '2012-07-22 15:07:12.432104', 'customer-65@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 66', '2012-07-22 15:07:12.432954', '66 Main Street', '2012-07-22 15:07:12.432954', 'customer-66@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 67', '2012-07-22 15:07:12.433794', '67 Main Street', '2012-07-22 15:07:12.433794', 'customer-67@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 68', '2012-07-22 15:07:12.434669', '68 Main Street', '2012-07-22 15:07:12.434669', 'customer-68@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 69', '2012-07-22 15:07:12.435567', '69 Main Street', '2012-07-22 15:07:12.435567', 'customer-69@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 70', '2012-07-22 15:07:12.436409', '70 Main Street', '2012-07-22 15:07:12.436409', 'customer-70@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 71', '2012-07-22 15:07:12.437252', '71 Main Street', '2012-07-22 15:07:12.437252', 'customer-71@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 72', '2012-07-22 15:07:12.438135', '72 Main Street', '2012-07-22 15:07:12.438135', 'customer-72@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 73', '2012-07-22 15:07:12.438983', '73 Main Street', '2012-07-22 15:07:12.438983', 'customer-73@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 74', '2012-07-22 15:07:12.439870', '74 Main Street', '2012-07-22 15:07:12.439870', 'customer-74@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 75', '2012-07-22 15:07:12.440738', '75 Main Street', '2012-07-22 15:07:12.440738', 'customer-75@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 76', '2012-07-22 15:07:12.441607', '76 Main Street', '2012-07-22 15:07:12.441607', 'customer-76@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 77', '2012-07-22 15:07:12.442480', '77 Main Street', '2012-07-22 15:07:12.442480', 'customer-77@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 78', '2012-07-22 15:07:12.443342', '78 Main Street', '2012-07-22 15:07:12.443342', 'customer-78@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 79', '2012-07-22 15:07:12.444205', '79 Main Street', '2012-07-22 15:07:12.444205', 'customer-79@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 80', '2012-07-22 15:07:12.445079', '80 Main Street', '2012-07-22 15:07:12.445079', 'customer-80@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 81', '2012-07-22 15:07:12.445927', '81 Main Street', '2012-07-22 15:07:12.445927', 'customer-81@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 82', '2012-07-22 15:07:12.446801', '82 Main Street', '2012-07-22 15:07:12.446801', 'customer-82@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 83', '2012-07-22 15:07:12.447667', '83 Main Street', '2012-07-22 15:07:12.447667', 'customer-83@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 84', '2012-07-22 15:07:12.448510', '84 Main Street', '2012-07-22 15:07:12.448510', 'customer-84@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 85', '2012-07-22 15:07:12.449358', '85 Main Street', '2012-07-22 15:07:12.449358', 'customer-85@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 86', '2012-07-22 15:07:12.450234', '86 Main Street', '2012-07-22 15:07:12.450234', 'customer-86@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 87', '2012-07-22 15:07:12.451076', '87 Main Street', '2012-07-22 15:07:12.451076', 'customer-87@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 88', '2012-07-22 15:07:12.451918', '88 Main Street', '2012-07-22 15:07:12.451918', 'customer-88@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 89', '2012-07-22 15:07:12.452947', '89 Main Street', '2012-07-22 15:07:12.452947', 'customer-89@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 90', '2012-07-22 15:07:12.453912', '90 Main Street', '2012-07-22 15:07:12.453912', 'customer-90@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 91', '2012-07-22 15:07:12.454812', '91 Main Street', '2012-07-22 15:07:12.454812', 'customer-91@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 92', '2012-07-22 15:07:12.455755', '92 Main Street', '2012-07-22 15:07:12.455755', 'customer-92@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 93', '2012-07-22 15:07:12.456723', '93 Main Street', '2012-07-22 15:07:12.456723', 'customer-93@example.com', 'Check')
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 94', '2012-07-22 15:07:12.457606', '94 Main Street', '2012-07-22 15:07:12.457606', 'customer-94@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 95', '2012-07-22 15:07:12.458515', '95 Main Street', '2012-07-22 15:07:12.458515', 'customer-95@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 96', '2012-07-22 15:07:12.459401', '96 Main Street', '2012-07-22 15:07:12.459401', 'customer-96@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 97', '2012-07-22 15:07:12.460347', '97 Main Street', '2012-07-22 15:07:12.460347', 'customer-97@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 98', '2012-07-22 15:07:12.461246', '98 Main Street', '2012-07-22 15:07:12.461246', 'customer-98@example.com', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 99', '2012-07-22 15:07:12.462148', '99 Main Street', '2012-07-22 15:07:12.462148', 'customer-99@example.com', 'Check')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "updated_at", "address", "created_at", "email", "pay_type") VALUES ('Customer 100', '2012-07-22 15:07:12.463047', '100 Main Street', '2012-07-22 15:07:12.463047', 'customer-100@example.com', 'Check')[0m
+
+
+Started GET "/orders" for 127.0.0.1 at Sun Jul 22 23:09:06 +0800 2012
+  Processing by OrdersController#index as HTML
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed   in 6ms
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+NoMethodError (undefined method `paginate' for #<Class:0x7f8d3c421488>):
+  app/controllers/orders_controller.rb:5:in `index'
+
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.6ms)
+
+
+Started GET "/orders" for 127.0.0.1 at Sun Jul 22 23:11:24 +0800 2012
+  Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (0.7ms)[0m  [1mSELECT "orders".* FROM "orders" ORDER BY created_at desc LIMIT 10 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "orders"
+Rendered orders/index.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 46ms (Views: 41.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/orders?page=2" for 127.0.0.1 at Sun Jul 22 23:11:28 +0800 2012
+  Processing by OrdersController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mOrder Load (0.7ms)[0m  [1mSELECT "orders".* FROM "orders" ORDER BY created_at desc LIMIT 10 OFFSET 10[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "orders"
+Rendered orders/index.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 45ms (Views: 40.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/orders?page=1" for 127.0.0.1 at Sun Jul 22 23:11:30 +0800 2012
+  Processing by OrdersController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mOrder Load (0.6ms)[0m  [1mSELECT "orders".* FROM "orders" ORDER BY created_at desc LIMIT 10 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "orders"
+Rendered orders/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 44ms (Views: 15.8ms | ActiveRecord: 0.6ms)
