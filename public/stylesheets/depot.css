@@ -1,6 +1,16 @@
 /* Global styles */
 
-h1 {
+#store #notice {
+        color: #000;
+        border: 2px solid red;
+        padding: 1em;
+        margin-bottom: 2em;
+        background-color: #f0f0f0;
+        font: bold smaller sans-serif;
+}
+
+
+#store h1 {
         font:  150% sans-serif;
         color: #226;
         border-bottom: 3px dotted #77d;
@@ -8,51 +18,94 @@ h1 {
 
 /* Styles for products/index */
 
-#product-list table {
+#product_list table {
         border-collapse: collapse;
 }
 
-#product-list table tr td {
+#product_list table tr td {
         padding: 5px;
         vertical-align: top;
 }
 
-#product-list .list-image {
+#product_list .list_image {
   width:        60px;
   height:       70px;
 }
 
-#product-list .list-description {
+#product_list .list_description {
   width:        60%;
 }
 
-#product-list .list-description dl {
+#product_list .list_description dl {
         margin: 0;
 }
 
-#product-list .list-description dt {
+#product_list .list_description dt {
 	color:        #244;
 	font-weight:  bold;
 	font-size:    larger;
 }
 
-#product-list .list-description dd {
+#product_list .list_description dd {
         margin: 0;
 }
 
-#product-list .list-actions {
+#product_list .list_actions {
   font-size:    x-small;
   text-align:   right;
   padding-left: 1em;
 }
 
-#product-list .list-line-even {
+#product_list .list_line_even {
   background:   #e0f8f8;
 }
 
-#product-list .list-line-odd {
+#product_list .list_line_odd {
   background:   #f8b0f8;
 }
+
+/* START:mainlayout */
+/* Styles for main page */
+
+#banner {
+  background: #9c9;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #282;
+  text-align: center;
+}
+
+#banner img {
+  float: left;
+}
+
+#columns {
+  background: #141;
+}
+
+#main {
+  margin-left: 17em;
+  padding-top: 4ex;
+  padding-left: 2em;
+  background: white;
+}
+
+#side {
+  float: left;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 16em;
+  background: #141;
+}
+
+#side a {
+  color: #bfb;
+  font-size: small;
+}
+/* END:mainlayout */
 
 /* An entry in the store catalog */
 
@@ -68,10 +121,12 @@ h1 {
 }
 
 #store .entry img {
-  width: 75px;
+  width: 80px;
+  margin-right: 5px;
+  margin-bottom: 5px;
   float: left;
-  margin-right: 10px;
 }
+
 
 #store .entry h3 {
  margin-top: 0;
@@ -84,25 +139,29 @@ h1 {
  margin-bottom: 0.8em; 
 }
 
-#store .entry .price-line {
+#store .entry .price_line {
  clear: both;
+ margin-bottom: 0.5em;
 }
 
-#store .entry .add-to-cart {
+#store .entry .add_to_cart {
   position: relative;
 }
 
 #store .entry  .price {
   color: #44a;
   font-weight: bold;
-  margin-right: 3em;
+  margin-right: 2em;
 }
 
+/* START:inline */
 #store .entry form, #store .entry form div {
   display: inline;
 }
+/* END:inline */
 
-/* Sytles for the cart in the main page */
+/* START:cartmain */
+/* Styles for the cart in the main page */
 
 #store .cart_title {
   font: 120% bold;
@@ -116,97 +175,55 @@ h1 {
   font-weight: bold;
   border-top: 1px solid #595;
 }
+/* END:cartmain */
 
-/* The error box */
-
-.fieldWithErrors {
-  padding: 2px;
-  background-color: #EEFFEE;
-  display: inline;
-}
-
-.fieldWithErrors * {
-  background-color: red;
-}
-
-#errorExplanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-
-#errorExplanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#errorExplanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 5px;
-}
-
-#errorExplanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
-
-#banner {
-  background: #9c9;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid;
-  font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
-  text-align: center;
-}
-
-#banner img {
-  float: left;
-  margin-right: 90px;
-}
-
-#columns {
-  background: #141;
-}
-
-#main {
-  margin-left: 22%;
-  padding-top: 4ex;
-  padding-left: 2em;
-  background: white;
-}
-
-#side {
-  float: left;
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-bottom: 1em;
-  /*width: 12em;*/
-  width: 20%;
-  background: #141;
-}
-
-#side a {
-  color: #bfb;
-  font-size: small;
-}
+/* START:cartside */
+/* Styles for the cart in the sidebar */
 
 #cart, #cart table {
   font-size: smaller;
-  color: white;
+  color:     white;
 }
 
 #cart table {
-  border-top: 1px dotted #595;
+  border-top:    1px dotted #595;
   border-bottom: 1px dotted #595;
   margin-bottom: 10px;
 }
+/* END:cartside */
+
+/* START:form */
+/* Styles for order form */
+
+.depot_form fieldset {
+  background: #efe;
+}
+
+.depot_form legend {
+  color: #dfd;
+  background: #141;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+}
+
+.depot_form label {
+  width: 5em;
+  float: left;
+  text-align: right;
+  padding-top: 0.2em;
+  margin-right: 0.1em;
+  display: block;
+}
+
+.depot_form select, .depot_form textarea, .depot_form input {
+  margin-left: 0.5em;
+}
+
+.depot_form .submit {
+  margin-left: 4em;
+}
+
+.depot_form div {
+  margin: 0.5em 0;
+}
+/* END:form */
