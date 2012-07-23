@@ -3,4 +3,3 @@ log
 
 # some db files
 db/test.sqlite3
-db/development.sqlite3
