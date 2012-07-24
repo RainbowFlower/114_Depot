@@ -9749,3 +9749,1340 @@ Started GET "/orders?page=1" for 127.0.0.1 at Sun Jul 22 23:11:30 +0800 2012
   [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "orders"
 Rendered orders/index.html.erb within layouts/application (14.2ms)
 Completed 200 OK in 44ms (Views: 15.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/3/who_bought" for 127.0.0.1 at Mon Jul 23 09:16:17 +0800 2012
+  Processing by ProductsController#who_bought as 
+  Parameters: {"id"=>"3"}
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1
+  [1m[36mOrder Load (0.0ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 3))[0m
+Rendered products/who_bought.atom.builder (218.8ms)
+Completed 200 OK in 266ms (Views: 234.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jul 23 09:16:53 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "carts" ("created_at", "updated_at") VALUES ('2012-07-23 01:16:53.609375', '2012-07-23 01:16:53.609375')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 32)
+Rendered collection (0.0ms)
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered store/index.html.erb within layouts/application (218.8ms)
+Completed 200 OK in 359ms (Views: 234.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/line_items?product_id=2" for 127.0.0.1 at Mon Jul 23 09:16:55 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"2", "authenticity_token"=>"MPkp8P5nNuBYaRc+jY3toPeb0KDhYTttzDF1rZpmglM="}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 32 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 2 AND ("line_items".cart_id = 32) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "line_items" ("cart_id", "created_at", "order_id", "updated_at", "product_id", "quantity") VALUES (32, '2012-07-23 01:16:55.890625', NULL, '2012-07-23 01:16:55.890625', 2, 1)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 32)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (46.9ms)
+Rendered carts/_cart.html.erb (109.4ms)
+Rendered line_items/create.js.rjs (140.6ms)
+Completed 200 OK in 438ms (Views: 250.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/line_items?product_id=3" for 127.0.0.1 at Mon Jul 23 09:16:57 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"3", "authenticity_token"=>"MPkp8P5nNuBYaRc+jY3toPeb0KDhYTttzDF1rZpmglM="}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 32 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 3 AND ("line_items".cart_id = 32) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "line_items" ("product_id", "cart_id", "updated_at", "order_id", "quantity", "created_at") VALUES (3, 32, '2012-07-23 01:16:57.406250', NULL, 1, '2012-07-23 01:16:57.406250')
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 32)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered line_items/create.js.rjs (15.6ms)
+Completed 200 OK in 328ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/line_items?product_id=1" for 127.0.0.1 at Mon Jul 23 09:16:58 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"1", "authenticity_token"=>"MPkp8P5nNuBYaRc+jY3toPeb0KDhYTttzDF1rZpmglM="}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 32 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 1 AND ("line_items".cart_id = 32) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "line_items" ("updated_at", "created_at", "cart_id", "order_id", "quantity", "product_id") VALUES ('2012-07-23 01:16:58.671875', '2012-07-23 01:16:58.671875', 32, NULL, 1, 1)[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 32)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 1 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (31.2ms)
+Rendered carts/_cart.html.erb (62.5ms)
+Rendered line_items/create.js.rjs (78.1ms)
+Completed 200 OK in 516ms (Views: 156.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at Mon Jul 23 09:17:04 +0800 2012
+  Processing by OrdersController#new as HTML
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 32 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 32)[0m
+Rendered orders/_form.html.erb (15.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 32)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 32)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 1 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (265.6ms)
+Rendered carts/_cart.html.erb (656.2ms)
+Rendered orders/new.html.erb within layouts/application (703.1ms)
+Completed 200 OK in 875ms (Views: 718.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/orders" for 127.0.0.1 at Mon Jul 23 09:17:28 +0800 2012
+  Processing by OrdersController#create as HTML
+  Parameters: {"commit"=>"Place Order", "authenticity_token"=>"MPkp8P5nNuBYaRc+jY3toPeb0KDhYTttzDF1rZpmglM=", "utf8"=>"✓", "order"=>{"name"=>"hjl", "address"=>"z4", "pay_type"=>"Check", "email"=>"123456@qq.com"}}
+  [1m[36mCart Load (15.6ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 32 LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 32)
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("updated_at", "email", "name", "address", "pay_type", "created_at") VALUES ('2012-07-23 01:17:28.437500', '123456@qq.com', 'hjl', 'z4', 'Check', '2012-07-23 01:17:28.437500')[0m
+  [1m[35mAREL (0.0ms)[0m  UPDATE "line_items" SET "order_id" = 101, "cart_id" = NULL, "updated_at" = '2012-07-23 01:17:28.437500' WHERE "line_items"."id" = 114
+  [1m[36mAREL (0.0ms)[0m  [1mUPDATE "line_items" SET "order_id" = 101, "cart_id" = NULL, "updated_at" = '2012-07-23 01:17:28.437500' WHERE "line_items"."id" = 115[0m
+  [1m[35mAREL (0.0ms)[0m  UPDATE "line_items" SET "order_id" = 101, "cart_id" = NULL, "updated_at" = '2012-07-23 01:17:28.453125' WHERE "line_items"."id" = 116
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 32 LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 32)
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM "carts" WHERE "carts"."id" = 32[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 469ms
+
+
+Started GET "/" for 127.0.0.1 at Mon Jul 23 09:17:28 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "carts" ("updated_at", "created_at") VALUES ('2012-07-23 01:17:28.671875', '2012-07-23 01:17:28.671875')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 33)
+Rendered collection (0.0ms)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 141ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/3/who_bought" for 127.0.0.1 at Mon Jul 23 09:17:33 +0800 2012
+  Processing by ProductsController#who_bought as 
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+  [1m[35mOrder Load (0.0ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 3))
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".order_id = 101)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 1 ORDER BY title LIMIT 1
+Rendered products/who_bought.atom.builder (609.4ms)
+Completed 200 OK in 625ms (Views: 609.4ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (15.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (93.8ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (15.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (109.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (93.8ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (93.8ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (93.8ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (46.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (46.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (46.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (93.8ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (46.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (46.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (93.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (46.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (46.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+  [1m[36mSQL (15.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (46.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (93.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+  [1m[36mSQL (46.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (515.6ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (125.0ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (171.9ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (125.0ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (203.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (171.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (140.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (171.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (156.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (171.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (218.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (156.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (187.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (125.0ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+  [1m[36mSQL (15.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (171.9ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (93.8ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (15.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (46.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (93.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (93.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (109.4ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (93.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (15.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (93.8ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (93.8ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (46.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (93.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (109.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (46.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (93.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (46.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (15.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (93.8ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (93.8ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (46.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (46.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 24 10:54:17 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "carts" ("created_at", "updated_at") VALUES ('2012-07-24 02:54:19.453125', '2012-07-24 02:54:19.453125')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 34)
+Rendered collection (0.0ms)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (109.4ms)
+Completed 200 OK in 359ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/line_items?product_id=2" for 127.0.0.1 at Tue Jul 24 10:54:25 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"2", "authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "_"=>""}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 34 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 2 AND ("line_items".cart_id = 34) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "line_items" ("product_id", "cart_id", "created_at", "order_id", "updated_at", "quantity") VALUES (2, 34, '2012-07-24 02:54:25.265625', NULL, '2012-07-24 02:54:25.265625', 1)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 34)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (0.0ms)
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered line_items/create.js.rjs (15.6ms)
+Completed 200 OK in 266ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/line_items?product_id=3" for 127.0.0.1 at Tue Jul 24 10:54:27 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"3", "authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "_"=>""}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 34 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 3 AND ("line_items".cart_id = 34) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "line_items" ("updated_at", "cart_id", "created_at", "quantity", "product_id", "order_id") VALUES ('2012-07-24 02:54:27.703125', 34, '2012-07-24 02:54:27.703125', 1, 3, NULL)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 34)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered line_items/create.js.rjs (15.6ms)
+Completed 200 OK in 266ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/line_items?product_id=1" for 127.0.0.1 at Tue Jul 24 10:54:31 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"1", "authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "_"=>""}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 34 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 1 AND ("line_items".cart_id = 34) LIMIT 1
+  [1m[36mAREL (15.6ms)[0m  [1mINSERT INTO "line_items" ("quantity", "order_id", "product_id", "updated_at", "created_at", "cart_id") VALUES (1, NULL, 1, '2012-07-24 02:54:31.640625', '2012-07-24 02:54:31.640625', 34)[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 34)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (15.6ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 1 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (93.8ms)
+Rendered line_items/create.js.rjs (93.8ms)
+Completed 200 OK in 484ms (Views: 109.4ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at Tue Jul 24 10:54:34 +0800 2012
+  Processing by OrdersController#new as HTML
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 34 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 34)[0m
+Rendered orders/_form.html.erb (250.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 34)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 34)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 1 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (78.1ms)
+Rendered carts/_cart.html.erb (218.8ms)
+Rendered orders/new.html.erb within layouts/application (484.4ms)
+Completed 200 OK in 547ms (Views: 500.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/orders" for 127.0.0.1 at Tue Jul 24 10:54:44 +0800 2012
+  Processing by OrdersController#create as HTML
+  Parameters: {"commit"=>"Place Order", "authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "utf8"=>"✓", "order"=>{"name"=>"A", "address"=>"B", "pay_type"=>"Check", "email"=>"C"}}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 34 LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 34)
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "orders" ("name", "created_at", "email", "address", "updated_at", "pay_type") VALUES ('A', '2012-07-24 02:54:44.984375', 'C', 'B', '2012-07-24 02:54:44.984375', 'Check')[0m
+  [1m[35mAREL (0.0ms)[0m  UPDATE "line_items" SET "order_id" = 102, "updated_at" = '2012-07-24 02:54:44.984375', "cart_id" = NULL WHERE "line_items"."id" = 117
+  [1m[36mAREL (0.0ms)[0m  [1mUPDATE "line_items" SET "order_id" = 102, "updated_at" = '2012-07-24 02:54:44.984375', "cart_id" = NULL WHERE "line_items"."id" = 118[0m
+  [1m[35mAREL (0.0ms)[0m  UPDATE "line_items" SET "order_id" = 102, "updated_at" = '2012-07-24 02:54:45.000000', "cart_id" = NULL WHERE "line_items"."id" = 119
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 34 LIMIT 1[0m
+  [1m[35mLineItem Load (15.6ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 34)
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM "carts" WHERE "carts"."id" = 34[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 1 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.text.erb (46.9ms)
+Rendered notifier/order_received.text.erb (62.5ms)
+
+Sent mail to C (1922ms)
+Date: Tue, 24 Jul 2012 10:54:46 +0800
+From: depot@example.com
+To: C
+Message-ID: <500e0e76632ea_84c2318c4c9645@WWW-FAC34F80024.mail>
+Subject: Pragmatic Store Order Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Dear A
+
+Thank you for your recent order from The Pragmatic Store.
+
+You ordered the following items:
+
+ 1 x Programming Ruby 1.9 1 x Rails Test Prescriptions 1 x Web Design for Developers
+
+We'll send you a separate e-mail when your order ships.
+Redirected to http://localhost:3000/
+Completed 302 Found in 3609ms
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 24 10:54:48 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "carts" ("created_at", "updated_at") VALUES ('2012-07-24 02:54:48.718750', '2012-07-24 02:54:48.718750')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 35)[0m
+Rendered collection (0.0ms)
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 328ms (Views: 218.8ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/line_items?product_id=3" for 127.0.0.1 at Tue Jul 24 10:55:29 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"3", "authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "_"=>""}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 35 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 3 AND ("line_items".cart_id = 35) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "line_items" ("created_at", "product_id", "quantity", "updated_at", "cart_id", "order_id") VALUES ('2012-07-24 02:55:29.484375', 3, 1, '2012-07-24 02:55:29.484375', 35, NULL)[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 35)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered line_items/create.js.rjs (15.6ms)
+Completed 200 OK in 297ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/carts/35" for 127.0.0.1 at Tue Jul 24 10:55:33 +0800 2012
+  Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "id"=>"35"}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 35 LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 35)[0m
+  [1m[35mAREL (0.0ms)[0m  DELETE FROM "line_items" WHERE "line_items"."id" = 120
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM "carts" WHERE "carts"."id" = 35[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 125ms
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 24 10:55:33 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "carts" ("updated_at", "created_at") VALUES ('2012-07-24 02:55:33.734375', '2012-07-24 02:55:33.734375')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 36)
+Rendered collection (0.0ms)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 250ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/line_items?product_id=2" for 127.0.0.1 at Tue Jul 24 10:57:18 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"2", "authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "_"=>""}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 36 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 2 AND ("line_items".cart_id = 36) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "line_items" ("quantity", "product_id", "cart_id", "updated_at", "order_id", "created_at") VALUES (1, 2, 36, '2012-07-24 02:57:18.796875', NULL, '2012-07-24 02:57:18.796875')
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 36)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (0.0ms)
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered line_items/create.js.rjs (31.2ms)
+Completed 200 OK in 297ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/line_items?product_id=3" for 127.0.0.1 at Tue Jul 24 10:57:20 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"3", "authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "_"=>""}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 36 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 3 AND ("line_items".cart_id = 36) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "line_items" ("cart_id", "product_id", "quantity", "order_id", "updated_at", "created_at") VALUES (36, 3, 1, NULL, '2012-07-24 02:57:20.812500', '2012-07-24 02:57:20.812500')
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 36)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered line_items/create.js.rjs (31.2ms)
+Completed 200 OK in 188ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at Tue Jul 24 10:57:24 +0800 2012
+  Processing by OrdersController#new as HTML
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 36 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 36)[0m
+Rendered orders/_form.html.erb (31.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 36)
+  [1m[36mLineItem Load (15.6ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 36)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (109.4ms)
+Rendered carts/_cart.html.erb (140.6ms)
+Rendered orders/new.html.erb within layouts/application (187.5ms)
+Completed 200 OK in 328ms (Views: 187.5ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/orders" for 127.0.0.1 at Tue Jul 24 10:57:28 +0800 2012
+  Processing by OrdersController#create as HTML
+  Parameters: {"commit"=>"Place Order", "authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "utf8"=>"✓", "order"=>{"name"=>"", "address"=>"", "pay_type"=>"", "email"=>""}}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 36 LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 36)[0m
+Rendered orders/_form.html.erb (15.6ms)
+Rendered orders/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 812ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 24 10:57:42 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 36 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 36)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 36)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (0.0ms)
+Rendered carts/_cart.html.erb (31.2ms)
+Rendered store/index.html.erb within layouts/application (78.1ms)
+Completed 200 OK in 125ms (Views: 93.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 24 10:57:46 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 36 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 36)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 36)[0m
+  [1m[35mProduct Load (15.6ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (93.8ms)
+Rendered carts/_cart.html.erb (93.8ms)
+Rendered store/index.html.erb within layouts/application (156.2ms)
+Completed 200 OK in 203ms (Views: 156.2ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/line_items?product_id=2" for 127.0.0.1 at Tue Jul 24 10:57:48 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"2", "authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "_"=>""}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 36 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 2 AND ("line_items".cart_id = 36) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mUPDATE "line_items" SET "updated_at" = '2012-07-24 02:57:48.359375', "quantity" = 2 WHERE "line_items"."id" = 121[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 36)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (31.2ms)
+Rendered line_items/create.js.rjs (31.2ms)
+Completed 200 OK in 312ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/line_items?product_id=3" for 127.0.0.1 at Tue Jul 24 10:57:51 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"3", "authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "_"=>""}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 36 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 3 AND ("line_items".cart_id = 36) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  UPDATE "line_items" SET "updated_at" = '2012-07-24 02:57:51.718750', "quantity" = 2 WHERE "line_items"."id" = 122
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 36)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered line_items/create.js.rjs (31.2ms)
+Completed 200 OK in 188ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 24 10:59:44 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 36 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 36)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 36)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (31.2ms)
+Rendered carts/_cart.html.erb (31.2ms)
+Rendered store/index.html.erb within layouts/application (171.9ms)
+Completed 200 OK in 219ms (Views: 187.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/line_items?product_id=2" for 127.0.0.1 at Tue Jul 24 10:59:46 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"2", "authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "_"=>""}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 36 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 2 AND ("line_items".cart_id = 36) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mUPDATE "line_items" SET "updated_at" = '2012-07-24 02:59:46.203125', "quantity" = 3 WHERE "line_items"."id" = 121[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 36)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered line_items/create.js.rjs (31.2ms)
+Completed 200 OK in 297ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/line_items?product_id=2" for 127.0.0.1 at Tue Jul 24 10:59:52 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"2", "authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "_"=>""}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 36 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 2 AND ("line_items".cart_id = 36) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  UPDATE "line_items" SET "updated_at" = '2012-07-24 02:59:53.031250', "quantity" = 4 WHERE "line_items"."id" = 121
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 36)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered line_items/create.js.rjs (109.4ms)
+Completed 200 OK in 297ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/line_items?product_id=3" for 127.0.0.1 at Tue Jul 24 10:59:56 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"3", "authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "_"=>""}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 36 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 3 AND ("line_items".cart_id = 36) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mUPDATE "line_items" SET "updated_at" = '2012-07-24 02:59:56.859375', "quantity" = 3 WHERE "line_items"."id" = 122[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 36)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered line_items/create.js.rjs (31.3ms)
+Completed 200 OK in 203ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 24 10:59:59 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 36 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 36)[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 36)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (31.2ms)
+Rendered carts/_cart.html.erb (31.2ms)
+Rendered store/index.html.erb within layouts/application (171.9ms)
+Completed 200 OK in 219ms (Views: 187.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/line_items?product_id=2" for 127.0.0.1 at Tue Jul 24 11:28:24 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"2", "authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "_"=>""}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 36 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 2 AND ("line_items".cart_id = 36) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  UPDATE "line_items" SET "updated_at" = '2012-07-24 03:28:24.671875', "quantity" = 5 WHERE "line_items"."id" = 121
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 36)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (0.0ms)
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered line_items/create.js.rjs (31.2ms)
+Completed 200 OK in 453ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/line_items?product_id=1" for 127.0.0.1 at Tue Jul 24 11:28:27 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"1", "authenticity_token"=>"P3HieljT2Ze4DQpTNy7U5aTDuE6hM13F+hK6XGlAHO0=", "_"=>""}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 36 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 1 AND ("line_items".cart_id = 36) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "line_items" ("quantity", "cart_id", "created_at", "order_id", "updated_at", "product_id") VALUES (1, 36, '2012-07-24 03:28:27.296875', NULL, '2012-07-24 03:28:27.296875', 1)[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 36)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 3 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 1 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (0.0ms)
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered line_items/create.js.rjs (31.2ms)
+Completed 200 OK in 344ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (93.8ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140210')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120712003610')
+  [1m[36mSQL (46.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717062851')[0m
+  [1m[35mSQL (62.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717062932')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718005452')[0m
+  [1m[35mSQL (46.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120718010223')
+  [1m[36mSQL (46.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120722140145')[0m
