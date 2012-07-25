@@ -1,8 +1,8 @@
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
-
+      <h2><%= pluralize(@order.errors.count, "error") %> 
+        prohibited this order from being saved:</h2>
       <ul>
       <% @order.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,23 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
+  <div>
+    <%= f.label :name, "Name:" %>
     <%= f.text_field :name, :size => 40 %>
   </div>
-  <div class="field">
-    <%= f.label :address %><br />
+
+  <div>
+    <%= f.label :address, "Address:" %>
     <%= f.text_area :address, :rows => 3, :cols => 40 %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, :size => 40 %>
+
+  <div>
+    <%= f.label :email, "E-Mail:" %>
+    <%= f.text_field :email, :size => 40 %>
   </div>
-  <div class="field">
-    <%= f.label :pay_type %><br />
-    <%= f.select :pay_type, Order::PAYMENT_TYPES, :prompt => 'Select a payment method' %>
+
+  <div>
+    <%= f.label :pay_type, "Pay with:" %>
+    <%= 
+      f.select :pay_type,
+                 Order::PAYMENT_TYPES,
+                :prompt => "Select a payment method" 
+    %>
   </div>
-  <div class="actions">
-    <%= f.submit 'Place Order' %>
-  </div>
+
+    <%= f.submit "Place Order" %>
 <% end %>
+

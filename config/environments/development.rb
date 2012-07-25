@@ -6,8 +6,8 @@ DepotB::Application.configure do
     :port           => 587,
     :domain         => "domain.of.sender.net",
     :authentication => "plain",
-    :user_name      => "dave",
-    :password       => "secret",
+    :user_name      => "zhutouhezhupo",
+    :password       => "1128281516",
     :enable_starttls_auto => true
   }
   # Settings specified here will take precedence over those in config/application.rb

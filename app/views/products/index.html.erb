@@ -1,15 +1,15 @@
-<div id="product-list">
+<div id="product_list">
   <h1>Listing products</h1>
 
   <table>
   <% @products.each do |product| %>
-    <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 
       <td>
-        <%= image_tag(product.image_url, :class => 'list-image') %>
+        <%= image_tag(product.image_url, :class => 'list_image') %>
       </td>
 
-      <td class="list-description">
+      <td class="list_description">
         <dl>
           <dt><%= product.title %></dt>
           <dd><%= truncate(strip_tags(product.description),
@@ -17,7 +17,7 @@
         </dl>
       </td>
 
-      <td class="list-actions">
+      <td class="list_actions">
         <%= link_to 'Show', product %><br/>
         <%= link_to 'Edit', edit_product_path(product) %><br/>
         <%= link_to 'Destroy', product, 
