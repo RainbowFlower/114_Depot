@@ -14,7 +14,11 @@ en:
   store:
     index:
       title_html:  "Your Pragmatic Catalog"
+<<<<<<< HEAD
       add_html:         "Add to Cart"
+=======
+      add:         "Add to Cart"
+>>>>>>> cc1623e8c9126fd09fed4932dcb9a404141fb403
     
   carts:
     cart:
@@ -36,10 +40,17 @@ en:
       legend:    "Please Enter your Details"
     form:
       name:        "Name"
+<<<<<<< HEAD
       address_html:     "Address"
       email:       "E-mail"
       pay_type:    "Pay with"
       pay_prompt_html:  "Select a payment method"
+=======
+      address:     "Address"
+      email:       "E-mail"
+      pay_type:    "Pay with"
+      pay_prompt:  "Select a payment method"
+>>>>>>> cc1623e8c9126fd09fed4932dcb9a404141fb403
       submit:      "Place Order"
   
   errors:
@@ -58,7 +69,11 @@ en:
       order:       "order"
     attributes:
       order:
+<<<<<<< HEAD
         address_html:   "Address"
+=======
+        address:   "Address"
+>>>>>>> cc1623e8c9126fd09fed4932dcb9a404141fb403
         name:      "Name"
         email:     "E-mail"
         pay_type:  "pay-type"

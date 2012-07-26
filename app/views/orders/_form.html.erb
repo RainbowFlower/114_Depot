@@ -19,7 +19,11 @@
   </div>
 
   <div>
+<<<<<<< HEAD
     <%= f.label :address, t('.address_html') + ":" %>
+=======
+    <%= f.label :address, t('.address') + ":" %>
+>>>>>>> cc1623e8c9126fd09fed4932dcb9a404141fb403
     <%= f.text_area :address, :rows => 3, :cols => 40 %>
   </div>
 
@@ -33,7 +37,11 @@
     <%= 
       f.select :pay_type,
                  Order::PAYMENT_TYPES,
+<<<<<<< HEAD
                 :prompt => t('.pay_prompt_html') 
+=======
+                :prompt => t('.pay_prompt') 
+>>>>>>> cc1623e8c9126fd09fed4932dcb9a404141fb403
     %>
   </div>
 
