@@ -7,6 +7,7 @@ DepotB::Application.routes.draw do
     delete 'logout' => :destroy
   end
 
+scope '(:locale)' do
   resources :users
 
   resources :orders
@@ -15,7 +16,6 @@ DepotB::Application.routes.draw do
 
   resources :carts
 
-  get "store/index"
 
   resources :products do
     get :who_bought, :on => :member
@@ -72,6 +72,7 @@ DepotB::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
   root :to => 'store#index', :as => 'store'
+end
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
