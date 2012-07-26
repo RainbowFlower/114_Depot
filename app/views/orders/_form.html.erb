@@ -19,7 +19,7 @@
   </div>
 
   <div>
-    <%= f.label :address, t('.address') + ":" %>
+    <%= f.label :address, t('.address_html') + ":" %>
     <%= f.text_area :address, :rows => 3, :cols => 40 %>
   </div>
 
@@ -33,7 +33,7 @@
     <%= 
       f.select :pay_type,
                  Order::PAYMENT_TYPES,
-                :prompt => t('.pay_prompt') 
+                :prompt => t('.pay_prompt_html') 
     %>
   </div>
 
