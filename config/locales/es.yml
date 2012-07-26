@@ -16,11 +16,7 @@ es:
   store:
     index:
       title_html:  "Su Cat&aacute;logo de Pragmatic"
-<<<<<<< HEAD
       add_html:          "A&ntilde;adir al Carrito"
-=======
-      add:          "A&ntilde;adir al Carrito"
->>>>>>> cc1623e8c9126fd09fed4932dcb9a404141fb403
       
   carts:
     cart:
@@ -42,17 +38,10 @@ es:
       legend:    "Por favor, introduzca sus datos"
     form:
       name:        "Nombre"
-<<<<<<< HEAD
       address_html:     "Direcci&oacute;n"
       email:       "E-mail"
       pay_type:    "Pagar con"
       pay_prompt_html:  "Seleccione un m&eacute;todo de pago"
-=======
-      address:     "Direcci&oacute"
-      email:       "E-mail"
-      pay_type:    "Pagar con"
-      pay_prompt:  "Seleccione un m&eacute;todo de pago"
->>>>>>> cc1623e8c9126fd09fed4932dcb9a404141fb403
       submit:      "Realizar Pedido"
       
   errors:
@@ -71,11 +60,7 @@ es:
       order:       "pedido"
     attributes:
       order:
-<<<<<<< HEAD
         address_html:   "Direcci&oacute;n"
-=======
-        address:   "Direcci&oacute;n"
->>>>>>> cc1623e8c9126fd09fed4932dcb9a404141fb403
         name:      "Nombre"
         email:     "E-mail"
         pay_type:  "Forma de pago"          
