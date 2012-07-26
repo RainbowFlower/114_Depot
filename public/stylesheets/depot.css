@@ -1,67 +1,66 @@
 /* Global styles */
 
 #store #notice {
-        color: #000;
-        border: 2px solid red;
-        padding: 1em;
-        margin-bottom: 2em;
-        background-color: #f0f0f0;
-        font: bold smaller sans-serif;
+  color: #000;
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
 }
 
-
 #store h1 {
-        font:  150% sans-serif;
-        color: #226;
-        border-bottom: 3px dotted #77d;
+  font:  150% sans-serif;
+  color: #226;
+  border-bottom: 3px dotted #77d;
 }
 
 /* Styles for products/index */
 
 #product_list table {
-        border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 #product_list table tr td {
-        padding: 5px;
-        vertical-align: top;
+  padding: 5px;
+  vertical-align: top;
 }
 
 #product_list .list_image {
-  width:        60px;
-  height:       70px;
+  width: 60px;
+  height: 70px;
 }
 
 #product_list .list_description {
-  width:        60%;
+  width: 60%;
 }
 
 #product_list .list_description dl {
-        margin: 0;
+  margin: 0;
 }
 
 #product_list .list_description dt {
-	color:        #244;
-	font-weight:  bold;
-	font-size:    larger;
+  color: #244;
+  font-weight: bold;
+  font-size: larger;
 }
 
 #product_list .list_description dd {
-        margin: 0;
+  margin: 0;
 }
 
 #product_list .list_actions {
-  font-size:    x-small;
-  text-align:   right;
+  font-size: x-small;
+  text-align: right;
   padding-left: 1em;
 }
 
 #product_list .list_line_even {
-  background:   #e0f8f8;
+  background: #e0f8f8;
 }
 
 #product_list .list_line_odd {
-  background:   #f8b0f8;
+  background: #f8b0f8;
 }
 
 /* START:mainlayout */
@@ -151,7 +150,7 @@
 #store .entry  .price {
   color: #44a;
   font-weight: bold;
-  margin-right: 2em;
+  margin-right: 3em;
 }
 
 /* START:inline */
@@ -254,6 +253,10 @@
   margin-left: 0.5em;
 }
 
+.depot_form input[type="submit"] {
+  margin-left: 5em;
+}
+
 .depot_form .submit {
   margin-left: 4em;
 }
@@ -266,3 +269,4 @@
 	float:right;
 	padding-top: 0.2em 
 }
+
