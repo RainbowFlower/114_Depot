@@ -25,7 +25,7 @@
 			<tr>
 			<th>Quantity</th>
 			<th>Title</th>
-			<th style="text-align:right">Price</th>
+			<th :text-align => "right">Price</th>
 			</tr>
 		</thead>
 		<%= render(@order.line_items) %>

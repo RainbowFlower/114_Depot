@@ -6,7 +6,7 @@
     <tr>
 
       <td>
-        <%= image_tag(product.image_url, :class => 'list_image') %>
+        <%= image_tag(product.image_url, :class => 'product_image') %>
       </td>
 
       <td class="list_description">

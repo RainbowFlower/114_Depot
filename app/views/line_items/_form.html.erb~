@@ -11,11 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div>
     <%= f.label :product_id %>
     <%= f.text_field :product_id %>
   </div>
-  <div class="field">
+  <div>
     <%= f.label :cart_id %>
     <%= f.text_field :cart_id %>
   </div>

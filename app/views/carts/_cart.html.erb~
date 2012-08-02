@@ -13,7 +13,7 @@
 		<td>
 			<%= button_to t('.empty'), cart, :method => :delete, :confirm => 'Are you sure?' %>
 		</td>
-		<td style="padding-left:45px">
+		<td style="margin-left:10px">
 			<%= button_to t('.checkout'), new_order_path, :method => :get %>
 		</td>
 	</tr>

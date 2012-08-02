@@ -1,6 +1,6 @@
 <h1>Listing orders</h1>
 
-<div style="width:70%">
+<div style="width:60%">
 <table class="table table-striped">
   <thead>
   <tr>

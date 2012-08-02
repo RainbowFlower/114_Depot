@@ -28,7 +28,7 @@
   </div>
 
   <div>
-    <%= f.label :password_confirmation, 'Confirm:' %>
+    <%= f.label :password_confirmation, 'Confirm' %>:
     <%= f.password_field :password_confirmation, :size => 40 %>
   </div>
 
