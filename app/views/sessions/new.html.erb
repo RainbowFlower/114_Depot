@@ -17,6 +17,14 @@
         <%= password_field_tag :password, params[:password] %>
       </div>
 
+			<div id="admin_field">
+          <label>Admin:</label>
+          <%= radio_button_tag :admin, "false", { :checked => true } %>
+          <%= label_tag :admin_false, 'False' %><br />
+          <%= radio_button_tag :admin, "true" %>
+          <%= label_tag :admin_true, 'True' %>
+      </div>
+      
       <div>
         <%= submit_tag "Login" %>
       </div>

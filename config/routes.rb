@@ -1,4 +1,6 @@
 DepotB::Application.routes.draw do
+  get "customer" => 'customer#index'
+
   resources :helps
 
   get 'admin' => 'admin#index'

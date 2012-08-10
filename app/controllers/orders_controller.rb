@@ -1,12 +1,19 @@
 class OrdersController < ApplicationController
-    skip_before_filter :authorize, :only => [:new, :create]
+  #skip_before_filter :authorize, :only => [:new, :create]
 
   # GET /orders
   # GET /orders.xml
   def index
-    @orders = Order.paginate :page => params[:page], :order => 'created_at desc',
-      :per_page => 10
-
+  	@user = User.find_by_id(session[:user_id])
+  	if @user.admin == true
+	    @orders = Order.paginate :page => params[:page], :order => 'created_at desc',
+  	    :per_page => 10
+		else
+			@orders = @user.orders
+			@orders = @orders.paginate :page => params[:page], :order => 'created_at desc',
+  	    :per_page => 10
+		end
+		
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @orders }
@@ -50,6 +57,7 @@ class OrdersController < ApplicationController
   # POST /orders.xml
   def create
     @order = Order.new(params[:order])
+    @customer = User.find_by_id(session[:user_id])
     @order.add_line_items_from_cart(current_cart)
 
     respond_to do |format|
@@ -57,6 +65,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         Notifier.order_received(@order).deliver
+        @customer.orders << @order
         format.html { redirect_to(store_url, :notice =>
           I18n.t('.thanks')) }
         format.xml  { render :xml => @order, :status => :created, :location => @order }

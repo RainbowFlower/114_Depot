@@ -1,5 +1,6 @@
 <h1>Welcome</h1>
 
 It's <%= Time.now %>
-We have <%= pluralize(@total_orders, "order") %>.
+We have <%= pluralize(@total_orders, "order") %>.<br /><br />
+<%= link_to 'Show all', orders_path %>
 

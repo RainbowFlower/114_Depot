@@ -16,7 +16,7 @@
                  :length => 80) %></dd>
         </dl>
       </td>
-
+			<% if @user.admin == true %>
       <td class="list_actions">
         <%= link_to 'Show', product %><br/>
         <%= link_to 'Edit', edit_product_path(product) %><br/>
@@ -24,6 +24,7 @@
                     :confirm => 'Are you sure?',
                     :method => :delete %>
       </td>
+      <% end %>
     </tr>
   <% end %>
   </table>
