@@ -1,0 +1,29 @@
+<%= form_for(@help) do |f| %>
+  <% if @help.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@help.errors.count, "error") %> prohibited this help from being saved:</h2>
+
+      <ul>
+      <% @help.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+	<div class="field">
+		<%= f.label :url %>
+		<%= f.text_field :url %>
+	</div>
+	<div class="field">
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</div>
+	<div class="field">
+		<%= f.label :tag %>
+		<%= f.select :tag, {"用户管理"=>1, "查找商品"=>2, "购物车"=>3, "订单管理"=>4, "评论管理"=>5, "国际化"=>6} %>
+	</div>
+    <%= f.submit %>
+  </div>
+<% end %>

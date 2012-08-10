@@ -1,0 +1,8 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<%= render @help.url %>
+
+<%= link_to 'Edit', edit_help_path(@help) %> |
+<%= link_to 'Back', helps_path %>

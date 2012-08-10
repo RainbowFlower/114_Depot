@@ -1,0 +1,74 @@
+<html>
+<body>
+<h1>帮助中心</h1>
+<p>下面的链接也许可以帮助你解决相关问题：</p>
+<dl>
+  <dt>用户管理</dt>
+  <dd>
+    <p>
+	  <% @helps.each do |help| %>
+		<% if help.tag == 1 %>
+			<%= link_to help.title, "/helps/" + help.id.to_s %>
+		<% end %>
+	  <% end %>
+	</p>
+  </dd>
+  
+  <dt>查找商品</dt>
+  <dd>
+    <p>
+	  <% @helps.each do |help| %>
+		<% if help.tag == 2 %>
+			<%= link_to help.title, "/helps/" + help.id.to_s %>
+		<% end %>
+	  <% end %>
+	</p>
+  </dd>
+  
+  <dt>购物车</dt>
+  <dd>
+    <p>
+	  <% @helps.each do |help| %>
+		<% if help.tag == 3 %>
+			<%= link_to help.title, "/helps/" + help.id.to_s %>
+		<% end %>
+	  <% end %>
+	</p>
+  </dd>
+  
+  <dt>订单管理</dt>
+  <dd>
+    <p>
+	  <% @helps.each do |help| %>
+		<% if help.tag == 4 %>
+			<%= link_to help.title, "/helps/" + help.id.to_s %>
+		<% end %>
+	  <% end %>
+	</p>
+  </dd>
+  
+  <dt>评论管理</dt>
+  <dd>
+    <p>
+	  <% @helps.each do |help| %>
+		<% if help.tag == 5 %>
+			<%= link_to help.title, "/helps/" + help.id.to_s %>
+		<% end %>
+	  <% end %>
+	</p>
+  </dd>
+  
+  <dt>国际化</dt>
+  <dd>
+    <p>
+	  <% @helps.each do |help| %>
+		<% if help.tag == 6 %>
+			<%= link_to help.title, "/helps/" + help.id.to_s %>
+		<% end %>
+	  <% end %>
+	</p>
+  </dd>
+
+</dl>
+</body>
+</html>

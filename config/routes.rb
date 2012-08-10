@@ -1,4 +1,6 @@
 DepotB::Application.routes.draw do
+  resources :helps
+
   get 'admin' => 'admin#index'
 
   controller :sessions do
