@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
   skip_before_filter :authorize, :only => [:show]
+  before_filter :admin_authorize, :only => [:edit, :new, :update, :delete]
+  
   # GET /categories
   # GET /categories.xml
   def index

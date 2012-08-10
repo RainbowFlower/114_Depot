@@ -28,8 +28,8 @@
 }
 
 #product_list .list_image {
-  width: 60px;
-  height: 70px;
+  width: 70px;
+  height: 80px;
 }
 
 #product_list .list_description {
@@ -55,28 +55,7 @@
   text-align: right;
   padding-left: 1em;
 }
-/*
-#product_list .list_line_even {
-  background: #e0f8f8;
-}
 
-#product_list .list_line_odd {
-  background: #f8b0f8;
-}
-
-/* START:mainlayout */
-/* Styles for main page */
-/*
-#banner {
-  background: #9c9;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid;
-  font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
-  text-align: center;
-}
-*/
 #banner img {
   float: left;
 }
@@ -270,11 +249,11 @@
 	float:right;
 	padding-top: 0.2em;
 }
-/*
+
 .left {
 	float: left;
 	padding-right: 10px;
-}*/
+}
 
 .clear {
 	clear: both;
@@ -311,4 +290,12 @@
 
 .depot_comment_form div{
 	margin: 0.5em 0;
+}
+
+.span-two-thirds {
+	width: 65%;
+}
+
+#admin_field {
+	display: none;
 }

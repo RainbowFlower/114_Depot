@@ -4,11 +4,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if user = User.authenticate(params[:name], params[:password], params[:admin])
+    if user = User.authenticate(params[:name], params[:password])
       session[:user_id] = user.id
       if user.admin == true
-      	redirect_to admin_url
+      	session[:admin] = user.admin
+      	redirect_to admin_url, :notice => "session[:admin]"
       else
+      	session[:admin] = false
       	redirect_to customer_url
       end
     else
@@ -18,6 +20,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    session[:admin] = false
     redirect_to store_url, :notice => "Logged out"
   end
 

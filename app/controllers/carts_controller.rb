@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  skip_before_filter :authorize, :only => [:create, :update, :delete]
+  skip_before_filter :authorize, :only => [:create, :update, :destroy]
 
   # GET /carts
   # GET /carts.xml
@@ -84,7 +84,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to(store_url) }
+      format.html { redirect_to(request.referer) }
       format.xml  { head :ok }
     end
   end

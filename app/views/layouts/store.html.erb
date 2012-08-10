@@ -33,8 +33,8 @@
 		<% if session[:user_id] %>
 			<%= button_to 'Logout', logout_path, :method => :delete, :class=>"pull-right" %>
 		<% end %>
-		<a href="#">sign_up</a>
-		<a href="#">sign_in</a>
+		<a href="#">Register</a> 
+		<a href="login">Login</a>
 		</div>
 	  </div>
 	</div>
@@ -82,7 +82,7 @@
 				<li class="active"><%= link_to 'Home', store_path %></li>
 				<li><%= link_to 'Products', products_path %></li>
 				<li><%= link_to 'Orders', orders_path %></li>
-				<li><%= link_to 'Users', users_path %></li>
+				<% if session[:admin] %><li><%= link_to 'Users', users_path %></li><% end %>
 				<li><%= link_to 'Helps', helps_path %></li>
 			</ul>
 			<form class="navbar-form pull-left">

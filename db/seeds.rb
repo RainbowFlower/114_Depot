@@ -286,7 +286,7 @@ Product.create(:title => 'Lippincott\'s Illustrated Reviews: Biochemistry',
         searchable online text and additional USMLE-style questions for students and an image 
         bank for faculty. 
      </p>},
-  :image_url => '/images/Chemical.jpg',
+  :image_url => '/images/chemical.jpg',
   :price => 63.58,
   :author => 'Richard A. Harvey and Denise R. Ferrier',
   :ISBN => 9781609139988,
