@@ -22,7 +22,7 @@
 		<div class="span2">
 		  <%= image_tag("logo.png") %>
 		</div>
-		<div class="span5 offset5" id="account-bar">
+		<div class="span6 offset4" id="account-bar">
 		  <%= form_tag store_path, :class => 'locale' do %>
 			<%= select_tag 'set_locale',
 			options_for_select(LANGUAGES, I18n.locale.to_s),
@@ -30,21 +30,53 @@
 			<%= submit_tag 'submit' %>
 			<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
 		  <% end %>
+		<% if session[:user_id] %>
+			<%= button_to 'Logout', logout_path, :method => :delete, :class=>"pull-right" %>
+		<% end %>
 		<a href="#">sign_up</a>
-		<a href="#">sign_in</a> 
+		<a href="#">sign_in</a>
 		</div>
 	  </div>
 	</div>
   </div>
   
   <div class="container" id="content">
-    <div id="header">
-		<div class="header-title">
-			<%= @page_title || "Pragmatic Bookshelf" %>
+    <div class="carousel slide" id="header">
+		<div class="carousel-inner">
+			<div class="active item">
+				<%= image_tag("xiaowangzi.png") %>
+				<div class="carousel-caption">
+					<%= image_tag("littleprince.jpg") %>
+					<h3>小王子</h3>
+					<p>《小王子》所讲述的是美丽的伤感故事，飞行员“我”因为飞机出了故障，被迫降落在远离人烟的撒哈拉沙漠上，这时一位迷人而神秘的小男孩出现了，执拗地请“我”给他画一只绵羊。他就是小王子...</p>
+				</div>
+			</div>
+			<div class="item">
+				<%= image_tag("kite.png") %>
+				<div class="carousel-caption">
+					<%= image_tag("kiterunner.jpg") %>
+					<h3>追风筝的人</h3>
+					<p>12岁的阿富汗富家少爷阿米尔与仆人哈桑情同手足。然而，在一场风筝比赛后，发生了一件悲惨不堪的事，阿米尔为自己的懦弱感到自责和痛苦，逼走了哈桑，不久，自己也跟随父亲逃往美国...</p>
+				</div>
+			</div>
+			<div class="item">
+				<%= image_tag("norwegian.png") %>
+				<div class="carousel-caption">
+					<%= image_tag("norwegianwood.jpg") %>
+					<h3>挪威的森林</h3>
+					<p>这是一部动人心弦的、平缓舒雅的、略带感伤的恋爱小说。小说主人公渡边以第一人称展开他同两个女孩间的爱情纠葛。渡边的第一个恋人直子原是他高中要好同学木月的女友，后来木月自杀了...</p>
+				</div>
+			</div>
+		</div>
+		<a class="carousel-control left" href="#header" data-slide="prev">&lsaquo;</a>
+		<a class="carousel-control right" href="#header" data-slide="next">&rsaquo;</a>
+	
+		<div class="new-label">
+			<%= image_tag("new.png") %>
 		</div>
 	</div>
 	
-	<div class="navbar" id="header-navbar">
+	<div class="navbar" id="header-navbar-index">
 		<div class="navbar-inner">
 			<ul class="nav">
 				<li class="active"><%= link_to 'Home', store_path %></li>

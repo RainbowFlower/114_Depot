@@ -66,7 +66,7 @@
 
 /* START:mainlayout */
 /* Styles for main page */
-
+/*
 #banner {
   background: #9c9;
   padding-top: 10px;
@@ -76,7 +76,7 @@
   color: #282;
   text-align: center;
 }
-
+*/
 #banner img {
   float: left;
 }
@@ -86,18 +86,14 @@
 }
 
 #main {
-  margin-left: 17em;
-  padding-top: 4ex;
-  padding-left: 2em;
+  margin-right: 240px;
+  padding: 4ex 2em 0 2em;
   background: white;
 }
 
 #side {
-  float: left;
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-bottom: 1em;
-  width: 16em;
+  float: right;
+  width: 240px;
   background: #141;
 }
 
@@ -121,7 +117,8 @@
 }
 
 #store .entry img {
-  width: 80px;
+  width: 120px;
+  border: 1px solid #9c9;
   margin-right: 5px;
   margin-bottom: 5px;
   float: left;
@@ -149,9 +146,11 @@
 }
 
 #store .entry  .price {
+  width: 120px;
+  display: inline-block;
   color: #44a;
   font-weight: bold;
-  margin-right: 3em;
+  margin-right: 5px;
 }
 
 /* START:inline */
@@ -270,11 +269,11 @@
 	float:right;
 	padding-top: 0.2em;
 }
-
+/*
 .left {
 	float: left;
 	padding-right: 10px;
-}
+}*/
 
 .clear {
 	clear: both;
