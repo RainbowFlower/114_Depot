@@ -203,6 +203,7 @@
   background: #141;
   font-family: sans-serif;
   padding: 0.2em 1em;
+  width: auto;
 }
 
 .depot_form label {
