@@ -33,5 +33,19 @@
   <%= sanitize @product.description %>
 </p>
 
+<p>
+  <b>comment:</b>
+</p>
+
+<ul>
+	<% @product.comments.each do |comment| %>
+	    <li>Commentator_ID:<b><%= comment.commentator %></b>        @ time:
+	    	<b><%= comment.time %></b></br>
+		<b><%= comment.content %></b></li>
+	<% end %>
+</ul>
+
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Back', products_path %> |
+<%= link_to "Comment", one_comment_path(@product) %>

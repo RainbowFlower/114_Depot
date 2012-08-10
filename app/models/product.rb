@@ -4,6 +4,7 @@ class Product < ActiveRecord::Base
 
   has_many :line_items
   has_many :orders, :through => :line_items
+   has_many :comments, :dependent => :destroy
   before_destroy :ensure_not_referenced_by_any_line_item
 
   # ensure that there are no line items referencing this product

@@ -1,4 +1,5 @@
 DepotB::Application.routes.draw do
+
   get "customer" => 'customer#index'
 
   resources :categories
@@ -14,6 +15,10 @@ DepotB::Application.routes.draw do
   end
 
 scope '(:locale)' do
+  resources :comments do
+    get :one, :on => :member
+  end
+  
   resources :users
 
   resources :orders

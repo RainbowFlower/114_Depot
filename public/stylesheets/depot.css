@@ -284,3 +284,31 @@
 	width: 100px;
 	height: 115px;
 }
+/* Styles for comment form */
+.depot_comment_form fieldset{
+	background: #ffffff;
+}
+
+.depot_comment_form legend {
+	color: #dfd;
+	background: #141;
+	font-family: sans-serif;
+	padding: 0.2em 1em;
+}
+
+.depot_comment_form label {
+	width: 7em;
+	float: left;
+	text-align: left;
+	padding-top: 0.2em;
+	margin-right: 0.1em;
+	display: block;
+}
+
+.depot_comment_form .submit {
+	margin-left: 4em;
+}
+
+.depot_comment_form div{
+	margin: 0.5em 0;
+}
