@@ -3,6 +3,9 @@
 
 
 es:
+  categories:
+    show:
+      add_html:   "A&ntilde;adir al Carrito"
   
   layouts:
     application:   

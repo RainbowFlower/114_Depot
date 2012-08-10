@@ -3,6 +3,9 @@
 
 
 en:
+  categories:
+    show:
+      add_html:   "Add to Cart"
   
   layouts:
     application:   
