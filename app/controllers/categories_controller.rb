@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  skip_before_filter :authorize, :only => [:show]
   # GET /categories
   # GET /categories.xml
   def index
@@ -44,6 +45,7 @@ class CategoriesController < ApplicationController
   # POST /categories.xml
   def create
     @category = Category.new(params[:category])
+    @category.parent_title = Category.find(@category.parent_title.to_i).title
 
     respond_to do |format|
       if @category.save
@@ -60,6 +62,7 @@ class CategoriesController < ApplicationController
   # PUT /categories/1.xml
   def update
     @category = Category.find(params[:id])
+    @category.parent_title = Category.find(@category.parent_title.to_i).title
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
