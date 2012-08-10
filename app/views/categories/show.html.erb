@@ -1,0 +1,52 @@
+<!--
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @category.title %>
+</p>
+
+<p>
+  <b>Parent title:</b>
+  <%= @category.parent_title %>
+</p>
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
+-->
+<h3><%= @category.title %></h3>
+<% if @category.parent_title == "top" %>
+  <% @categories.each do |category| %>
+    <% if category.parent_title == @category.title %>
+      <% @products.each do |product| %>
+        <% if product.category_title == category.title %>
+          <div class = "entry">
+            <%= image_tag(product.image_url) %>
+		    <h3><%= product.title %></h3>
+		    <%=sanitize product.description %>    
+	        <div class="price_line">
+	          <span class="price"><%= number_to_currency(product.price) %></span>
+	          <%= button_to t('.add_html'), line_items_path(:product_id => product),:remote => true %>
+	        </div>
+	      </div>
+	    <% end %>
+	  <% end %>
+    <% end %>
+  <% end %>
+<% else %>
+  <% @products.each do |product| %>
+	<% if product.category_title == @category.title %>
+	  <div class = "entry">
+	    <%= image_tag(product.image_url) %>
+	    <h3><%= product.title %></h3>
+	    <%=sanitize product.description %>    
+	    <div class="price_line">
+	      <span class="price"><%= number_to_currency(product.price) %></span>
+	      <%= button_to t('.add_html'), line_items_path(:product_id => product), :remote => true %>
+	    </div>
+	  </div>
+	<% end %>
+  <% end %>
+<% end %>
+

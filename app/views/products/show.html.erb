@@ -8,11 +8,20 @@
 		<%= image_tag(@product.image_url, :class => 'product_image') %>
 	</div>
 	<div class="left">
-		<b>Price:</b><%= @product.price %>
-		<br /><br />
-		<b>Title:</b><%= @product.title %>
-		<br /><br />
-		<b>Title:</b><%= @product.title %>
+		<table>
+		<tr>
+		<td class="td"><b>Title:</b><%= @product.title %></td>
+		<td class="td"><b>Author:</b><%= @product.author %></td>
+		</tr>
+		<tr>
+		<td class="td"><b>Punblisher:</b><%= @product.publisher %></td>
+		<td class="td"><b>ISBN:</b><%= @product.ISBN %></td>
+		</tr>
+		<tr>
+		<td class="td"><b>Price:</b><%= @product.price %></td>
+		<td class="td"><b>Category:</b><%= @product.category_title %></td>
+		</tr>	
+		</table>
 	</div>
 	<div class="clear">
 	</div>

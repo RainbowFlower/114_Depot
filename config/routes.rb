@@ -1,4 +1,6 @@
 DepotB::Application.routes.draw do
+  resources :categories
+
   resources :helps
 
   get 'admin' => 'admin#index'

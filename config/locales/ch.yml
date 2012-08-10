@@ -3,6 +3,9 @@
 
 
 ch:
+  categories:
+    show:
+      add_html:   "加入购物车"
   
   layouts:
     application:   
