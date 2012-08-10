@@ -6,8 +6,8 @@
 
 <% @products.each do |product| %>
   <div class="entry">
-    <%= image_tag(product.image_url) %>
-    <h3><%= product.title %></h3>
+    <%= link_to(image_tag(product.image_url), product) %>
+    <h3><%= link_to product.title, product %></h3>
     <%= truncate(strip_tags(product.description), :length => 400) %>
     <div class="price_line">
       <span class="price"><%= number_to_currency(product.price) %></span>
