@@ -24,18 +24,19 @@
 		</div>
 		<div class="span5 offset5" id="account-bar">
 		  <%= form_tag store_path, :class => 'locale' do %>
-			<%= select_tag 'set_locale',
-			options_for_select(LANGUAGES, I18n.locale.to_s),
-			:onchange => 'this.form.submit()' %>
-			<%= submit_tag 'submit' %>
-			<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+				<%= select_tag 'set_locale',
+					options_for_select(LANGUAGES, I18n.locale.to_s),
+					:onchange => 'this.form.submit()' %>
+				<%= submit_tag 'submit' %>
+				<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
 		  <% end %>
-		<% if session[:user_id] %>
-			<%= button_to 'Logout', logout_path, :method => :delete %>
-		<% else %>
-		<a href="/register">Register</a> 
-		<a href="/login">Login</a>
-		<% end %>
+			<% if session[:user_id] %>
+				<%= button_to 'Logout', logout_path, :method => :delete %>
+				<!--<span class="span2">Welcome, <%= User.find(session[:user_id]).name %></span>-->
+			<% else %>
+				<a href="/register">Register</a> 
+				<a href="/login">Login</a>
+			<% end %>
 		</div>
 	  </div>
 	</div>
@@ -68,7 +69,7 @@
 				<li><%= link_to 'Helps', helps_path %></li>
 			</ul>
       <%= form_tag search_index_path, :method => :get, :class => 'navbar-form pull-left' do %>
-        <%= text_field_tag :search, params[:search], :class => 'span2', :placeholder => "title/author/publisher" %>
+        <%= text_field_tag :search, params[:search], :class => 'span3', :placeholder => "title/author/publisher" %>
         <%= submit_tag "Search", :name => nil, :style => 'display: none;' %>
       <% end %>
 		</div>
