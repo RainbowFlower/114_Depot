@@ -3,7 +3,11 @@
 
 
 ch:
-  categories:
+  pcategories:
+    show:
+      add_html:   "加入购物车"
+      
+  ccategories:
     show:
       add_html:   "加入购物车"
   

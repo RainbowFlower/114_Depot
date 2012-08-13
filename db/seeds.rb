@@ -1,26 +1,28 @@
 # encoding: utf-8
 Cart.delete_all
 
-Category.delete_all
-Category.create(:title => "Economy", :parent_title => "top")
-Category.create(:title => "Life", :parent_title => "top")
-Category.create(:title => "Literature", :parent_title => "top")
-Category.create(:title => "Management", :parent_title => "top")
-Category.create(:title => "Science", :parent_title => "top")
-Category.create(:title => "Technology", :parent_title => "top")
-Category.create(:title => "Economics", :parent_title => "Economy")
-Category.create(:title => "Business", :parent_title => "Economy")
-Category.create(:title => "Cooking", :parent_title => "Life")
-Category.create(:title => "Health", :parent_title => "Life")
-Category.create(:title => "Travel", :parent_title => "Life")
-Category.create(:title => "Fiction", :parent_title => "Literature")
-Category.create(:title => "Essay", :parent_title => "Literature")
-Category.create(:title => "Financing", :parent_title => "Management")
-Category.create(:title => "Enterprise", :parent_title => "Management")
-Category.create(:title => "Nature", :parent_title => "Science")
-Category.create(:title => "Chemical", :parent_title => "Science")
-Category.create(:title => "Programming", :parent_title => "Technology")
-Category.create(:title => "Architecture", :parent_title => "Technology")
+Pcategory.delete_all
+Pcategory.create(:title => "Economy")
+Pcategory.create(:title => "Life")
+Pcategory.create(:title => "Literature")
+Pcategory.create(:title => "Management")
+Pcategory.create(:title => "Science")
+Pcategory.create(:title => "Technology")
+
+Ccategory.delete_all
+Ccategory.create(:title => "Economics", :ptitle => "Economy")
+Ccategory.create(:title => "Business", :ptitle => "Economy")
+Ccategory.create(:title => "Cooking", :ptitle => "Life")
+Ccategory.create(:title => "Health", :ptitle => "Life")
+Ccategory.create(:title => "Travel", :ptitle => "Life")
+Ccategory.create(:title => "Fiction", :ptitle => "Literature")
+Ccategory.create(:title => "Essay", :ptitle => "Literature")
+Ccategory.create(:title => "Financing", :ptitle => "Management")
+Ccategory.create(:title => "Enterprise", :ptitle => "Management")
+Ccategory.create(:title => "Nature", :ptitle => "Science")
+Ccategory.create(:title => "Chemical", :ptitle => "Science")
+Ccategory.create(:title => "Programming", :ptitle => "Technology")
+Ccategory.create(:title => "Architecture", :ptitle => "Technology")
 
 Product.delete_all
 Product.create(:title => 'Web Design for Developers',
