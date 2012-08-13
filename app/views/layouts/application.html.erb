@@ -31,7 +31,7 @@
 			<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
 		  <% end %>
 		<% if session[:user_id] %>
-			<%= button_to 'Logout', logout_path, :method => :delete, :class=>"pull-right" %>
+			<%= button_to 'Logout', logout_path, :method => :delete %>
 		<% else %>
 		<a href="/register">Register</a> 
 		<a href="/login">Login</a>
@@ -96,8 +96,7 @@
 			</div>
 		<% end %>
 	  </div>
-	  <%= render "categories/category" %><br />
-	
+	<%= render "pcategories/pcategory" %><br />
 
     </div>
 

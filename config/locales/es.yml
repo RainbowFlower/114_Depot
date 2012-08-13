@@ -3,7 +3,11 @@
 
 
 es:
-  categories:
+  pcategories:
+    show:
+      add_html:   "A&ntilde;adir al Carrito"
+  
+  ccategories:
     show:
       add_html:   "A&ntilde;adir al Carrito"
   
