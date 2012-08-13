@@ -1,5 +1,7 @@
 DepotB::Application.routes.draw do
 
+  get "search/index"
+
   get "customer" => 'customer#index'
 
   resources :categories
