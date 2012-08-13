@@ -1,17 +1,21 @@
 <h1>Listing carts</h1>
 
-<table>
+<table class="table">
   <tr>
-    <th></th>
-    <th></th>
+    <th>Cart ID</th>
+    <th>Last update</th>
     <th></th>
   </tr>
 
 <% @carts.each do |cart| %>
   <tr>
-    <td><%= link_to 'Show', cart %></td>
-    <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-    <td><%= link_to 'Destroy', cart, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= cart.id %></td>
+    <td><%= cart.updated_at %></td>
+    <td>
+    	<%= link_to 'Show', cart %> |
+    	<%= link_to 'Edit', edit_cart_path(cart) %> |
+    	<%= link_to 'Destroy', cart, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>

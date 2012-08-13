@@ -9,3 +9,11 @@
 </table>
 
 <%= button_to 'Empty Cart', @cart, :method => :delete, :confirm => 'Are you sure?'%>
+
+<br />
+
+<% if session[:admin] %>
+	<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<% end %>
+
+<%= link_to 'Back', carts_path %>

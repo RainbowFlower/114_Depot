@@ -31,7 +31,7 @@
 			<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
 		  <% end %>
 		<% if session[:user_id] %>
-			<%= button_to 'Logout', logout_path, :method => :delete, :class=>"pull-right" %>
+			<%= button_to 'Logout', logout_path, :method => :delete %>
 		<% else %>
 		<a href="/register">Register</a> 
 		<a href="/login">Login</a>
@@ -82,8 +82,18 @@
 			<ul class="nav">
 				<li class="active"><%= link_to 'Home', store_path %></li>
 				<li><%= link_to 'Products', products_path %></li>
-				<li><%= link_to 'Orders', orders_path %></li>
+				<li><%= link_to 'Cart', carts_path %></li>
 				<% if session[:admin] %><li><%= link_to 'Users', users_path %></li><% end %>
+				<% if session[:user_id] %>
+					<li><%= link_to 'Orders', orders_path %></li>
+					<li>
+						<% if session[:admin] %>
+							<%= link_to 'Profile', admin_url %>
+						<% else %>
+							<%= link_to 'Profile', customer_url %>
+						<% end %>
+					</li>
+				<% end %>
 				<li><%= link_to 'Helps', helps_path %></li>
 			</ul>
       <%= form_tag search_index_path, :method => :get, :class => 'navbar-form pull-left' do %>
@@ -115,17 +125,9 @@
 			</div>
 		<% end %>
 	  </div>
+
 	  <%= render "pcategories/pcategory" %><br />
-	  <!--
-	  <%= link_to 'Home',			store_path    %><br />
-      <%= link_to 'Products', products_path %><br />
-      <% if session[:user_id] %>
-        <%= link_to 'Orders',   orders_path   %><br />
-        <%= link_to 'Users',    users_path    %><br />
-        <br/>
-        <%= button_to 'Logout', logout_path, :method => :delete %>
-      <% end %>
-	  -->
+
 
     </div>
 
@@ -138,56 +140,5 @@
     </div>
   </div>
   
-  <!--
-  <div id="banner">
-  	<%= form_tag store_path, :class => 'locale' do %>
-  	  <%= select_tag 'set_locale',
-  	    options_for_select(LANGUAGES, I18n.locale.to_s),
-  	    :onchange => 'this.form.submit()' %>
-  	  <%= submit_tag 'submit' %>
-  	  <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
-  	  <% end %>
-  	  
-    <%= image_tag("logo.png") %>
-    <%= @page_title || t('.title') %>
-  </div>
-
-  <div id="columns">
-    <div id="side">
-	  <div id="cart">
-		  <% if @cart %>
-			  <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%>
-				<%= render @cart %>
-			  <% end %>
-		  <% end %>
-	  </div>
-	  <br />
-	  <%= link_to 'Home',			store_path    %><br />
-    <%= link_to 'Products', products_path %><br />
-	  <!--
-      <a href="http://www...."><%= t('.home') %></a><br />
-      <a href="http://www..../faq"><%= t('.questions') %></a><br />
-      <a href="http://www..../news"><%= t('.news') %></a><br />
-      <a href="http://www..../contact"><%= t('.contact') %></a><br />
-		--><!--
-      <% if session[:user_id] %>
-        <%= link_to 'Orders',   orders_path   %><br />
-        <%= link_to 'Users',    users_path    %><br />
-        <br/>
-        <%= button_to 'Logout', logout_path, :method => :delete %>
-      <% end %>
-
-    </div>
-
-    <div id="main">
-      <%= yield :layout %>
-      <br /><hr />
-      <div id="copyright">
-    		<p style="text-align:center">&copy; 2005 - 2012 RainbowFlower. All rights reserved.</p>
-    	</div>
-    </div>
-    
-  </div>
-    -->
 </body>
 </html>

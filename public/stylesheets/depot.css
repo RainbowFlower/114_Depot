@@ -299,3 +299,12 @@
 #admin_field {
 	display: none;
 }
+
+#link-group {
+	margin: 0;
+}
+
+#link-group a {
+	width: 50px;
+	margin-bottom: 5px;
+}
