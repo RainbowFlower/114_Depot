@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   private
-
+  
   def current_cart
     Cart.find(session[:cart_id])
   rescue ActiveRecord::RecordNotFound
@@ -44,5 +44,20 @@ class ApplicationController < ActionController::Base
 	def default_url_options
 	 { :locale => I18n.locale }
 	end 
-
+  
+  def ptitles
+    titles = []
+    for pcategory in Pcategory.all
+      titles << pcategory.title
+    end
+    return titles
+  end
+  
+  def ctitles
+    titles = []
+    for ccategory in Ccategory.all
+      titles << ccategory.title
+    end
+    return titles
+  end
 end

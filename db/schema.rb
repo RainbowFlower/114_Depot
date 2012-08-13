@@ -10,16 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120810051408) do
+ActiveRecord::Schema.define(:version => 20120813005436) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "categories", :force => true do |t|
+  create_table "ccategories", :force => true do |t|
     t.string   "title"
-    t.string   "parent_title"
+    t.string   "ptitle"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,6 +59,12 @@ ActiveRecord::Schema.define(:version => 20120810051408) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+  end
+
+  create_table "pcategories", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "products", :force => true do |t|
