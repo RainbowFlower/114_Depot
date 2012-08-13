@@ -1,32 +1,30 @@
 <div id="product_list">
   <h1>Listing products</h1>
 
-  <table class="table table-striped">
   <% @products.each do |product| %>
-    <tr>
-
-      <td>
-        <%= image_tag(product.image_url, :class => 'list_image') %>
-      </td>
-
-      <td class="list_description">
-        <dl>
-          <dt><%= product.title %></dt>
-          <dd><%= truncate(strip_tags(product.description),
-                 :length => 80) %></dd>
-        </dl>
-      </td>
-
-      <td class="list_actions">
-        <%= link_to 'Show', product %><br/>
-        <%= link_to 'Edit', edit_product_path(product) %><br/>
-        <%= link_to 'Destroy', product, 
-                    :confirm => 'Are you sure?',
-                    :method => :delete %>
-      </td>
-    </tr>
+		<div class="entry">
+			<div class="span1">
+		    <%= image_tag(product.image_url, :class => 'list_image') %>
+		  </div>
+		  <div class="span-two-thirds">
+		    <h4><%= link_to truncate(strip_tags(product.title), :length => 50), product, :title => product.title %></h4>
+		    <%= truncate(strip_tags(product.description), :length => 300) %>
+			</div>
+			<% if session[:admin] %>
+		  <div class="span1">
+		    <p><%= link_to ' Show ', product, :class => ['btn', 'primary'] %></p>
+		    <p><%= link_to ' Edit ', edit_product_path(product), :class => ['btn', 'success'] %></p>
+				<p><%= link_to 'Destroy', product, 
+		                :confirm => 'Are you sure?',
+		                :method => :delete, :class => ['btn', 'danger']%></p>
+		  </div>
+		  <% end %>
+		</div>
   <% end %>
-  </table>
 </div>
 
-<%= link_to 'New product', new_product_path %>
+<p><%= will_paginate @products %></p>
+
+<% if session[:admin] %>
+	<%= link_to 'New product', new_product_path %>
+<% end %>

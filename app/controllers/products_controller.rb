@@ -1,9 +1,14 @@
 class ProductsController < ApplicationController
+	skip_before_filter :authorize , :only => [:show, :index]
+	before_filter :admin_authorize, :only => [:edit, :update, :new]
+	
   # GET /products
   # GET /products.xml
   def index
-    @products = Product.all
-
+#    @products = Product.all
+		@products = Product.paginate :page => params[:page], :order => 'title desc',
+  	    :per_page => 5
+		@user = User.find_by_id(session[:user_id])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @products }

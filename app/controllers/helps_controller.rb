@@ -1,4 +1,7 @@
 class HelpsController < ApplicationController
+	skip_before_filter :authorize
+	before_filter :admin_authorize, :only => ['new', 'edit', 'destroy', 'delete']
+	
   # GET /helps
   # GET /helps.xml
   def index

@@ -1,0 +1,39 @@
+<h1>Welcome, <%= @user.name %></h1>
+
+It's <%= Time.now %> <br /><br />
+<% unless @orders.count.zero? %>
+	<b>Here are all of your orders.</b>
+	<div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Pay type</th>
+    <th></th>
+  </tr>
+	</thead>
+	
+	<tbody>
+		<% @orders.each do |order| %>
+			<tr>
+				<td><%= order.name %></td>
+				<td><%= order.address %></td>
+				<td><%= order.email %></td>
+				<td><%= order.pay_type %></td>
+				<td><%= link_to 'Show', order %> |
+				<%= link_to 'Edit', edit_order_path(order) %> |
+				<%= link_to 'Destroy', order, :confirm => 'Are you sure?', :method => :delete %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+</div>
+
+<%= link_to 'New Order', new_order_path %>
+<% else %>
+	<p>You have no orders.</p>
+<% end %>
+
+

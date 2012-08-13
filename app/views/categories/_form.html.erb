@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :parent_title %><br />
-    <%= f.text_field :parent_title %>
+    <%= f.select :parent_title, Category.all.map{ |m| [m.title, m.id] if m.parent_title == "top"} %>
   </div>
   <div class="actions">
     <%= f.submit %>

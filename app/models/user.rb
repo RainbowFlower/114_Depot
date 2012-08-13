@@ -17,6 +17,8 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
+   has_many :comments
+	has_many :orders, :dependent => :destroy
   validates :name, :presence => true, :uniqueness => true
  
   validates :password, :confirmation => true
@@ -37,7 +39,7 @@ class User < ActiveRecord::Base
   def User.authenticate(name, password)
     if user = find_by_name(name)
       if user.hashed_password == encrypt_password(password, user.salt)
-        user
+        	user
       end
     end
   end

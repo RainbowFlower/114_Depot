@@ -28,8 +28,8 @@
 }
 
 #product_list .list_image {
-  width: 60px;
-  height: 70px;
+  width: 70px;
+  height: 80px;
 }
 
 #product_list .list_description {
@@ -55,28 +55,7 @@
   text-align: right;
   padding-left: 1em;
 }
-/*
-#product_list .list_line_even {
-  background: #e0f8f8;
-}
 
-#product_list .list_line_odd {
-  background: #f8b0f8;
-}
-
-/* START:mainlayout */
-/* Styles for main page */
-/*
-#banner {
-  background: #9c9;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid;
-  font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
-  text-align: center;
-}
-*/
 #banner img {
   float: left;
 }
@@ -270,11 +249,11 @@
 	float:right;
 	padding-top: 0.2em;
 }
-/*
+
 .left {
 	float: left;
 	padding-right: 10px;
-}*/
+}
 
 .clear {
 	clear: both;
@@ -283,4 +262,40 @@
 .product_image {
 	width: 100px;
 	height: 115px;
+}
+/* Styles for comment form */
+.depot_comment_form fieldset{
+	background: #ffffff;
+}
+
+.depot_comment_form legend {
+	color: #dfd;
+	background: #141;
+	font-family: sans-serif;
+	padding: 0.2em 1em;
+}
+
+.depot_comment_form label {
+	width: 7em;
+	float: left;
+	text-align: left;
+	padding-top: 0.2em;
+	margin-right: 0.1em;
+	display: block;
+}
+
+.depot_comment_form .submit {
+	margin-left: 4em;
+}
+
+.depot_comment_form div{
+	margin: 0.5em 0;
+}
+
+.span-two-thirds {
+	width: 65%;
+}
+
+#admin_field {
+	display: none;
 }
