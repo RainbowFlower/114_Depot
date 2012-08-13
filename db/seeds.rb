@@ -312,4 +312,5 @@ Product.create(:title => 'Modern Architecture: A Critical History',
   :publisher => 'Thames & Hudson Ltd',
   :category_title => "Architecture")
   
-User.create(:name => 'dave', :password => 'abc', :password_confirmation => 'abc')
+User.create(:name => 'dave', :password => 'abc', :password_confirmation => 'abc', :admin => false)
+User.create(:name => 'admin', :password => 'admin', :password_confirmation => 'admin', :admin => true)

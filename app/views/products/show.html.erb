@@ -35,28 +35,11 @@
 
 <h2>Comments</h2>
 <% @product.comments.each do |comment| %>
-  <p>
-    <b><%= comment.user.name %></b>
-	commented in
-	<b><%= comment.created_at %></b>
-	:
-  </p>
-
-  <p>
-    <%= comment.body %>
-  </p>
+  <%= render comment %>
 <% end %>
 
 <h2>Add a new comment:</h2>
-<%= form_for([@product, @product.comments.build]) do |f| %>
-  <div class="field">
-	<br />
-    <%= f.text_area :body, :rows => 5 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<%= render "comments/form" %>
 
 <br />
 
