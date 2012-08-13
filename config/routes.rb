@@ -8,6 +8,8 @@ DepotB::Application.routes.draw do
   #get "search/index" 
   
   get "customer" => 'customer#index'
+  
+  get "register" => 'users#register'
 
   resources :helps
 
