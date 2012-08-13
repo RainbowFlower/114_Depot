@@ -1,5 +1,8 @@
 DepotB::Application.routes.draw do
 
+  resources :search
+  #get "search/index" 
+
   get "customer" => 'customer#index'
   
   get "register" => 'users#register'
