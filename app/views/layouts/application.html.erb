@@ -53,14 +53,24 @@
 			<ul class="nav">
 				<li class="active"><%= link_to 'Home', store_path %></li>
 				<li><%= link_to 'Products', products_path %></li>
-				<li><%= link_to 'Orders', orders_path %></li>
+				<li><%= link_to 'Cart', carts_path %></li>
 				<% if session[:admin] %><li><%= link_to 'Users', users_path %></li><% end %>
+				<% if session[:user_id] %>
+					<li><%= link_to 'Orders', orders_path %></li>
+					<li>
+						<% if session[:admin] %>
+							<%= link_to 'Profile', admin_url %>
+						<% else %>
+							<%= link_to 'Profile', customer_url %>
+						<% end %>
+					</li>
+				<% end %>
 				<li><%= link_to 'Helps', helps_path %></li>
 			</ul>
-            <%= form_tag search_index_path, :method => :get, :class => 'navbar-form pull-left' do %>
-              <%= text_field_tag :search, params[:search], :class => 'span2', :placeholder => "title/author/publisher" %>
-              <%= submit_tag "Search", :name => nil, :style => 'display: none;' %>
-            <% end %>
+      <%= form_tag search_index_path, :method => :get, :class => 'navbar-form pull-left' do %>
+        <%= text_field_tag :search, params[:search], :class => 'span2', :placeholder => "title/author/publisher" %>
+        <%= submit_tag "Search", :name => nil, :style => 'display: none;' %>
+      <% end %>
 		</div>
 	</div>
 	<div id="columns">

@@ -11,12 +11,12 @@
 		    <%= truncate(strip_tags(product.description), :length => 300) %>
 			</div>
 			<% if session[:admin] %>
-		  <div class="span1">
-		    <p><%= link_to ' Show ', product, :class => ['btn', 'btn-primary'] %></p>
-		    <p><%= link_to ' Edit ', edit_product_path(product), :class => ['btn', 'btn-success'] %></p>
+		  <div class="span1" id="link-group">
+		    <p><%= link_to ' Show ', product, :class => ['btn', 'btn-primary', "span1"] %></p>
+		    <p><%= link_to ' Edit ', edit_product_path(product), :class => ['btn', 'btn-success', "span1"] %></p>
 				<p><%= link_to 'Destroy', product, 
 		                :confirm => 'Are you sure?',
-		                :method => :delete, :class => ['btn', 'btn-danger']%></p>
+		                :method => :delete, :class => ['btn', 'btn-danger', "span1"]%></p>
 		  </div>
 		  <% end %>
 		</div>
