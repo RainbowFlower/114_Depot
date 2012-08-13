@@ -1,11 +1,9 @@
 class CreateComments < ActiveRecord::Migration
   def self.up
     create_table :comments do |t|
-      t.string :commentator
-      t.integer :product_id
-      t.text :content
-      t.integer :grade
-      t.string :time
+      t.string :commenter
+      t.text :body
+      t.references :product
 
       t.timestamps
     end
