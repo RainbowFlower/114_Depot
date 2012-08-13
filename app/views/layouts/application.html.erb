@@ -32,9 +32,10 @@
 		  <% end %>
 		<% if session[:user_id] %>
 			<%= button_to 'Logout', logout_path, :method => :delete, :class=>"pull-right" %>
+		<% else %>
+		<a href="/register">Register</a> 
+		<a href="/login">Login</a>
 		<% end %>
-		<a href="#">Register</a> 
-		<a href="login">Login</a>
 		</div>
 	  </div>
 	</div>

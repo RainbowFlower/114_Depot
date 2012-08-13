@@ -1,6 +1,8 @@
 DepotB::Application.routes.draw do
 
   get "customer" => 'customer#index'
+  
+  get "register" => 'users#register'
 
   resources :categories
 

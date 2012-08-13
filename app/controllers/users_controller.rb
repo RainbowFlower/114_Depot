@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
+	skip_before_filter :authorize, :only => [:register, :create]
+	
   # GET /users
   # GET /users.xml
   def index
-    @users = User.order(:name)
+    @users = User.order(:admin)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -32,6 +34,17 @@ class UsersController < ApplicationController
     end
   end
 
+	# GET /users/register
+  # GET /users/register.xml
+  def register
+    @user = User.new
+    
+    respond_to do |format|
+      format.html # register.html.erb
+      format.xml  { render :xml => @user }
+    end
+  end
+  
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
@@ -41,11 +54,18 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
+    
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to(users_url, 
-          :notice => "User #{@user.name} was successfully created.") }
+      	session[:user_id] = @user.id
+      	if session[:admin]
+		      format.html { redirect_to(users_url, 
+		        :notice => "User #{@user.name} was successfully created.") }
+        else
+        	format.html { redirect_to(store_url, 
+		        :notice => "User #{@user.name} registered successfully") }
+		    end
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
