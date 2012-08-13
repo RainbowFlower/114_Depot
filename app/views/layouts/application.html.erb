@@ -56,9 +56,10 @@
 				<% if session[:admin] %><li><%= link_to 'Users', users_path %></li><% end %>
 				<li><%= link_to 'Helps', helps_path %></li>
 			</ul>
-			<form class="navbar-form pull-left">
-				<input type="text" class="span2" placeholder="书目/作者/出版社">
-			</form>
+            <%= form_tag search_index_path, :method => :get, :class => 'navbar-form pull-left' do %>
+              <%= text_field_tag :search, params[:search], :class => 'span2', :placeholder => "title/author/publisher" %>
+              <%= submit_tag "Search", :name => nil, :style => 'display: none;' %>
+            <% end %>
 		</div>
 	</div>
 	<div id="columns">

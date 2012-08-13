@@ -4,11 +4,10 @@ DepotB::Application.routes.draw do
 
   resources :pcategories
 
-  resources :addpcategories
-
+  resources :search
+  #get "search/index" 
+  
   get "customer" => 'customer#index'
-
-  resources :categories
 
   resources :helps
 

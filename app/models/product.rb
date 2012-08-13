@@ -26,4 +26,15 @@ class Product < ActiveRecord::Base
     :message => 'must be a URL for GIF, JPG or PNG image.'
   }
 
+  # search stuff
+  def self.search(search)
+    if search
+      search_condition = "%#{search}%"
+      find(:all, :conditions => ['title LIKE ? OR category_title LIKE ? OR author LIKE ? OR 
+           publisher LIKE ?', search_condition, search_condition, search_condition,
+      search_condition])
+    else
+      find(:all)
+    end
+  end
 end
