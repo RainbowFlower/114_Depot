@@ -1,4 +1,15 @@
-<h1>Search#index</h1>
-<p>Find me in app/views/search/index.html.erb</p>
+<h1>Search "<%= params[:search] %>"</h1>
 
+<% @results.each do |result| %>
+  <div class="entry">
+    <%= link_to(image_tag(result.image_url), result) %>
+    <h3><%= link_to result.title, result %></h3>
+    <%= truncate(strip_tags(result.description), :length => 400) %>
+    <div class="price_line">
+      <span class="price"><%= number_to_currency(result.price) %></span>
+      <%= button_to 'add cart', line_items_path(:product_id => result), 
+      :remote => true %>
+    </div>
+  </div>
+<% end %>
 

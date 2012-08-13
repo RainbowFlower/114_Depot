@@ -56,7 +56,7 @@
 				<% if session[:admin] %><li><%= link_to 'Users', users_path %></li><% end %>
 				<li><%= link_to 'Helps', helps_path %></li>
 			</ul>
-            <%= form_tag 'search/index', :method => :get, :class => 'navbar-form pull-left' do %>
+            <%= form_tag search_index_path, :method => :get, :class => 'navbar-form pull-left' do %>
               <%= text_field_tag :search, params[:search], :class => 'span2' %>
               <%= submit_tag "Search", :name => nil, :style => 'display: none;' %>
             <% end %>
