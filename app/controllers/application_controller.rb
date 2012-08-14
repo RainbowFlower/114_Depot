@@ -59,5 +59,6 @@ class ApplicationController < ActionController::Base
       titles << ccategory.title
     end
     return titles
-  end
+  end 
+  
 end

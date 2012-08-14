@@ -17,8 +17,8 @@ class PcategoriesController < ApplicationController
   # GET /pcategories/1.xml
   def show
     @pcategory = Pcategory.find(params[:id])
-    @titles = @pcategory.childcategory
-    @cart = current_cart    
+    @cart = current_cart
+    @products = @pcategory.getproducts    
 
     respond_to do |format|
       format.html # show.html.erb
@@ -46,6 +46,7 @@ class PcategoriesController < ApplicationController
   # POST /pcategories.xml
   def create
     @pcategory = Pcategory.new(params[:pcategory])
+    @pcategory.add_ccategory_to_pcategory
 
     respond_to do |format|
       if @pcategory.save
