@@ -188,3 +188,12 @@
 .carts .table tbody tr:hover td, .table tbody tr:hover th {
   background-color: transparent;
 }
+
+.cart-bar form {
+  margin: 0;
+  display: inline-block;
+}
+
+#cart a {
+  color: black;
+}
