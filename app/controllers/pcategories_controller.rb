@@ -49,7 +49,7 @@ class PcategoriesController < ApplicationController
 
     respond_to do |format|
       if @pcategory.save
-        format.html { redirect_to(@pcategory, :notice => 'Pcategory was successfully created.') }
+        format.html { redirect_to(pcategories_path, :notice => 'Pcategory was successfully created.') }
         format.xml  { render :xml => @pcategory, :status => :created, :location => @pcategory }
       else
         format.html { render :action => "new" }
@@ -65,7 +65,7 @@ class PcategoriesController < ApplicationController
 
     respond_to do |format|
       if @pcategory.update_attributes(params[:pcategory])
-        format.html { redirect_to(@pcategory, :notice => 'Pcategory was successfully updated.') }
+        format.html { redirect_to(pcategories_path, :notice => 'Pcategory was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
