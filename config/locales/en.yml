@@ -26,6 +26,14 @@ en:
       logout:         "Logout"
       searchhint:     "title/author/publisher"
     store:
+      title:          "Pragmatic Bookshelfs"
+      home:           "Home"
+      products:       "Products"
+      cart:           "Carts"
+      orders:         "Orders"
+      help:           "Helps"
+      users:          "Users"
+      profile:        "Profile"
       login:          "Login"
       register:       "Register"
       logout:         "Logout"
@@ -72,6 +80,11 @@ en:
       edit:        "Edit"
       back:        "Back"
       checkout:  		"Checkout"
+    advanced_cart:
+      title:       "书名"
+      quantity:    "数量"
+      prices:      "价钱"
+      total:       "总价"
       
   number:
     currency:
@@ -126,8 +139,38 @@ en:
       edit:         "Edit"
       yes:          "Yes"
       no:           "No"
+
+  products:
+    edit:
+      title:        "Edit product" 
+      show:         "Show"
+      back:         "Back"
+    index:
+      title:         "Listing products"  
+      show:         "Show"
+      edit:         "Edit"
+      destroy:      "Destroy"
+      confirm:      "Are you sure?"
+      newproduct:   "New product"
+    new:
+      title:        "New product"
+      back:         "Back"
+    show:
+      author:       "Author"
+      publisher:    "Publisher"
+      price:        "Price"
+      category:     "Category"
+      description:  "Description"
+      comment:      "Comments"
+      comment_action: "Leave a comment"
+      edit:          "Edit"
+      back:          "Back"
       
-  
+  comments:
+    comment:
+      delete:      "delete"
+      confirm:     "Are you sure?"
+        
   errors:
     template:
       body:      "There are problems with the following fields"

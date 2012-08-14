@@ -4,20 +4,20 @@
 
 <table>
 	<tr>
-	<th>Quantity</th>
-	<th>Title</th>
-	<th>Price</th>
+	  <td>Title</td>
+	  <td>Quantity</td>	
+	  <td>Price</td>
 	</tr>	
     <% (@order.line_items).each do |line_item| %>
     <tr>
-      <td><%= line_item.quantity %></td>
       <td><%= line_item.product.title %></td>
+      <td><%= line_item.quantity %></td>      
       <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
     </tr>
     <% end %>
     <tr class="total_line">
-    <td colspan="2">Total</td>
-    <td class="total_cell"><%= number_to_currency(@order.total_price) %></td>
+      <td colspan="2">Total</td>
+      <td class="total_cell"><%= number_to_currency(@order.total_price) %></td>
     </tr>   
 </table>
 <p>You select to play with <%= @order.pay_type %></p>

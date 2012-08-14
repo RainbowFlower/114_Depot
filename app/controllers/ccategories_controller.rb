@@ -50,7 +50,6 @@ class CcategoriesController < ApplicationController
   def create
     @ccategory = Ccategory.new(params[:ccategory])
     @titles = ptitles
-    @ccategory.add_product_to_ccategory
 
     respond_to do |format|
       if @ccategory.save

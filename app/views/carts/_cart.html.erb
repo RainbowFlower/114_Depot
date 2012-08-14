@@ -8,13 +8,7 @@
   </tr>
 </table>
 
-<table class="table">
-	<tr>
-		<td>
-			<%= button_to t('.empty'), cart, :remote => true, :method => :delete, :confirm => t('.confirm'), :class => "btn btn-danger" %>
-		</td>
-		<td style="padding-left:45px">
-			<%= button_to t('.checkout'), new_order_path, :method => :get, :class => "btn btn-primary" %>
-		</td>
-	</tr>
-</table>
+<div class="cart-bar">
+	<%= button_to t('.empty'), cart, :remote => true, :method => :delete, :confirm => t('.confirm'), :class=>['btn', 'btn-default']%>
+	<%= button_to t('.checkout'), new_order_path, :method => :get, :class=>['btn', 'btn-default'] %>
+</div>

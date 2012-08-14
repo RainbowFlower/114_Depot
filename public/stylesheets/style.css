@@ -200,3 +200,13 @@
 	margin: 0;
 	display: inline-block;
 }
+
+.cart-bar form {
+  margin: 0;
+  display: inline-block;
+}
+
+#cart a {
+  color: black;
+}
+

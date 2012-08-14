@@ -46,7 +46,6 @@ class PcategoriesController < ApplicationController
   # POST /pcategories.xml
   def create
     @pcategory = Pcategory.new(params[:pcategory])
-    @pcategory.add_ccategory_to_pcategory
 
     respond_to do |format|
       if @pcategory.save
