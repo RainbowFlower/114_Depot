@@ -121,7 +121,7 @@ en:
       address:      "Address"
       email:        "Email"
       pay_type:     "Pay_type"
-      ship:         "ship"
+      ship:         "Ship"
       items:        "Items"
       quantity:     "Quantity"
       title:        "Title"
