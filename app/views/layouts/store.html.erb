@@ -24,18 +24,18 @@
 		</div>
 		<div class="span6 offset4" id="account-bar">
 		  <%= form_tag store_path, :class => 'locale' do %>
-			<%= select_tag 'set_locale',
-			options_for_select(LANGUAGES, I18n.locale.to_s),
-			:onchange => 'this.form.submit()' %>
-			<%= submit_tag 'submit' %>
-			<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+				<%= select_tag 'set_locale',
+					options_for_select(LANGUAGES, I18n.locale.to_s),
+					:onchange => 'this.form.submit()' %>
+				<%= submit_tag 'submit' %>
+				<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
 		  <% end %>
-		<% if session[:user_id] %>
-			<%= button_to t('.logout'),logout_path, :method => :delete %>
-		<% else %>
-		<a href="/register"><%= t('.register') %></a> 
-		<a href="/login"><%= t('.login') %></a>
-		<% end %>
+			<% if session[:user_id] %>
+				<%= button_to t('.logout'),logout_path, :method => :delete %>
+			<% else %>
+				<a href="/register"><%= t('.register') %></a> 
+				<a href="/login"><%= t('.login') %></a>
+			<% end %>
 		</div>
 	  </div>
 	</div>
@@ -83,16 +83,15 @@
 				<li class="active"><%= link_to t('.home'), store_path %></li>
 				<li><%= link_to t('.products'), products_path %></li>
 				<li><%= link_to t('.carts'), carts_path %></li>
-				<% if session[:admin] %><li><%= link_to t('.users'), users_path %></li><% end %>
 				<% if session[:user_id] %>
 					<li><%= link_to t('.orders'), orders_path %></li>
-					<li>
-						<% if session[:admin] %>
-							<%= link_to t('.profile'), admin_url %>
-						<% else %>
-							<%= link_to t('.profile'), customer_url %>
-						<% end %>
-					</li>
+					<% if session[:admin] %>
+						<li><%= link_to t('.users'), users_path %></li>
+						<li><%= link_to t('.category'), pcategories_path %></li>
+						<li><%= link_to t('.profile'), admin_url %></li>
+					<% else %>
+						<li><%= link_to t('.profile'), customer_url %>
+					<% end %>
 				<% end %>
 				<li><%= link_to t('.helps'), helps_path %></li>
 			</ul>

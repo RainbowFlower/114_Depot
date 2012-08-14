@@ -15,6 +15,7 @@
 <%= link_to 'Edit', edit_ccategory_path(@ccategory) %> |
 <%= link_to 'Back', ccategories_path %>
 -->
+<h1><%= link_to @pcategory.title, @pcategory %> &gt; <%= @ccategory.title %></h1>
 
 <% @products.each do |product| %>
   <% if product.category_title == @ccategory.title %>
