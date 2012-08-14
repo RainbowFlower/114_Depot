@@ -28,13 +28,13 @@ scope '(:locale)' do
   
   resources :users
 
-  resources :orders
-  
-  resources :line_items do
-	post :quantity, :on => :member
+  resources :orders do
+    get :ship, :on => :member
   end
 
-  resources :line_items
+  resources :line_items do
+    post :quantity, :on => :member
+  end
 
   resources :carts
 

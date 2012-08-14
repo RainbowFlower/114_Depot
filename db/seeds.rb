@@ -1,5 +1,6 @@
 # encoding: utf-8
 Cart.delete_all
+Order.delete_all
 
 Pcategory.delete_all
 Pcategory.create(:title => "Economy")

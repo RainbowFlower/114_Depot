@@ -15,7 +15,8 @@ class CcategoriesController < ApplicationController
   def show
     @ccategory = Ccategory.find(params[:id])
     @products = Product.all
-
+    @cart = current_cart
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @ccategory }
