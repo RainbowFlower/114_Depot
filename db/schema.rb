@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120813065940) do
+ActiveRecord::Schema.define(:version => 20120813011848) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(:version => 20120813065940) do
     t.string   "commenter"
     t.text     "body"
     t.integer  "product_id"
+    t.integer  "user_id"
+    t.string   "time"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "time"
-    t.integer  "user_id"
   end
 
   create_table "helps", :force => true do |t|
@@ -45,10 +45,10 @@ ActiveRecord::Schema.define(:version => 20120813065940) do
   create_table "line_items", :force => true do |t|
     t.integer  "product_id"
     t.integer  "cart_id"
+    t.integer  "order_id"
+    t.integer  "quantity",   :default => 1
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "quantity",   :default => 1
-    t.integer  "order_id"
   end
 
   create_table "orders", :force => true do |t|
@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(:version => 20120813065940) do
     t.text     "address"
     t.string   "email"
     t.string   "pay_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "user_id"
     t.boolean  "ship",       :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "pcategories", :force => true do |t|
@@ -73,21 +73,21 @@ ActiveRecord::Schema.define(:version => 20120813065940) do
     t.text     "description"
     t.string   "image_url"
     t.decimal  "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "author"
     t.integer  "ISBN"
     t.string   "category_title"
     t.string   "publisher"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "hashed_password"
     t.string   "salt"
+    t.boolean  "admin",           :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin",           :default => false
   end
 
 end

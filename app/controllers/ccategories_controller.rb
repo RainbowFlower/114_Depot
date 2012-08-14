@@ -17,7 +17,7 @@ class CcategoriesController < ApplicationController
   # GET /ccategories/1.xml
   def show
     @ccategory = Ccategory.find(params[:id])
-    @products = Product.all
+    @products = @ccategory.getproducts
     @pcategory = Pcategory.find_by_title(@ccategory.ptitle)
     @cart = current_cart
 
@@ -50,6 +50,7 @@ class CcategoriesController < ApplicationController
   def create
     @ccategory = Ccategory.new(params[:ccategory])
     @titles = ptitles
+    @ccategory.add_product_to_ccategory
 
     respond_to do |format|
       if @ccategory.save
