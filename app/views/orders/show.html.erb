@@ -34,9 +34,10 @@
 		</thead>
 		<%= render(@order.line_items) %>
 	</table>
+	<% if !@order.ship %>
+      <p><%= link_to t('.ship'), ship_order_path, :confirm => 'Are you sure?' %></p><br />
+    <% end %>
 </div>
-<% if !@order.ship %>
-  <%= link_to t('.ship'), ship_order_path %> |
-<% end %>
+
 <%= link_to t('.edit'), edit_order_path(@order) %> |
 <%= link_to t('.back'), orders_path %>

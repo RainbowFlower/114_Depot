@@ -1,23 +1,24 @@
-<h1>Listing pcategories</h1>
+<h1>Listing categories</h1>
 
 <table>
   <tr>
     <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Ccategory</th>
   </tr>
 
 <% @pcategories.each do |pcategory| %>
   <tr>
-    <td><%= pcategory.title %></td>
-    <td><%= link_to 'Show', pcategory %></td>
-    <td><%= link_to 'Edit', edit_pcategory_path(pcategory) %></td>
-    <td><%= link_to 'Destroy', pcategory, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to pcategory.title, edit_pcategory_path(pcategory) %></td>
+    <td>
+    <% pcategory.getchildcategories.each do |category| %>
+        <%= link_to category.title, edit_ccategory_path(category) %><br />
+    <% end %>
+    </td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Pcategory', new_pcategory_path %>
+<%= link_to 'New Pcategory', new_pcategory_path %> | 
+<%= link_to 'New Ccategory', new_ccategory_path %>

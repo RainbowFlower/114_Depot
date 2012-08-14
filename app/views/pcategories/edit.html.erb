@@ -2,5 +2,6 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @pcategory %> |
+<%= link_to 'Show', @pcategory %> | 
+<%= link_to 'Destroy', @pcategory, :confirm => 'Are you sure?', :method => :delete %> | 
 <%= link_to 'Back', pcategories_path %>
