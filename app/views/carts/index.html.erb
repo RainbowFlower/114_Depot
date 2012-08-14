@@ -1,9 +1,9 @@
-<h1>Listing carts</h1>
+<h1><%= t('.title') %></h1>
 
 <table class="table">
   <tr>
-    <th>Cart ID</th>
-    <th>Last update</th>
+    <th><%= t('.cartid') %></th>
+    <th><%= t('.updatetime') %></th>
     <th></th>
   </tr>
 
@@ -12,9 +12,9 @@
     <td><%= cart.id %></td>
     <td><%= cart.updated_at %></td>
     <td>
-    	<%= link_to 'Show', cart %> |
-    	<%= link_to 'Edit', edit_cart_path(cart) %> |
-    	<%= link_to 'Destroy', cart, :confirm => 'Are you sure?', :method => :delete %>
+    	<%= link_to t('.show'), cart %> |
+    	<%= link_to t('.edit'), edit_cart_path(cart) %> |
+    	<%= link_to t('.destroy'), cart, :confirm => t('.confirm'), :method => :delete %>
     </td>
   </tr>
 <% end %>
@@ -22,4 +22,4 @@
 
 <br />
 
-<%= link_to 'New Cart', new_cart_path %>
+<%= link_to t('.newcart'), new_cart_path %>

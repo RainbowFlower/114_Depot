@@ -39,9 +39,33 @@ ch:
       
   carts:
     cart:
-      title:     "我的购物车"
+      title:     "你的购物车"
       empty:     "清空购物车"
-      checkout:  "  结  账   "
+      confirm:   "你确定清空?"
+      checkout:  "结账"
+    edit:
+      title:     "编辑购物车"
+      show:      "显示"
+      back:      "返回"
+    index:
+      title:     "购物车列表"
+      cartid:    "购物车ID"   
+      updatetime: "更新时间" 
+      show:       "显示"
+      edit:       "编辑" 
+      destroy:    "删除"
+      confirm:    "你确定删除?"
+      newcart:    "新建购物车"
+    new:
+      title:      "新建购物车"
+      back:        "返回"
+    show:
+      title:       "你的购物车"
+      total:       "总价"
+      empty:       "清空购物车"
+      confirm:     "你确定清空?"
+      edit:        "编辑"
+      back:        "返回"
       
   number:
     currency:
