@@ -1,42 +1,42 @@
 <p>
-  <b>Name:</b>
+  <b><%= t('.name')%>:</b>
   <%= @order.name %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <b><%= t('.address')%>:</b>
   <%= @order.address %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b><%= t('.email')%>:</b>
   <%= @order.email %>
 </p>
 
 <p>
-  <b>Pay type:</b>
+  <b><%= t('.pay_type')%>:</b>
   <%= @order.pay_type %>
 </p>
 <p>
-	<b>Ship:</b>
+	<b><%= t('.ship')%>:</b>
 	<%= (@order.ship)?"Yes":"No" %>
 </p>
 
 <div style="width:50%">
-	<b>Items:</b>
+	<b><%= t('.items')%>:</b>
 	<table class="table table-striped table-bordered">
 		<thead>
 			<tr>
-			<th>Quantity</th>
-			<th>Title</th>
-			<th style="text-align:right">Price</th>
+			<th><%= t('.quantity')%></th>
+			<th><%= t('.title')%></th>
+			<th style="text-align:right"><%= t('.price')%></th>
 			</tr>
 		</thead>
 		<%= render(@order.line_items) %>
 	</table>
 </div>
 <% if !@order.ship %>
-  <%= link_to "Ship", ship_order_path %> |
+  <%= link_to t('.ship'), ship_order_path %> |
 <% end %>
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to t('.edit'), edit_order_path(@order) %> |
+<%= link_to t('.back'), orders_path %>

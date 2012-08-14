@@ -91,6 +91,41 @@ en:
       pay_type:    "Pay with"
       pay_prompt_html:  "Select a payment method"
       submit:      "Place Order"
+    edit:
+      title:       "Edit order"
+      legend:      "Edit your order"
+      show:        "Show"
+      back:        "Back"
+    index:
+      title:        "Listing orders"
+      name:         "Name"
+      address:      "Address"
+      email:        "Email"
+      pay_type:     "Pay_type"
+      ship:         "Ship"
+      show:         "Show"
+      edit:         "Edit"
+      destroy:      "Destroy"
+      confirm:      "Are you sure?"
+      neworder:     "New order"
+    ship:
+      title:        "E-mail has been sent to customer."
+      back:         "Back"
+    show:
+      name:         "Name"
+      address:      "Address"
+      email:        "Email"
+      pay_type:     "Pay_type"
+      ship:         "ship"
+      items:        "Items"
+      quantity:     "Quantity"
+      title:        "Title"
+      price:        "Price"
+      back:         "Back"
+      edit:         "Edit"
+      yes:          "Yes"
+      no:           "No"
+      
   
   errors:
     template:

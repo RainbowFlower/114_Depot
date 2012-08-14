@@ -91,7 +91,41 @@ ch:
       pay_type:    "支付方式"
       pay_prompt_html:  "请选择支付方式"
       submit:      "提交订单"
-      
+    edit:
+      title:       "编辑订单"
+      legend:      "编辑你的订单"
+      show:        "显示"
+      back:        "返回"
+    index:
+      title:        "订单列表"
+      name:         "姓名"
+      address:      "地址"
+      email:        "Email"
+      pay_type:     "支付方式"
+      ship:         "发货"
+      show:         "显示"
+      edit:         "编辑"
+      destroy:      "删除"
+      confirm:      "你确定删除？"
+      neworder:     "新建订单"
+    ship:
+      title:        "E-mail 已经发送给顾客。"
+      back:         "返回"
+    show:
+      name:         "姓名"
+      address:      "地址"
+      email:        "Email"
+      pay_type:     "支付方式"
+      ship:         "发货"
+      items:        "项"
+      quantity:     "数量"
+      title:        "书名"
+      price:        "价格"
+      back:         "返回"
+      edit:         "编辑"
+      yes:          "是"
+      no:           "否"
+       
   errors:
     template:
       body:      "以下方面有错误"
