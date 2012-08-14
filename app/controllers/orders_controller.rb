@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
 	    @orders = Order.paginate :page => params[:page], :order => 'created_at desc',
   	    :per_page => 10
 		else
-			@orders = @user.orders
+			@orders = @user.orders.order(:updated_at)
 			@orders = @orders.paginate :page => params[:page], :order => 'created_at desc',
   	    :per_page => 10
 		end

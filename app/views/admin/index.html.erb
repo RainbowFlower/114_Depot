@@ -2,5 +2,31 @@
 
 It's <%= Time.now %>
 We have <%= pluralize(@total_orders, "order") %>.<br /><br />
-<%= link_to 'Show all', orders_path %>
+<% unless @total_orders.zero? %>
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th>Name</th>
+			<th>Address</th>
+			<th>Email</th>
+			<th>Pay type</th>
+			<th></th>
+		</tr>
+		</thead>
+
+		<tbody>
+			<% @orders.each do |order| %>
+				<tr>
+					<td><%= order.name %></td>
+					<td><%= order.address %></td>
+					<td><%= order.email %></td>
+					<td><%= order.pay_type %></td>
+					<td><%= link_to 'Show', order %>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% end %>
+
+<%= link_to 'More details', orders_path %>
 

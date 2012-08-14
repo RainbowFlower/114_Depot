@@ -4,19 +4,19 @@
   <% @products.each do |product| %>
 		<div class="entry">
 			<div class="span1">
-		    <%= image_tag(product.image_url, :class => 'list_image') %>
+		    <%= link_to(image_tag(product.image_url, :class => 'list_image'), product) %>
 		  </div>
 		  <div class="span-two-thirds">
 		    <h4><%= link_to truncate(strip_tags(product.title), :length => 50), product, :title => product.title %></h4>
 		    <%= truncate(strip_tags(product.description), :length => 300) %>
 			</div>
 			<% if session[:admin] %>
-		  <div class="span1">
-		    <p><%= link_to ' Show ', product, :class => ['btn', 'btn-primary'] %></p>
-		    <p><%= link_to ' Edit ', edit_product_path(product), :class => ['btn', 'btn-success'] %></p>
+		  <div class="span1" id="link-group">
+		    <p><%= link_to ' Show ', product, :class => ['btn', 'btn-primary', "span1"] %></p>
+		    <p><%= link_to ' Edit ', edit_product_path(product), :class => ['btn', 'btn-success', "span1"] %></p>
 				<p><%= link_to 'Destroy', product, 
 		                :confirm => 'Are you sure?',
-		                :method => :delete, :class => ['btn', 'btn-danger']%></p>
+		                :method => :delete, :class => ['btn', 'btn-danger', "span1"]%></p>
 		  </div>
 		  <% end %>
 		</div>

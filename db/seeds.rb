@@ -312,3 +312,6 @@ Product.create(:title => 'Modern Architecture: A Critical History',
   :ISBN => 9780500203958,
   :publisher => 'Thames & Hudson Ltd',
   :category_title => "Architecture")
+  
+User.create(:name => 'dave', :password => 'abc', :password_confirmation => 'abc', :admin => false)
+User.create(:name => 'admin', :password => 'admin', :password_confirmation => 'admin', :admin => true)

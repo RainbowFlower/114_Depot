@@ -1,10 +1,10 @@
 class CartsController < ApplicationController
-  skip_before_filter :authorize, :only => [:create, :update, :destroy]
+  skip_before_filter :authorize
 
   # GET /carts
   # GET /carts.xml
   def index
-    @carts = Cart.all
+    @carts = Cart.order(:updated_at)
 
     respond_to do |format|
       format.html # index.html.erb

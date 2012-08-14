@@ -17,7 +17,7 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
-   has_many :comments
+   has_many :comments, :dependent => :destroy
 	has_many :orders, :dependent => :destroy
   validates :name, :presence => true, :uniqueness => true
  

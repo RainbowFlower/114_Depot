@@ -10,7 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120813065940) do
+=======
+ActiveRecord::Schema.define(:version => 20120813054006) do
+>>>>>>> 826955c91aa6b2ab69930b21b425c07856e1cb67
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -25,13 +29,13 @@ ActiveRecord::Schema.define(:version => 20120813065940) do
   end
 
   create_table "comments", :force => true do |t|
-    t.string   "commentator"
+    t.string   "commenter"
+    t.text     "body"
     t.integer  "product_id"
-    t.text     "content"
-    t.integer  "grade"
-    t.string   "time"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "time"
+    t.integer  "user_id"
   end
 
   create_table "helps", :force => true do |t|
@@ -87,7 +91,7 @@ ActiveRecord::Schema.define(:version => 20120813065940) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin"
+    t.boolean  "admin",           :default => false
   end
 
 end

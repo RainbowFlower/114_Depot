@@ -1,10 +1,12 @@
-<% (Pcategory.all).each do |pcategory| %>
-<dl>
-  <dt><%= link_to pcategory.title,pcategory %></dt>
-  <% (Ccategory.all).each do |ccategory| %>
-    <% if ccategory.ptitle == pcategory.title %>
-      <dd><%= link_to ccategory.title,ccategory %></dd>
-    <% end %>
-  <% end %>
-</dl>
-<% end %>
+<div style="padding-left:10px">
+	<% (Pcategory.all).each do |pcategory| %>
+	<dl>
+		<dt><%= link_to pcategory.title,pcategory %></dt>
+		<% (Ccategory.all).each do |ccategory| %>
+		  <% if ccategory.ptitle == pcategory.title %>
+		    <dd><%= link_to ccategory.title,ccategory %></dd>
+		  <% end %>
+		<% end %>
+	</dl>
+	<% end %>
+</div>

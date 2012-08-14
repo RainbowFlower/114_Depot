@@ -1,4 +1,4 @@
-<h1>Search "<%= params[:search] %>"</h1>
+<h1><%= t('.search')%> "<%= params[:search] %>"</h1>
 
 <% @results.each do |result| %>
   <div class="entry">
@@ -7,7 +7,7 @@
     <%= truncate(strip_tags(result.description), :length => 400) %>
     <div class="price_line">
       <span class="price"><%= number_to_currency(result.price) %></span>
-      <%= button_to 'add cart', line_items_path(:product_id => result), 
+      <%= button_to t('.add'), line_items_path(:product_id => result), 
       :remote => true %>
     </div>
   </div>
