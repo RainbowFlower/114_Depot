@@ -15,6 +15,7 @@ class PcategoriesController < ApplicationController
   def show
     @pcategory = Pcategory.find(params[:id])
     @titles = @pcategory.childcategory
+    @cart = current_cart    
 
     respond_to do |format|
       format.html # show.html.erb

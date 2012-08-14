@@ -1,7 +1,6 @@
-<h3>Pragmatic Order Shipped</h3>
-<p>
-	This is just to let you know that we've shipped your recent order:
-</p>
+<h3>Dear <%= @order.name %></h3>
+<p>Thank you for your recent order from The Pragmatic Store.</p>
+<p>You ordered the following items:</p>
 
 <table>
 	<tr>
@@ -19,8 +18,7 @@
     <tr class="total_line">
     <td colspan="2">Total</td>
     <td class="total_cell"><%= number_to_currency(@order.total_price) %></td>
-    </tr>  
+    </tr>   
 </table>
-
 <p>You select to play with <%= @order.pay_type %></p>
-<p>See you next time.</p>
+<p>We'll send you a separate e-mail when your order ships.</p>

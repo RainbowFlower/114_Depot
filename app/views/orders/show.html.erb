@@ -17,6 +17,10 @@
   <b>Pay type:</b>
   <%= @order.pay_type %>
 </p>
+<p>
+	<b>Ship:</b>
+	<%= (@order.ship)?"Yes":"No" %>
+</p>
 
 <div style="width:50%">
 	<b>Items:</b>
@@ -31,6 +35,8 @@
 		<%= render(@order.line_items) %>
 	</table>
 </div>
-
+<% if !@order.ship %>
+  <%= link_to "Ship", ship_order_path %> |
+<% end %>
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
