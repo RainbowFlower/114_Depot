@@ -71,6 +71,12 @@ ch:
       confirm:     "你确定清空?"
       edit:        "编辑"
       back:        "返回"
+    advanced_cart:
+      title:       "书名"
+      quantity:    "数量"
+      prices:      "价钱"
+      total:       "总价"
+       
       
   number:
     currency:
