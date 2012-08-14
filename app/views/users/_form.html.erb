@@ -1,5 +1,3 @@
-<div class="depot_form">
-
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -12,10 +10,6 @@
       </ul>
     </div>
   <% end %>
-
-
-  <fieldset>
-  <legend>Enter User Details</legend>
 
   <div>
     <%= f.label :name, 'Name:'%>
@@ -33,11 +27,8 @@
   </div>
 
   <div>
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-primary"%>
   </div>
 
-  </fieldset>
 <% end %>
-
-</div>
 

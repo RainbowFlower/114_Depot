@@ -71,6 +71,7 @@ en:
       confirm:     "Are you sure?"
       edit:        "Edit"
       back:        "Back"
+      checkout:  		"Checkout"
       
   number:
     currency:

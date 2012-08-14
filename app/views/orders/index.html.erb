@@ -1,34 +1,39 @@
 <h1><%= t('.title')%></h1>
 
 <div>
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th><%= t('.name')%></th>
-    <th><%= t('.address')%></th>
-    <th><%= t('.email')%></th>
-    <th><%= t('.pay_type')%></th>
-    <th><%= t('.ship')%></th>
-    <th></th>
-  </tr>
-	</thead>
+<% unless @orders.count.zero? %>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th><%= t('.name')%></th>
+				<th><%= t('.address')%></th>
+				<th><%= t('.email')%></th>
+				<th><%= t('.pay_type')%></th>
+				<th><%= t('.ship')%></th>
+				<th></th>
+			</tr>
+		</thead>
 	
-	<tbody>
-<% @orders.each do |order| %>
-  <tr>
-    <td><%= order.name %></td>
-    <td><%= order.address %></td>
-    <td><%= order.email %></td>
-    <td><%= order.pay_type %></td>
-    <td><%= (order.ship)? "Yes":"NO" %></td>
-    <td><%= link_to t('.show'), order %> |
-    <%= link_to t('.edit'), edit_order_path(order) %> |
-    <%= link_to t('.destroy'), order, :confirm => t('.confirm'), :method => :delete %></td>    
-  </tr>
+		<tbody>
+			<% @orders.each do |order| %>
+				<tr>
+					<td><%= order.name %></td>
+					<td><%= order.address %></td>
+					<td><%= order.email %></td>
+					<td><%= order.pay_type %></td>
+					<td><%= (order.ship)? "Yes":"NO" %></td>
+					<td><%= link_to t('.show'), order %> |
+					<%= link_to t('.edit'), edit_order_path(order) %> |
+					<%= link_to t('.destroy'), order, :confirm => t('.confirm'), :method => :delete %></td>    
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+<% else %>
+	<p>You have no orders.</p>
 <% end %>
-	</tbody>
-</table>
 </div>
 
-<%= link_to t('.neworder'), new_order_path %>
+<%= link_to t('.show cart'), cart_path(session[:cart_id]) %>
 <p><%= will_paginate @orders %></p>
