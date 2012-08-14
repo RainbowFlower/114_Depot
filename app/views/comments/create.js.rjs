@@ -1,0 +1,8 @@
+page.replace_html('product' , render(@product))
+
+page.select('#comments').each do |element|
+	page.replace_html('comments' , render(:partial => "comments/comment", :comment => {:comment => @comment}))
+end
+
+
+

@@ -116,7 +116,7 @@ en:
       address:      "Address"
       email:        "Email"
       pay_type:     "Pay_type"
-      ship:         "Ship"
+      ship:         "Shipped"
       show:         "Show"
       edit:         "Edit"
       destroy:      "Destroy"
@@ -165,6 +165,18 @@ en:
       comment_action: "Leave a comment"
       edit:          "Edit"
       back:          "Back"
+      add_html:      "Add to Cart"
+    product:
+      author:       "Author"
+      publisher:    "Publisher"
+      price:        "Price"
+      category:     "Category"
+      description:  "Description"
+      comment:      "Comments"
+      comment_action: "Leave a comment"
+      edit:          "Edit"
+      back:          "Back"
+      add_html:      "Add to Cart"
       
   comments:
     comment:

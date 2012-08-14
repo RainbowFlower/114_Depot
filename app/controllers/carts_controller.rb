@@ -85,7 +85,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(request.referer) }
-	  format.js {@cart = current_cart}
+	  	format.js {@cart = current_cart}
       format.xml  { head :ok }
     end
   end
