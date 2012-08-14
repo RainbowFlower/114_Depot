@@ -1,0 +1,5 @@
+page.replace_html('cart' , '')
+page.select('#advanced-cart').each do |element|
+	page.replace_html('advanced-cart', '')
+end
+page['cart-holder'].href = cart_path(@cart)
