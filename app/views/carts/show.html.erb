@@ -1,19 +1,19 @@
-<div class="cart_title">Your Cart</div>
+<div class="cart_title"><%= t('.title') %></div>
 <table>
   <%= render(@cart.line_items)%>
   
   <tr class="total_line">
-    <td colspan="2">Total</td>
+    <td colspan="2"><%= t('.total')%></td>
     <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
   </tr>
 </table>
 
-<%= button_to 'Empty Cart', @cart, :method => :delete, :confirm => 'Are you sure?'%>
+<%= button_to t('.empty'), @cart, :method => :delete, :confirm => t('.confirm') %>
 
 <br />
 
 <% if session[:admin] %>
-	<%= link_to 'Edit', edit_cart_path(@cart) %> |
+	<%= link_to t('.edit'), edit_cart_path(@cart) %> |
 <% end %>
 
-<%= link_to 'Back', carts_path %>
+<%= link_to t('.back'), carts_path %>
