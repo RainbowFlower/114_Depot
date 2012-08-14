@@ -19,6 +19,7 @@ class CcategoriesController < ApplicationController
     @ccategory = Ccategory.find(params[:id])
     @products = Product.all
     @pcategory = Pcategory.find_by_title(@ccategory.ptitle)
+    @cart = current_cart
 
     respond_to do |format|
       format.html # show.html.erb

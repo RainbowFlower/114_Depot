@@ -10,7 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(:version => 20120813065940) do
+=======
 ActiveRecord::Schema.define(:version => 20120813054006) do
+>>>>>>> 826955c91aa6b2ab69930b21b425c07856e1cb67
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -59,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20120813054006) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.boolean  "ship",       :default => false
   end
 
   create_table "pcategories", :force => true do |t|

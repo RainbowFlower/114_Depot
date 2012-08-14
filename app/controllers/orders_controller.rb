@@ -103,4 +103,18 @@ class OrdersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def ship
+    @order = Order.find(params[:id])
+    unless @order.ship
+      Notifier.order_shipped(@order).deliver
+      @order.ship = true
+      @order.save
+    end
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @order }
+    end
+  end
+  
 end
