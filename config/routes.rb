@@ -29,6 +29,10 @@ scope '(:locale)' do
   resources :users
 
   resources :orders
+  
+  resources :line_items do
+	post :quantity, :on => :member
+  end
 
   resources :line_items
 

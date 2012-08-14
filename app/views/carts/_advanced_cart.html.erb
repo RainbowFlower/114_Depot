@@ -1,0 +1,7 @@
+<table>
+  <%= render :partial => "line_items/advanced_line_item", :collection => cart.line_items, :as => :line_item %>
+  <tr class="total_line">
+	<td colspan="3">Total</td>
+	<td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
+  </tr>
+</table>
