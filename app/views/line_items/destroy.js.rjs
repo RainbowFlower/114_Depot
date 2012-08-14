@@ -1,1 +1,11 @@
-page.replace_html('cart' , render(@cart))
+if (@cart.line_items.empty?)
+	page.replace_html('cart', '')
+	page.select('#advanced-cart').each do |element|
+		page.replace_html('advanced-cart', '')
+	end
+else
+	page.replace_html('cart' , render(@cart))
+	page.select('#advanced-cart').each do |element|
+		page.replace_html('advanced-cart' , render(:partial => "line_items/advanced_line_item", :collection => @cart.line_items, :as => :line_item))
+	end
+end

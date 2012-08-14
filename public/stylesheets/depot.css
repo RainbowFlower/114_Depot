@@ -118,6 +118,8 @@
 #store .entry .price_line {
  clear: both;
  margin-bottom: 0.5em;
+ margin-top: 0.5em;
+ margin-left: 10em;
 }
 
 #store .entry .add_to_cart {
@@ -260,8 +262,9 @@
 }
 
 .product_image {
-	width: 100px;
-	height: 115px;
+	width: 108px;
+	height: 133px;
+	border: 1px solid #99CC99;
 }
 /* Styles for comment form */
 .depot_comment_form fieldset{
@@ -298,4 +301,50 @@
 
 #admin_field {
 	display: none;
+}
+
+#link-group {
+	margin: 0;
+}
+
+#link-group a {
+	width: 50px;
+	margin-bottom: 5px;
+	color: white;
+}
+
+#description {
+	margin-top: 160px;
+	margin-bottom: 20px;
+}
+
+.field textarea {
+	width: 80%;
+	margin-top: 10px;
+}
+
+.field input {
+	width: 50%;
+}
+
+.comment {
+	border-radius: 5px 5px 5px 5px;
+  box-shadow: 2px 2px 3px #AAAAAA;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.comment-author span {
+	color: #336699;
+	border-bottom: 1px solid #336699;
+}
+
+.comment-author a {
+	float: right;
+	margin-right: 10px;
+}
+
+.comment-body {
+	line-height: 150%;
+	padding: 12px 0 4px;
 }

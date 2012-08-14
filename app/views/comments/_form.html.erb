@@ -1,0 +1,8 @@
+<%= form_for([@product, @product.comments.build]) do |f| %>
+  <div class="field">
+    <%= f.text_area :body, :rows => 5 %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Comment" %>
+  </div>
+<% end %>

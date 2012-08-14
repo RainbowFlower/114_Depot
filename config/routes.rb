@@ -1,11 +1,15 @@
 DepotB::Application.routes.draw do
 
+  resources :ccategories
+
+  resources :pcategories
+
   resources :search
   #get "search/index" 
-
+  
   get "customer" => 'customer#index'
-
-  resources :categories
+  
+  get "register" => 'users#register'
 
   resources :helps
 
@@ -25,6 +29,10 @@ scope '(:locale)' do
   resources :users
 
   resources :orders
+  
+  resources :line_items do
+	post :quantity, :on => :member
+  end
 
   resources :line_items
 
@@ -32,6 +40,7 @@ scope '(:locale)' do
 
 
   resources :products do
+    resources :comments
     get :who_bought, :on => :member
   end
 

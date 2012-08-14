@@ -24,17 +24,19 @@
 		</div>
 		<div class="span5 offset5" id="account-bar">
 		  <%= form_tag store_path, :class => 'locale' do %>
-			<%= select_tag 'set_locale',
-			options_for_select(LANGUAGES, I18n.locale.to_s),
-			:onchange => 'this.form.submit()' %>
-			<%= submit_tag 'submit' %>
-			<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+				<%= select_tag 'set_locale',
+					options_for_select(LANGUAGES, I18n.locale.to_s),
+					:onchange => 'this.form.submit()' %>
+				<%= submit_tag 'submit' %>
+				<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
 		  <% end %>
-		<% if session[:user_id] %>
-			<%= button_to 'Logout', logout_path, :method => :delete, :class=>"pull-right" %>
-		<% end %>
-		<a href="#">Register</a> 
-		<a href="login">Login</a>
+			<% if session[:user_id] %>
+				<%= button_to t('.logout'), logout_path, :method => :delete %>
+				<!--<span class="span2">Welcome, <%= User.find(session[:user_id]).name %></span>-->
+			<% else %>
+				<a href="/register"><%= t('.register') %></a> 
+				<a href="/login"><%= t('.login') %></a>
+			<% end %>
 		</div>
 	  </div>
 	</div>
@@ -43,40 +45,41 @@
   <div class="container" id="content">
     <div id="header">
 		<div class="header-title">
-			<%= @page_title || "Pragmatic Bookshelf" %>
+			<%= @page_title || t('.title') %>
 		</div>
 	</div>
 	
 	<div class="navbar" id="header-navbar">
 		<div class="navbar-inner">
 			<ul class="nav">
-				<li class="active"><%= link_to 'Home', store_path %></li>
-				<li><%= link_to 'Products', products_path %></li>
-				<li><%= link_to 'Orders', orders_path %></li>
-				<% if session[:admin] %><li><%= link_to 'Users', users_path %></li><% end %>
-				<li><%= link_to 'Helps', helps_path %></li>
+				<li class="active"><%= link_to t('.home'), store_path %></li>
+				<li><%= link_to t('.products'), products_path %></li>
+				<li><%= link_to t('.carts'), carts_path %></li>
+				<% if session[:admin] %><li><%= link_to t('.users'), users_path %></li><% end %>
+				<% if session[:user_id] %>
+					<li><%= link_to t('.orders'), orders_path %></li>
+					<li>
+						<% if session[:admin] %>
+							<%= link_to t('.profile'), admin_url %>
+						<% else %>
+							<%= link_to t('.profile'), customer_url %>
+						<% end %>
+					</li>
+				<% end %>
+				<li><%= link_to t('.helps'), helps_path %></li>
 			</ul>
-            <%= form_tag search_index_path, :method => :get, :class => 'navbar-form pull-left' do %>
-              <%= text_field_tag :search, params[:search], :class => 'span2', :placeholder => "title/author/publisher" %>
-              <%= submit_tag "Search", :name => nil, :style => 'display: none;' %>
-            <% end %>
+      <%= form_tag search_index_path, :method => :get, :class => 'navbar-form pull-left' do %>
+        <%= text_field_tag :search, params[:search], :class => 'span3', :placeholder => t('.searchhint') %>
+        <%= submit_tag "Search", :name => nil, :style => 'display: none;' %>
+      <% end %>
 		</div>
 	</div>
 	<div id="columns">
     <div id="side">
-	<!--
-	  <div id="cart">
-		  <% if @cart %>
-			  <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%>
-				<%= render @cart %>
-			  <% end %>
-		  <% end %>
-	  </div>
-	-->
 	  <div class="carts">
 		<% if @cart %>
-			<a id="cart-holder" href="#">
-				<i class="icon-shopping-cart icon-white"></i>  Cart
+			<a id="cart-holder" href="<%= cart_path(@cart) %>">
+				<i class="icon-shopping-cart icon-white"></i> Cart
 			</a>
 			<div class="cart-content" id="cart">
 				<%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%>
@@ -85,8 +88,7 @@
 			</div>
 		<% end %>
 	  </div>
-	  <%= render "categories/category" %><br />
-	
+	<%= render "pcategories/pcategory" %><br />
 
     </div>
 

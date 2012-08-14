@@ -3,7 +3,11 @@
 
 
 en:
-  categories:
+  pcategories:
+    show:
+      add_html:   "Add to Cart"
+  
+  ccategories:
     show:
       add_html:   "Add to Cart"
   
@@ -11,20 +15,62 @@ en:
     application:   
       title:          "Pragmatic Bookshelfs"
       home:           "Home"
-      questions:      "Questions"
-      news:           "News"
-      contact:        "Contact"
+      products:       "Products"
+      cart:           "Carts"
+      orders:         "Orders"
+      help:           "Helps"
+      users:          "Users"
+      profile:        "Profile"
+      login:          "Login"
+      register:       "Register"
+      logout:         "Logout"
+      searchhint:     "title/author/publisher"
+    store:
+      login:          "Login"
+      register:       "Register"
+      logout:         "Logout"
+      searchhint:     "title/author/publisher"
+
     
   store:
     index:
       title_html:  "Your Pragmatic Catalog"
       add_html:         "Add to Cart"
     
+  search:
+    index:
+      search:       "Search"
+      add:           "Add to Cart"
+      
   carts:
     cart:
       title:     "Your Cart"
       empty:     "Empty cart"
+      confirm:   "Are you sure?"
       checkout:  "Checkout"
+    edit:
+      title:     "Edit carts"
+      show:      "Show"
+      back:      "Back"
+    index:
+      title:     "Listing carts"
+      cartid:    "Cart_ID"   
+      updatetime: "Updatetime" 
+      show:       "Show"
+      edit:       "Edit" 
+      destroy:    "Destroy"
+      confirm:    "Are you sure?"
+      newcart:    "New cart"
+    new:
+      title:      "New cart"
+      back:        "Back"
+    show:
+      title:       "Your cart"
+      total:       "Total"
+      empty:       "Empty cart"
+      confirm:     "Are you sure?"
+      edit:        "Edit"
+      back:        "Back"
       
   number:
     currency:
