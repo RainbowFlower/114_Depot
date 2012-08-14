@@ -1,6 +1,5 @@
 <tr>
     <td><%= line_item.product.title %></td>
-    <td>&times;</td>
 	<td>
 		<%= form_tag quantity_line_item_path(line_item), :remote => true do %>
 			<%= number_field_tag :quantity, line_item.quantity, :class=>"item-quantity", :in => 1..999, :onchange=>"this.form.request({onSuccess: function(response) {eval(response)}});" %>

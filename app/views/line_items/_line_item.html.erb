@@ -3,8 +3,8 @@
 <% else %>
 <tr>
 <% end %>
-    <td><%= line_item.quantity %>&times;</td>
-    <td><%= line_item.product.title %></td>
-    <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
-	<td><%= link_to 'X', line_item, :method => :delete, :class => ['btn', 'btn-inverse', 'btn-mini'], :remote => true %></td>
+    <td><%= line_item.quantity %>&times;</th>
+    <td style="width:50%"><%= line_item.product.title %></th>
+    <td class="item_price"><%= number_to_currency(line_item.total_price) %></th>
+	<td><%= link_to 'X', line_item, :method => :delete, :class => ['btn', 'btn-inverse', 'btn-mini'], :remote => true %></th>
 </tr>

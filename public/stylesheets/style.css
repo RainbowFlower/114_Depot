@@ -69,7 +69,7 @@
 }
 
 .carts {
-  width: 240px;
+  min-width: 240px;
   position: absolute;
   left: 0;
   top: -40px;
@@ -174,4 +174,17 @@
 
 #copyright p {
   line-height: 36px;
+}
+
+#advanced-cart form {
+  margin: 0;
+}
+
+#advanced-cart input {
+  width: 40px;
+  margin: 0;
+}
+
+.carts .table tbody tr:hover td, .table tbody tr:hover th {
+  background-color: transparent;
 }
