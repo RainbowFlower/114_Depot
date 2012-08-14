@@ -1,5 +1,5 @@
 <div id="product_list">
-  <h1>Listing products</h1>
+  <h1><%= t('.title')%></h1>
 
   <% @products.each do |product| %>
 		<div class="entry">
@@ -12,10 +12,10 @@
 			</div>
 			<% if session[:admin] %>
 		  <div class="span1" id="link-group">
-		    <p><%= link_to ' Show ', product, :class => ['btn', 'btn-primary', "span1"] %></p>
-		    <p><%= link_to ' Edit ', edit_product_path(product), :class => ['btn', 'btn-success', "span1"] %></p>
-				<p><%= link_to 'Destroy', product, 
-		                :confirm => 'Are you sure?',
+		    <p><%= link_to t('.show'), product, :class => ['btn', 'btn-primary', "span1"] %></p>
+		    <p><%= link_to t('.edit'), edit_product_path(product), :class => ['btn', 'btn-success', "span1"] %></p>
+				<p><%= link_to t('.destroy'), product, 
+		                :confirm => t('.confirm'),
 		                :method => :delete, :class => ['btn', 'btn-danger', "span1"]%></p>
 		  </div>
 		  <% end %>
@@ -26,5 +26,5 @@
 <p><%= will_paginate @products %></p>
 
 <% if session[:admin] %>
-	<%= link_to 'New product', new_product_path %>
+	<%= link_to t('.newproduct'), new_product_path %>
 <% end %>

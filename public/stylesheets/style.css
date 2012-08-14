@@ -20,13 +20,17 @@
   text-align: right;
 }
 
+#account-bar form {
+	margin: 0;
+	display: inline-block;
+}
+
 #account-bar a {
   padding: 0 5px;
   margin-top: 4px;
   color: #282;
   line-height: 28px;
   display: inline-block;
-  float: right;
   text-decoration: none;
 }
 
@@ -170,10 +174,13 @@
 #copyright {
   background-color: whiteSmoke; 
   padding-bottom: 3px;
+  padding-top: 5px;
 }
 
 #copyright p {
   line-height: 36px;
+  text-align:center;
+  margin: 0;
 }
 
 #advanced-cart form {
@@ -189,6 +196,11 @@
   background-color: transparent;
 }
 
+.form-inline form {
+	margin: 0;
+	display: inline-block;
+}
+
 .cart-bar form {
   margin: 0;
   display: inline-block;
@@ -197,3 +209,4 @@
 #cart a {
   color: black;
 }
+

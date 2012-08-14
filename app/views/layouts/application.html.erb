@@ -22,7 +22,7 @@
 		<div class="span2">
 		  <%= image_tag("logo.png") %>
 		</div>
-		<div class="span5 offset5" id="account-bar">
+		<div class="span10" id="account-bar">
 		  <%= form_tag store_path, :class => 'locale' do %>
 				<%= select_tag 'set_locale',
 					options_for_select(LANGUAGES, I18n.locale.to_s),
@@ -31,11 +31,15 @@
 				<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
 		  <% end %>
 			<% if session[:user_id] %>
+				<% if session[:admin] %>
+					Welcome, <%=link_to User.find(session[:user_id]).name, admin_url %>
+				<% else %>
+					Welcome, <%=link_to User.find(session[:user_id]).name, customer_url %>
+				<% end %>
 				<%= button_to t('.logout'), logout_path, :method => :delete, :class => "btn" %>
-				<!--<span class="span2">Welcome, <%= User.find(session[:user_id]).name %></span>-->
 			<% else %>
-				<a href="/register"><%= t('.register') %></a> 
 				<a href="/login"><%= t('.login') %></a>
+				<a href="/register"><%= t('.register') %></a>
 			<% end %>
 		</div>
 	  </div>
@@ -54,15 +58,11 @@
 			<ul class="nav">
 				<li class="active"><%= link_to t('.home'), store_path %></li>
 				<li><%= link_to t('.products'), products_path %></li>
-				<li><%= link_to t('.carts'), carts_path %></li>
 				<% if session[:user_id] %>
 					<li><%= link_to t('.orders'), orders_path %></li>
 					<% if session[:admin] %>
 						<li><%= link_to t('.users'), users_path %></li>
 						<li><%= link_to t('.category'), pcategories_path %></li>
-						<li><%= link_to t('.profile'), admin_url %></li>
-					<% else %>
-						<li><%= link_to t('.profile'), customer_url %>
 					<% end %>
 				<% end %>
 				<li><%= link_to t('.helps'), helps_path %></li>
@@ -97,9 +97,9 @@
     </div>
   </div>
   <div class="clear"></div>
-      <div id="copyright">
-    		<p style="text-align:center">&copy; 2005 - 2012 RainbowFlower. All rights reserved.</p>
-    	</div>
+  <div id="copyright">
+		<p>&copy; 2005 - 2012 RainbowFlower. All rights reserved.</p>
+	</div>
  
 </body>
 </html>

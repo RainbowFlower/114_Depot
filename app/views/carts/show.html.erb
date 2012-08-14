@@ -3,7 +3,12 @@
 	<%= render :partial => "carts/advanced_cart", :locals => {:cart => @cart} %>
 </div>
 
-<%= button_to t('.empty'), @cart, :method => :delete, :confirm => t('.confirm') %>
+<div class="form-inline">
+	<%= button_to t('.empty'), @cart, :method => :delete, :confirm => t('.confirm'), :class => "btn btn-danger" %>
+	<%= button_to t('.checkout'), new_order_path, :method => :get, :class => "btn btn-danger" %>
+</div>
+
+<br />
 
 <% if session[:admin] %>
 	<%= link_to t('.edit'), edit_cart_path(@cart) %> |
