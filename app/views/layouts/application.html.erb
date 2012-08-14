@@ -68,7 +68,7 @@
 				<li><%= link_to t('.helps'), helps_path %></li>
 			</ul>
       <%= form_tag search_index_path, :method => :get, :class => 'navbar-form pull-left' do %>
-        <%= text_field_tag :search, params[:search], :class => 'span3', :placeholder => t('.searchhint') %>
+        <%= text_field_tag :search, params[:search], :class => 'span2', :placeholder => t('.searchhint') %>
         <%= submit_tag "Search", :name => nil, :style => 'display: none;' %>
       <% end %>
 		</div>
