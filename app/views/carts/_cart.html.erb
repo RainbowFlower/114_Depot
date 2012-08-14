@@ -11,7 +11,7 @@
 <table>
 	<tr>
 		<td>
-			<%= button_to t('.empty'), cart, :method => :delete, :confirm => t('.confirm') %>
+			<%= button_to t('.empty'), cart, :remote => true, :method => :delete, :confirm => t('.confirm') %>
 		</td>
 		<td style="padding-left:45px">
 			<%= button_to t('.checkout'), new_order_path, :method => :get %>

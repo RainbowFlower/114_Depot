@@ -104,19 +104,10 @@
 	</div>
 	<div id="columns">
     <div id="side">
-	<!--
-	  <div id="cart">
-		  <% if @cart %>
-			  <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%>
-				<%= render @cart %>
-			  <% end %>
-		  <% end %>
-	  </div>
-	-->
 	  <div class="carts">
 		<% if @cart %>
-			<a id="cart-holder" href="#">
-				<i class="icon-shopping-cart icon-white"></i>  Cart
+			<a id="cart-holder" href="<%= cart_path(@cart) %>">
+				<i class="icon-shopping-cart icon-white"></i> Cart
 			</a>
 			<div class="cart-content" id="cart">
 				<%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%>

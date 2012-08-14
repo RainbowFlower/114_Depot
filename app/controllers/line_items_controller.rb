@@ -86,4 +86,19 @@ class LineItemsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def quantity
+	@line_item = LineItem.find(params[:id])
+	@line_item.quantity = params[:quantity]
+	
+	respond_to do |format|
+		if 	@line_item.save
+			format.html { redirect_to(line_items_url) }
+			format.js {@cart = current_cart}
+			format.xml  { head :ok }
+		else
+			format.js {@cart = current_cart}
+		end
+	end
+  end
 end
