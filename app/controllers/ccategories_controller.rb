@@ -1,4 +1,7 @@
 class CcategoriesController < ApplicationController
+	skip_before_filter :authorize, :only => ['index', 'show']
+	before_filter :admin_authorize, :only => ['new', 'edit', 'update', 'destroy', 'create']
+	
   # GET /ccategories
   # GET /ccategories.xml
   def index
@@ -15,6 +18,7 @@ class CcategoriesController < ApplicationController
   def show
     @ccategory = Ccategory.find(params[:id])
     @products = Product.all
+    @pcategory = Pcategory.find_by_title(@ccategory.ptitle)
 
     respond_to do |format|
       format.html # show.html.erb

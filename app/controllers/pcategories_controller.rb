@@ -1,4 +1,7 @@
 class PcategoriesController < ApplicationController
+	skip_before_filter :authorize, :only => ['index', 'show']
+	before_filter :admin_authorize, :only => ['new', 'edit', 'update', 'destroy', 'create']
+	
   # GET /pcategories
   # GET /pcategories.xml
   def index
