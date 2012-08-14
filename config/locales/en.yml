@@ -15,9 +15,22 @@ en:
     application:   
       title:          "Pragmatic Bookshelfs"
       home:           "Home"
-      questions:      "Questions"
-      news:           "News"
-      contact:        "Contact"
+      products:       "Products"
+      cart:           "Carts"
+      orders:         "Orders"
+      help:           "Helps"
+      users:          "Users"
+      profile:        "Profile"
+      login:          "Login"
+      register:       "Register"
+      logout:         "Logout"
+      searchhint:     "title/author/publisher"
+    store:
+      login:          "Login"
+      register:       "Register"
+      logout:         "Logout"
+      searchhint:     "title/author/publisher"
+
     
   store:
     index:

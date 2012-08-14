@@ -14,10 +14,23 @@ ch:
   layouts:
     application:   
       title:        "七色花书城"   
-      home:         "书城首页"
-      questions:    "疑难解析"
-      news:         "最新动态"
-      contact:      "相关链接"
+      home:         "首页"
+      products:     "产品"
+      carts:        "购物车"
+      orders:       "订单"
+      helps:        "帮助"
+      users:        "用户"
+      profile:      "个人页面"
+      login:        "登录"
+      register:     "注册"
+      logout:       "退出"
+      searchhint:   "书名/作者/出版社"
+    store:
+      login:        "登录"
+      register:     "注册"
+      logout:       "退出"
+      searchhint:   "书名/作者/出版社"
+
     
   store:
     index:
