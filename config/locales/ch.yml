@@ -34,8 +34,13 @@ ch:
     
   store:
     index:
-      title_html:  "七色花目录"
-      add_html:          "加入购物车"
+      title_html:     "七色花目录"
+      add_html:       "加入购物车"
+   
+  search:
+    index:
+      search:       "查找"
+      add:           "加入购物车"
       
   carts:
     cart:

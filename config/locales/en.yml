@@ -37,6 +37,11 @@ en:
       title_html:  "Your Pragmatic Catalog"
       add_html:         "Add to Cart"
     
+  search:
+    index:
+      search:       "Search"
+      add:           "Add to Cart"
+      
   carts:
     cart:
       title:     "Your Cart"
