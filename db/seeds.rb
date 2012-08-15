@@ -40,7 +40,7 @@ Product.create(:title => 'Web Design for Developers',
   :image_url =>   '/images/wd4d.jpg',    
   :price => 42.95,
   :author => 'Brian P. Hogan',
-  :ISBN => 9781934356135,
+  :ISBN => '9781934356135',
   :publisher => 'Pragmatic Bookshelf',
   :category_title => "Programming")
 # . . .
@@ -54,7 +54,7 @@ Product.create(:title => 'Programming Ruby 1.9',
   :image_url => '/images/ruby.jpg',
   :price => 49.50,
   :author => 'Dave Thomas',
-  :ISBN => 9781934356081,
+  :ISBN =>'9781934356081',
   :publisher => 'Pragmatic Bookshelf',
   :category_title => "Programming")
 # . . .
@@ -72,7 +72,7 @@ Product.create(:title => 'Rails Test Prescriptions',
   :image_url => '/images/rtp.jpg',
   :price => 43.75,
   :author => 'Noel Rappin',
-  :ISBN => 9781934356647,
+  :ISBN => '9781934356647',
   :publisher => 'Pragmatic Bookshelf',
   :category_title => "Programming")
   
@@ -89,7 +89,7 @@ Product.create(:title => 'Miette Bakery Cookbook: Recipes from San Francisco\'s 
   :image_url => '/images/recipes.jpg',
   :price => 16.21,
   :author => 'Miette Cakes',
-  :ISBN => 9780811875042,
+  :ISBN => '9780811875042',
   :publisher => 'Chronicle Books',
   :category_title => "Cooking")
   
@@ -103,7 +103,7 @@ Product.create(:title => 'Stress Proof Your Life',
   :image_url => '/images/stress.jpg',
   :price => 23.41,
   :author => 'Patrick Keeley',
-  :ISBN => 9780741430137,
+  :ISBN => '9780741430137',
   :publisher => 'Infinity Publishing',
   :category_title => "Health")
   
@@ -121,7 +121,7 @@ Product.create(:title => 'Australia',
   :image_url => '/images/Australia.jpg',
   :price => 23.41,
   :author => 'Charles Rawlings-Way and Meg Worby',
-  :ISBN => 9781741798074,
+  :ISBN => '9781741798074',
   :publisher => 'Lonely Planet Publications',
   :category_title => "Travel")
   
@@ -137,7 +137,7 @@ Product.create(:title => 'Economics',
   :image_url => '/images/Economics.jpg',
   :price => 30.52,
   :author => 'Paul A. Samuelson and William D. Nordhaus',
-  :ISBN => 9780071263832,
+  :ISBN => '9780071263832',
   :publisher => 'McGraw Hill Higher Education',
   :category_title => "Economics")
   
@@ -160,7 +160,7 @@ Product.create(:title => 'Business',
   :image_url => '/images/Business.jpg',
   :price => 48.67,
   :author => 'William K. Pride, Robert J. Hughes and Jack R. Kapoor',
-  :ISBN => 9781439037515,
+  :ISBN =>'9781439037515',
   :publisher => 'South-Western, Division of Thomson Learning',
   :category_title => "Business")
   
@@ -185,7 +185,7 @@ Product.create(:title => 'A BRIEF HISTORY OF CHINESE FICTION',
   :image_url => '/images/ChineseFiction.jpg',
   :price => 14.95,
   :author => 'LuXun',
-  :ISBN => 9787119057507,
+  :ISBN => '9787119057507',
   :publisher => 'FOREIGN LANGUAGES PRESS',
   :category_title => "Fiction")
   
@@ -200,7 +200,7 @@ Product.create(:title => 'College Essays that Made a Difference',
   :image_url => '/images/Essay.jpg',
   :price => 16.72,
   :author => 'Princeton Review',
-  :ISBN => 9780375427855,
+  :ISBN => '9780375427855',
   :publisher => 'Princeton Review',
   :category_title => "Essay")
   
@@ -221,7 +221,7 @@ Product.create(:title => 'Financing Your Small Business',
   :image_url => '/images/Financing.jpg',
   :price => 19.46,
   :author => 'Richard P. Lehman',
-  :ISBN => 9781572485532,
+  :ISBN => '9781572485532',
   :publisher => 'Sourcebooks',
   :category_title => "Financing")
   
@@ -244,7 +244,7 @@ Product.create(:title => 'Corporate Value of Enterprise Risk Management: The Nex
   :image_url => '/images/Enterprise.jpg',
   :price => 84.62,
   :author => 'Sim Segal',
-  :ISBN => 9780470882542,
+  :ISBN => '9780470882542',
   :publisher => 'John Wiley & Sons Ltd',
   :category_title => "Enterprise")
   
@@ -272,7 +272,7 @@ Product.create(:title => 'Man Vs. Wild: Survival Techniques from the Most Danger
   :image_url => '/images/Bear.jpg',
   :price => 28.34,
   :author => 'Bear Grylls',
-  :ISBN => 9781401322939,
+  :ISBN => '9781401322939',
   :publisher => 'Hyperion Books',
   :category_title => "Nature")
   
@@ -292,7 +292,7 @@ Product.create(:title => 'Lippincott\'s Illustrated Reviews: Biochemistry',
   :image_url => '/images/chemical.jpg',
   :price => 63.58,
   :author => 'Richard A. Harvey and Denise R. Ferrier',
-  :ISBN => 9781609139988,
+  :ISBN => '9781609139988',
   :publisher => 'Lippincott Williams and Wilkins',
   :category_title => "Chemical")
   
@@ -309,7 +309,7 @@ Product.create(:title => 'Modern Architecture: A Critical History',
   :image_url => '/images/Architecture.jpg',
   :price => 24.86,
   :author => 'Kenneth Frampton',
-  :ISBN => 9780500203958,
+  :ISBN => '9780500203958',
   :publisher => 'Thames & Hudson Ltd',
   :category_title => "Architecture")
 
