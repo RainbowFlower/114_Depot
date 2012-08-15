@@ -1,74 +1,62 @@
-<h1>帮助中心</h1>
-<p>下面的链接也许可以帮助你解决相关问题：</p>
+<h1><%= t('.helpcenter') %></h1>
+<p><%= t('.prompt') %></p>
 <dl>
-  <dt>用户管理</dt>
+  <dt><%= t('.usermanagement') %></dt>
   <dd>
     <p>
-	  <% @helps.each do |help| %>
-		<% if help.tag == 1 %>
-			<%= link_to help.title, "/helps/" + help.id.to_s %>
-		<% end %>
-	  <% end %>
+	  <%= link_to t('.register'), :controller => "helps", :action => "helpregister" %>
+	  &nbsp;&nbsp;&nbsp;
+	  <%= link_to t('.login'), :controller => "helps", :action => "helplogin" %>
 	</p>
   </dd>
   
-  <dt>查找商品</dt>
+  <dt><%= t('.findproduct') %></dt>
   <dd>
     <p>
-	  <% @helps.each do |help| %>
-		<% if help.tag == 2 %>
-			<%= link_to help.title, "/helps/" + help.id.to_s %>
-		<% end %>
-	  <% end %>
+	  <%= link_to t('.searchbykeyword'), :controller => "helps", :action => "helpsearchbykeyword" %>
+	  &nbsp;&nbsp;&nbsp;
+	  <%= link_to t('.searchbytype'), :controller => "helps", :action => "helpsearchbytype" %>
 	</p>
   </dd>
   
-  <dt>购物车</dt>
+  <dt><%= t('.cart') %></dt>
   <dd>
     <p>
-	  <% @helps.each do |help| %>
-		<% if help.tag == 3 %>
-			<%= link_to help.title, "/helps/" + help.id.to_s %>
-		<% end %>
-	  <% end %>
+	  <%= link_to t('.addtocart'), :controller => "helps", :action => "helpaddtocart" %>
+	  &nbsp;&nbsp;&nbsp;
+	  <%= link_to t('.deletefromcart'), :controller => "helps", :action => "helpdeletefromcart" %>
+	  &nbsp;&nbsp;&nbsp;
+	  <%= link_to t('.clearcart'), :controller => "helps", :action => "helpclearcart" %>
 	</p>
   </dd>
   
-  <dt>订单管理</dt>
+  <dt><%= t('.ordermanagement') %></dt>
   <dd>
     <p>
-	  <% @helps.each do |help| %>
-		<% if help.tag == 4 %>
-			<%= link_to help.title, "/helps/" + help.id.to_s %>
-		<% end %>
-	  <% end %>
+	  <%= link_to t('.checkout'), :controller => "helps", :action => "helpcheckout" %>
+	  &nbsp;&nbsp;&nbsp;
+	  <%= link_to t('.vieworder'), :controller => "helps", :action => "helpvieworder" %>
+	  &nbsp;&nbsp;&nbsp;
+	  <%= link_to t('.changeorder'), :controller => "helps", :action => "helpchangeorder" %>
+	  &nbsp;&nbsp;&nbsp;
+	  <%= link_to t('.deleteorder'), :controller => "helps", :action => "helpdeleteorder" %>
 	</p>
   </dd>
   
-  <dt>评论管理</dt>
+  <dt><%= t('.commentmanagement') %></dt>
   <dd>
     <p>
-	  <% @helps.each do |help| %>
-		<% if help.tag == 5 %>
-			<%= link_to help.title, "/helps/" + help.id.to_s %>
-		<% end %>
-	  <% end %>
+	  <%= link_to t('.createcomment'), :controller => "helps", :action => "helpcreatecomment" %>
+	  &nbsp;&nbsp;&nbsp;
+	  <%= link_to t('.viewcomment'), :controller => "helps", :action => "helpviewcomment" %>
 	</p>
   </dd>
   
-  <dt>国际化</dt>
+  <dt><%= t('.internationalization') %></dt>
   <dd>
     <p>
-	  <% @helps.each do |help| %>
-		<% if help.tag == 6 %>
-			<%= link_to help.title, "/helps/" + help.id.to_s %>
-		<% end %>
-	  <% end %>
+	  <%= link_to t('.changelanguage'), :controller => "helps", :action => "helpchangelanguage" %>
 	</p>
   </dd>
 
 </dl>
-
-<% if session[:admin] %>
-	<%= link_to 'New', new_help_path() %>
-<% end %>

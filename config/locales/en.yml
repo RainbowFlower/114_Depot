@@ -10,6 +10,20 @@ en:
   ccategories:
     show:
       add_html:   "Add to Cart"
+      
+  admin:
+    index:
+      welcome:          "Welcome,"
+      edit:             "Edit"
+      name:             "Name"
+      address_html:     "Address"
+      email:            "E-mail"
+      pay_type:         "Pay_type"
+      more_details:     "More details"
+      show:             "Show"
+      its:              "It's"
+      we_have:          "We have "
+      order:            "order"
   
   layouts:
     application:   
@@ -79,13 +93,33 @@ en:
       confirm:     "Are you sure?"
       edit:        "Edit"
       back:        "Back"
-      checkout:  		"Checkout"
     advanced_cart:
-      title:       "书名"
-      quantity:    "数量"
-      prices:      "价钱"
-      total:       "总价"
+      title:       "Title"
+      quantity:    "Quantity"
+      prices:      "Price"
+      total:       "Total"
+
+  users:
+    form:
+      legend:      "Enter User Details" 
+      name:        "UserName"
+      password:    "Password"
+      confirm:     "Confirm"
+    register:
+      legend:      "Enter Your Details"  
+      name:        "UserName"
+      password:    "Password"
+      confirm:     "Confirm"
+      register:    "Register"
       
+  sessions:
+    new:
+      title:       "Please Login"
+      name:        "Name"
+      password:     "Password"
+      login:       "Login"
+      
+            
   number:
     currency:
       format:
@@ -156,17 +190,6 @@ en:
       title:        "New product"
       back:         "Back"
     show:
-      author:       "Author"
-      publisher:    "Publisher"
-      price:        "Price"
-      category:     "Category"
-      description:  "Description"
-      comment:      "Comments"
-      comment_action: "Leave a comment"
-      edit:          "Edit"
-      back:          "Back"
-      add_html:      "Add to Cart"
-    product:
       author:       "Author"
       publisher:    "Publisher"
       price:        "Price"

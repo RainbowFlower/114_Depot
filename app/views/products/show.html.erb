@@ -1,5 +1,9 @@
 <% if notice %>
-	<p id="notice"><%= notice %></p>
+	<script type="text/javascript">
+  		$j(document).ready(function(){
+  			alertNotice("info", "<%= notice %>", 2000);
+  		});
+  	</script>
 <% end %>
 
 <h2><%= @product.title %></h2>

@@ -11,6 +11,20 @@ ch:
     show:
       add_html:   "加入购物车"
   
+  admin:
+    index:
+      welcome:   "欢迎，"
+      edit:      "编辑"
+      name:        "姓名"
+      address_html:     "地址"
+      email:       "E-mail"
+      pay_type:    "支付方式"
+      more_details: "更多细节"
+      show:         "显示"
+      its:          "现在是"
+      we_have:      "我们有"
+      order:         "张订单"
+  
   layouts:
     application:   
       title:        "七色花书城"   
@@ -84,7 +98,26 @@ ch:
       quantity:    "数量"
       prices:      "价钱"
       total:       "总价"
-       
+
+  users:
+    form:
+      legend:      "请输入相关细节"     
+      name:        "用户名"
+      password:    "密码"
+      confirm:     "确认密码"
+    register:
+      legend:      "请输入你的信息"  
+      name:        "用户名"
+      password:    "密码"
+      confirm:     "确认密码"
+      register:    "注册"
+
+  sessions:
+    new:
+      title:       "请登录"
+      name:        "姓名"
+      password:     "密码"
+      login:       "登录"
       
   number:
     currency:
@@ -165,6 +198,7 @@ ch:
       comment_action: "写评论"
       edit:          "编辑"
       back:          "返回"
+      add_html:      "加入购物车"
   
   comments:
     comment:

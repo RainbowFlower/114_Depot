@@ -1,15 +1,16 @@
-<h1>Welcome, <%= @user.name %> (<%= link_to 'show', user_path(@user)%>)</h1>
+<h1><%= t('.welcome') %>, <%= @user.name %> (<%= link_to t('.show'), user_path(@user)%>)</h1>
 
-It's <%= Time.now %>
-We have <%= pluralize(@total_orders, "order") %>.<br /><br />
+
+<%= t('.its') %> <%= Time.now %>
+<%= t('.we_have') %> <%= pluralize(@total_orders, t('.order')) %>.<br /><br />
 <% unless @total_orders.zero? %>
 	<table class="table table-striped">
 		<thead>
 		<tr>
-			<th>Name</th>
-			<th>Address</th>
-			<th>Email</th>
-			<th>Pay type</th>
+			<th><%= t('.name') %></th>
+			<th><%= t('.address') %></th>
+			<th><%= t('.email') %></th>
+			<th><%= t('.pay_type') %></th>
 			<th></th>
 		</tr>
 		</thead>
@@ -21,12 +22,12 @@ We have <%= pluralize(@total_orders, "order") %>.<br /><br />
 					<td><%= order.address %></td>
 					<td><%= order.email %></td>
 					<td><%= order.pay_type %></td>
-					<td><%= link_to 'Show', order %>
+					<td><%= link_to t('.show'), order %>
 				</tr>
 			<% end %>
 		</tbody>
 	</table>
 <% end %>
 
-<%= link_to 'More details', orders_path %>
+<%= link_to t('.more_details'), orders_path %>
 

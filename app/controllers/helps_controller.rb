@@ -83,4 +83,47 @@ class HelpsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def helpregister
+  end
+  
+  def helplogin
+  end
+  
+  def helpsearchbykeyword
+  end
+  
+  def helpsearchbytype
+  end
+  
+  def helpaddtocart
+  end
+  
+  def helpdeletefromcart
+  end
+  
+  def helpclearcart
+  end
+  
+  def helpcheckout
+  end
+  
+  def helpvieworder
+  end
+  
+  def helpchangeorder
+  end
+  
+  def helpdeleteorder
+  end
+  
+  def helpcreatecomment
+  end
+  
+  def helpviewcomment
+  end
+  
+  def helpchangelanguage
+  end
+  
 end
