@@ -6,6 +6,7 @@ class CcategoriesController < ApplicationController
   # GET /ccategories.xml
   def index
     @ccategories = Ccategory.all
+	@cart = current_cart
 
     respond_to do |format|
       format.html # index.html.erb

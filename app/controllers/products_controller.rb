@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 		@products = Product.paginate :page => params[:page], :order => 'title desc',
   	    :per_page => 5
 		@user = User.find_by_id(session[:user_id])
+	@cart = current_cart
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @products }

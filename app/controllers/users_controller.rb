@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   # GET /users.xml
   def index
     @users = User.order(:admin)
+	@cart = current_cart
 
     respond_to do |format|
       format.html # index.html.erb
@@ -20,7 +21,8 @@ class UsersController < ApplicationController
 	  	@user = User.find(params[:id])
   	else
   		@user = User.find(session[:user_id])
-		end
+	end
+	@cart = current_cart
 	  
 	  respond_to do |format|
 	  	if @user
