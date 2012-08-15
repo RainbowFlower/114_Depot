@@ -20,7 +20,7 @@
 	<div class="container">
 	  <div class="row">
 		<div class="span2">
-		  <%= image_tag("logo.png") %>
+		  <%= link_to(image_tag("logo.png"), store_path) %>
 		</div>
 		<div class="span10" id="account-bar">
 		  <%= form_tag store_path, :class => 'locale' do %>
@@ -36,10 +36,10 @@
 				<% else %>
 					Welcome, <%=link_to User.find(session[:user_id]).name, customer_url %>
 				<% end %>
-				<%= button_to t('.logout'), logout_path, :method => :delete, :class => "btn" %>
+				<%= link_to t('.logout'), logout_path, :method => :delete %>
 			<% else %>
-				<a href="/login"><%= t('.login') %></a>
-				<a href="/register"><%= t('.register') %></a>
+              <%= link_to t('.login'), login_path %>
+              <%= link_to t('.register'), register_path %>
 			<% end %>
 		</div>
 	  </div>
