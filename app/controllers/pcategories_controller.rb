@@ -6,7 +6,9 @@ class PcategoriesController < ApplicationController
   # GET /pcategories.xml
   def index
     @pcategories = Pcategory.all
-	@cart = current_cart
+    @titles = ptitles
+	  @cart = current_cart
+	  @ccategories = (Ccategory.all).select {|ccategory| !(@titles.include? ccategory.ptitle)}
 
     respond_to do |format|
       format.html # index.html.erb

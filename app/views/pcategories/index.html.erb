@@ -2,13 +2,15 @@
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Ccategory</th>
+    <td><b>Pcategory</b></td>
+    <td>            </td>
+    <td><b>Ccategory</b></td>
   </tr>
 
 <% @pcategories.each do |pcategory| %>
   <tr>
     <td><%= link_to pcategory.title, edit_pcategory_path(pcategory) %></td>
+    <td>            </td>
     <td>
     <% pcategory.getchildcategories.each do |category| %>
         <%= link_to category.title, edit_ccategory_path(category) %><br />
@@ -17,6 +19,16 @@
   </tr>
 <% end %>
 </table>
+<br />
+
+<% if @ccategories.length > 0 %>
+<div>
+  <p><b>Ccategories without pcategories.</b></p>
+  <% @ccategories.each do |ccategory| %>
+    <%= link_to ccategory.title, edit_ccategory_path(ccategory) %><br />
+  <% end %>
+</div>
+<% end %>
 
 <br />
 
