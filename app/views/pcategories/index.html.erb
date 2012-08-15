@@ -1,9 +1,9 @@
-<h1>Listing categories</h1>
+<h1><%= t('.title') %></h1>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Ccategory</th>
+    <th><%= t('.Pcategory') %></th>
+    <th><%= t('.Ccategory')%></th>
   </tr>
 
 <% @pcategories.each do |pcategory| %>
@@ -20,5 +20,5 @@
 
 <br />
 
-<%= link_to 'New Pcategory', new_pcategory_path %> | 
-<%= link_to 'New Ccategory', new_ccategory_path %>
+<%= link_to t('.newpcategory'), new_pcategory_path %> | 
+<%= link_to t('.newccategory'), new_ccategory_path %>

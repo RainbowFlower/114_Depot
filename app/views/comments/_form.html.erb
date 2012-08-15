@@ -1,6 +1,6 @@
 <%= form_for([@product, @product.comments.build], :remote => true)  do |f| %>
   <div class="field">
-    <%= f.text_area :body, :rows => 5, :placeholder => "add a comment..." %>
+    <%= f.text_area :body, :rows => 5, :placeholder => t('.hint')%>
   </div>
   <div class="actions">
     <%= f.submit t('.comment') , :class => "btn btn-primary" %>

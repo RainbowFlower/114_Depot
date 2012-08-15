@@ -4,6 +4,12 @@
 
 ch:
   pcategories:
+    index:
+      title:   "类别目录"
+      Pcategory: "父目录"
+      Ccategory: "子目录"
+      newpcategory:  "新建父目录"
+      newccategory:  "新建子目录"
     show:
       add_html: "加入购物车"
       
@@ -30,7 +36,7 @@ ch:
       title:        "七色花书城"   
       home:         "首页"
       products:     "产品"
-      carts:        "购物车"
+      cart:         "购物车"
       orders:       "订单"
       helps:        "帮助"
       users:        "用户"
@@ -44,7 +50,7 @@ ch:
       title:        "七色花书城"   
       home:         "首页"
       products:     "产品"
-      carts:        "购物车"
+      cart:         "购物车"
       orders:       "订单"
       helps:        "帮助"
       users:        "用户"
@@ -59,7 +65,7 @@ ch:
     
   store:
     index:
-      title_html: "七色花目录"
+      title_html: "书籍目录"
       add_html: "加入购物车"
    
   search:
@@ -112,7 +118,7 @@ ch:
       name:        "用户名"
       password:    "密码"
       confirm:     "确认密码"
-      create:       "新用户"  
+      create:       "保存"  
     edit:
       title:       "编辑用户信息"
       show:          "显示"
@@ -193,7 +199,8 @@ ch:
       address: "地址"
       email: "Email"
       pay_type: "支付方式"
-      ship: "发货"
+      ship: "是否发货"
+      Ship: "发货"
       items: "项"
       quantity: "数量"
       title: "书名"
@@ -247,6 +254,7 @@ ch:
       confirm:     "你确定删除？"
     form:
       comment:     "评论"
+      hint:        "添加你的评论。。。"
   errors:
     template:
       body: "以下方面有错误"
