@@ -1,5 +1,4 @@
-<h1><%= t('.welcome') %><%= @user.name %> (<%= link_to t('.edit'), edit_user_path(@user)%>)</h1>
-
+<h1><%= t('.welcome') %> <%= @user.name %> (<%= link_to t('.show'), user_path(@user)%>)</h1>
 
 <%= t('.its') %> <%= Time.now %>
 <%= t('.we_have') %> <%= pluralize(@total_orders, t('.order')) %>.<br /><br />

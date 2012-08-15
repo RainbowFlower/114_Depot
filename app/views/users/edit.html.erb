@@ -1,11 +1,11 @@
 <div class="depot_form">
 	<fieldset>
-		<legend>Edit User</legend>
+		<legend><%= t('.title') %></legend>
 		<%= render 'form' %>
 	</fieldset>
 </div>
 
 <br />
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', request.referer %>
+<%= link_to t('.show'), @user %> |
+<%= link_to t('.back'), request.referer %>

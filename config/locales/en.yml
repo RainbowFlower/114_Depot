@@ -26,33 +26,34 @@ en:
       order: "order"
   
   layouts:
-    application:
-      title: "Pragmatic Bookshelfs"
-      home: "Home"
-      products: "Products"
-      cart: "Carts"
-      orders: "Orders"
-      help: "Helps"
-      users: "Users"
-      profile: "Profile"
-      login: "Login"
-      register: "Register"
-      logout: "Logout"
-      searchhint: "title/author/publisher"
+    application:   
+      title:          "Pragmatic Bookshelfs"
+      home:           "Home"
+      products:       "Products"
+      cart:           "Carts"
+      orders:         "Orders"
+      help:           "Helps"
+      users:          "Users"
+      category:       "Category"
+      welcome:        "Welcome,"
+      login:          "Login"
+      register:       "Register"
+      logout:         "Logout"
+      searchhint:     "title/author/publisher"
     store:
-      title: "Pragmatic Bookshelfs"
-      home: "Home"
-      products: "Products"
-      cart: "Carts"
-      orders: "Orders"
-      help: "Helps"
-      users: "Users"
-      profile: "Profile"
-      login: "Login"
-      register: "Register"
-      logout: "Logout"
-      searchhint: "title/author/publisher"
-
+      title:          "Pragmatic Bookshelfs"
+      home:           "Home"
+      products:       "Products"
+      cart:           "Carts"
+      orders:         "Orders"
+      help:           "Helps"
+      users:          "Users"
+      category:       "Category"
+      welcome:        "Welcome,"
+      login:          "Login"
+      register:       "Register"
+      logout:         "Logout"
+      searchhint:     "title/author/publisher"
     
   store:
     index:
@@ -66,10 +67,11 @@ en:
       
   carts:
     cart:
-      title: "Your Cart"
-      empty: "Empty cart"
-      confirm: "Are you sure?"
-      checkout: "Checkout"
+      title:     "Your Cart"
+      empty:     "Empty cart"
+      confirm:   "Are you sure?"
+      checkout:  "Checkout"
+      total:     "Total"
     edit:
       title: "Edit carts"
       show: "Show"
@@ -87,12 +89,13 @@ en:
       title: "New cart"
       back: "Back"
     show:
-      title: "Your cart"
-      total: "Total"
-      empty: "Empty cart"
-      confirm: "Are you sure?"
-      edit: "Edit"
-      back: "Back"
+      title:       "Your cart"
+      total:       "Total"
+      empty:       "Empty cart"
+      confirm:     "Are you sure?"
+      edit:        "Edit"
+      back:        "Back"
+      checkout:    "Check Out"
     advanced_cart:
       title: "Title"
       quantity: "Quantity"
@@ -101,16 +104,38 @@ en:
 
   users:
     form:
-      legend: "Enter User Details"
-      name: "UserName"
-      password: "Password"
-      confirm: "Confirm"
+      legend:      "Enter User Details" 
+      name:        "UserName"
+      password:    "Password"
+      confirm:     "Confirm"
+      create:        "Create User"   
+    edit:
+      title:       "Edit User"
+      show:          "Show"
+      back:          "Back"
+    index:
+      title:         "Listing users"
+      name:           "Name"
+      group:          "Group"
+      show:           "Show"
+      edit:           "Edit"
+      destroy:        "Delete"
+      new_user:       "New User"
+    new:
+      title:         "New User"
+      back:          "Back"
     register:
-      legend: "Enter Your Details"
-      name: "UserName"
-      password: "Password"
-      confirm: "Confirm"
-      register: "Register"
+      legend:      "Enter Your Details"  
+      name:        "UserName"
+      password:    "Password"
+      confirm:     "Confirm"
+      register:    "Register"
+    show:
+      name:        "Name："
+      group:       "Group："
+      hash_password: "Hashed password："
+      edit:         "Edit"
+      back:         "Back"
       
   sessions:
     new:
@@ -145,34 +170,35 @@ en:
       show: "Show"
       back: "Back"
     index:
-      title: "Listing orders"
-      name: "Name"
-      address: "Address"
-      email: "Email"
-      pay_type: "Pay_type"
-      ship: "Shipped"
-      show: "Show"
-      edit: "Edit"
-      destroy: "Destroy"
-      confirm: "Are you sure?"
-      neworder: "New order"
+      title:        "Listing orders"
+      name:         "Name"
+      address:      "Address"
+      email:        "Email"
+      pay_type:     "Pay_type"
+      ship:         "Shipped"
+      show:         "Show"
+      edit:         "Edit"
+      destroy:      "Destroy"
+      confirm:      "Are you sure?"
+      neworder:     "New order"
+      show_cart:    "Show Cart"
     ship:
       title: "E-mail has been sent to customer."
       back: "Back"
     show:
-      name: "Name"
-      address: "Address"
-      email: "Email"
-      pay_type: "Pay_type"
-      ship: "ship"
-      items: "Items"
-      quantity: "Quantity"
-      title: "Title"
-      price: "Price"
-      back: "Back"
-      edit: "Edit"
-      yes: "Yes"
-      no: "No"
+      name:         "Name"
+      address:      "Address"
+      email:        "Email"
+      pay_type:     "Pay_type"
+      ship:         "shipped"
+      items:        "Items"
+      quantity:     "Quantity"
+      title:        "Title"
+      price:        "Price"
+      back:         "Back"
+      edit:         "Edit"
+      yes:          "Yes"
+      no:           "No"
 
   products:
     edit:
@@ -197,35 +223,28 @@ en:
       description: "Description"
       comment: "Comments"
       comment_action: "Leave a comment"
-      edit: "Edit"
-      back: "Back"
-      add_html: "Add to Cart"
+      edit:          "Edit"
+      back:          "Back"
+      quantity:      "Quantity"
+      add_html:      "Add to Cart"
+    form:
+      title:        "Title"
+      description:  "Description"
+      image_url:    "Image url"
+      price:        "Price"
+      author:       "Author"
+      publisher:    "Publisher"
+      category_title:     "Category_title"
+      select_a_category:  "select a category:"
+      update:        "Update Product"
+
       
   comments:
     comment:
-      delete: "delete"
-      confirm: "Are you sure?"
-        
-  errors:
-    template:
-      body: "There are problems with the following fields"
-      header:
-        one: "1 error prohibited this order from being saved"
-        other: "%{count} errores prohibited this order from being saved"
-  
-  activerecord:
-    models:
-      order: "order"
-    attributes:
-      order:
-        address: "Address"
-        name: "Name"
-        email: "E-mail"
-        pay_type: "pay-type"
-    errors:
-      messages:
-        inclusion: "is not include in the list"
-        blank: "can't be blank"
+      delete:      "delete"
+      confirm:     "Are you sure?"
+    form:
+      comment:     "Comment"
         
   thanks: "Thank you for your order" 
   

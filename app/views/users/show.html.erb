@@ -1,17 +1,17 @@
 <p>
-  <b>Name:</b>
+  <b><%= t('.name') %></b>
   <%= @user.name %>
 </p>
 
 <p>
-  <b>Group:</b>
+  <b><%= t('.group') %></b>
   <% if @user.admin == true %> Admin
 	<% else %> Customer
 	<% end %>
 </p>
 
 <p>
-  <b>Hashed password:</b>
+  <b><%= t('.hash_password') %></b>
   <%= @user.hashed_password %>
 </p>
 
@@ -21,6 +21,6 @@
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> | 
-<%= link_to 'Back', request.referer %>
+<%= link_to t('.edit'), edit_user_path(@user) %> | 
+<%= link_to t('.back'), request.referer %>
 
