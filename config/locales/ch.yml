@@ -5,120 +5,338 @@
 ch:
   pcategories:
     show:
-      add_html:   "加入购物车"
+      add_html: "加入购物车"
       
   ccategories:
     show:
-      add_html:   "加入购物车"
+      add_html: "加入购物车"
   
   admin:
     index:
-      welcome:   "欢迎，"
-      edit:      "编辑"
-      name:        "姓名"
-      address_html:     "地址"
-      email:       "E-mail"
-      pay_type:    "支付方式"
+      welcome: "欢迎，"
+      edit: "编辑"
+      name: "姓名"
+      address_html: "地址"
+      email: "E-mail"
+      pay_type: "支付方式"
       more_details: "更多细节"
-      show:         "显示"
-      its:          "现在是"
-      we_have:      "我们有"
-      order:         "张订单"
+      show: "显示"
+      its: "现在是"
+      we_have: "我们有"
+      order: "张订单"
   
   layouts:
-    application:   
-      title:        "七色花书城"   
-      home:         "首页"
-      products:     "产品"
-      carts:        "购物车"
-      orders:       "订单"
-      helps:        "帮助"
-      users:        "用户"
-      profile:      "个人页面"
-      login:        "登录"
-      register:     "注册"
-      logout:       "退出"
-      searchhint:   "书名/作者/出版社"
+    application:
+      title: "七色花书城"
+      home: "首页"
+      products: "产品"
+      carts: "购物车"
+      orders: "订单"
+      helps: "帮助"
+      users: "用户"
+      profile: "个人页面"
+      login: "登录"
+      register: "注册"
+      logout: "退出"
+      searchhint: "书名/作者/出版社"
     store:
-      title:        "七色花书城"   
-      home:         "首页"
-      products:     "产品"
-      carts:        "购物车"
-      orders:       "订单"
-      helps:        "帮助"
-      users:        "用户"
-      profile:      "个人页面"
-      login:        "登录"
-      register:     "注册"
-      logout:       "退出"
-      searchhint:   "书名/作者/出版社"
+      title: "七色花书城"
+      home: "首页"
+      products: "产品"
+      carts: "购物车"
+      orders: "订单"
+      helps: "帮助"
+      users: "用户"
+      profile: "个人页面"
+      login: "登录"
+      register: "注册"
+      logout: "退出"
+      searchhint: "书名/作者/出版社"
 
     
   store:
     index:
-      title_html:     "七色花目录"
-      add_html:       "加入购物车"
+      title_html: "七色花目录"
+      add_html: "加入购物车"
    
   search:
     index:
-      search:       "查找"
-      add:           "加入购物车"
+      search: "查找"
+      add: "加入购物车"
       
   carts:
     cart:
-      title:     "你的购物车"
-      empty:     "清空购物车"
-      confirm:   "你确定清空?"
-      checkout:  "结账"
+      title: "你的购物车"
+      empty: "清空购物车"
+      confirm: "你确定清空?"
+      checkout: "结账"
     edit:
-      title:     "编辑购物车"
-      show:      "显示"
-      back:      "返回"
+      title: "编辑购物车"
+      show: "显示"
+      back: "返回"
     index:
-      title:     "购物车列表"
-      cartid:    "购物车ID"   
-      updatetime: "更新时间" 
-      show:       "显示"
-      edit:       "编辑" 
-      destroy:    "删除"
-      confirm:    "你确定删除?"
-      newcart:    "新建购物车"
+      title: "购物车列表"
+      cartid: "购物车ID"
+      updatetime: "更新时间"
+      show: "显示"
+      edit: "编辑"
+      destroy: "删除"
+      confirm: "你确定删除?"
+      newcart: "新建购物车"
     new:
-      title:      "新建购物车"
-      back:        "返回"
+      title: "新建购物车"
+      back: "返回"
     show:
-      title:       "你的购物车"
-      total:       "总价"
-      empty:       "清空购物车"
-      confirm:     "你确定清空?"
-      edit:        "编辑"
-      back:        "返回"
+      title: "你的购物车"
+      total: "总价"
+      empty: "清空购物车"
+      confirm: "你确定清空?"
+      edit: "编辑"
+      back: "返回"
     advanced_cart:
-      title:       "书名"
-      quantity:    "数量"
-      prices:      "价钱"
-      total:       "总价"
+      title: "书名"
+      quantity: "数量"
+      prices: "价钱"
+      total: "总价"
 
   users:
     form:
-      legend:      "请输入相关细节"     
-      name:        "用户名"
-      password:    "密码"
-      confirm:     "确认密码"
+      legend: "请输入相关细节"
+      name: "用户名"
+      password: "密码"
+      confirm: "确认密码"
     register:
-      legend:      "请输入你的信息"  
-      name:        "用户名"
-      password:    "密码"
-      confirm:     "确认密码"
-      register:    "注册"
+      legend: "请输入你的信息"
+      name: "用户名"
+      password: "密码"
+      confirm: "确认密码"
+      register: "注册"
 
   sessions:
     new:
-      title:       "请登录"
-      name:        "姓名"
-      password:     "密码"
-      login:       "登录"
+      title: "请登录"
+      name: "姓名"
+      password: "密码"
+      login: "登录"
       
+  number:
+    currency:
+      format:
+        unit: "￥"
+        precision: 2
+        separator: "."
+        delimiter: "，"
+        format: "%u%n"
+        
+  orders:
+    new:
+      legend: "请输入相关细节"
+    form:
+      name: "姓名"
+      address_html: "地址"
+      email: "E-mail"
+      pay_type: "支付方式"
+      pay_prompt_html: "请选择支付方式"
+      submit: "提交订单"
+    edit:
+      title: "编辑订单"
+      legend: "编辑你的订单"
+      show: "显示"
+      back: "返回"
+    index:
+      title: "订单列表"
+      name: "姓名"
+      address: "地址"
+      email: "Email"
+      pay_type: "支付方式"
+      ship: "发货"
+      show: "显示"
+      edit: "编辑"
+      destroy: "删除"
+      confirm: "你确定删除？"
+      neworder: "新建订单"
+    ship:
+      title: "E-mail 已经发送给顾客。"
+      back: "返回"
+    show:
+      name: "姓名"
+      address: "地址"
+      email: "Email"
+      pay_type: "支付方式"
+      ship: "发货"
+      items: "项"
+      quantity: "数量"
+      title: "书名"
+      price: "价格"
+      back: "返回"
+      edit: "编辑"
+      yes: "是"
+      no: "否"
+      
+  products:
+    edit:
+      title: "编辑产品信息"
+      show: "显示"
+      back: "返回"
+    index:
+      title: "商品列表"
+      show: "显示"
+      edit: "编辑"
+      destroy: "删除"
+      confirm: "你确定删除？"
+      newproduct: "添加商品"
+    new:
+      title: "添加商品"
+      back: "返回"
+    show:
+      author: "作者"
+      publisher: "出版社"
+      price: "价格"
+      category: "分类"
+      description: "描述"
+      comment: "评论"
+      comment_action: "写评论"
+      edit: "编辑"
+      back: "返回"
+      add_html: "加入购物车"
+  
+  comments:
+    comment:
+      delete: "删除"
+      confirm: "你确定删除？"
+       
+  errors:
+    template:
+      body: "以下方面有错误"
+      header:
+        one: "保持订单时遇到一个错误"
+        other: "保存订单时遇到%{count} 个错误"
+          
+  activerecord:
+    models:
+      order: "订单1"
+    attributes:
+      order:
+        address: "地址"
+        name: "姓名"
+        email: "E-mail"
+        pay_type: "支付方式"
+    errors:
+      messages:
+        inclusion: "不在列表"
+        blank: "不能为空"
+        
+  thanks: "订单已经提交，谢谢！"
+  
+  helps:
+    index: 
+      helpcenter:            "帮助中心"	
+      prompt:                "下面的链接也许可以帮助你解决相关问题："
+      usermanagement:        "用户管理"
+      findproduct:           "查找商品"
+      cart:                  "购物车"
+      ordermanagement:       "订单管理"
+      commentmanagement:     "评论管理"
+      internationalization:  "国际化"
+      register:              "注册"
+      login:                 "登录"
+      searchbykeyword:       "关键字搜索"
+      searchbytype:          "分类搜索"
+      addtocart:             "添加商品"
+      deletefromcart:        "删除商品"
+      clearcart:             "清空购物车"
+      checkout:              "结账买单"
+      vieworder:             "查看订单"
+      changeorder:           "修改订单"
+      deleteorder:           "删除订单"
+      createcomment:         "发表评论"
+      viewcomment:           "查看评论"
+      changelanguage:        "切换语言"
+    helpregister:
+      title:         "注册"
+      line1:         "首先，点击页面上方导航栏里的注册链接，跳转到注册页面。"
+      line2:         "填写相关的注册信息，并点击“注册”按钮。"
+      line3:         "注册成功，系统会自动登录并提示注册成功的信息。"
+      back:          "返回"
+    helplogin:
+      title:         "登录"
+      line1:         "首先，点击页面上方导航栏里的登录链接，跳转到登录页面。"
+      line2:         "填写相应的账号密码，并点击“登录”按钮。"
+      line3:         "登录成功，系统会自动跳转回之前想要去的页面。"
+      back:          "返回"
+    helpsearchbykeyword:
+      title:         "关键字搜索"
+      line1:         "首先，在搜索框中输入书籍的名字/作者/出版社/关键词，并按下回车键。"
+      line2:         "系统将列出搜索到的所有结果。"
+      line3:         "若搜索不到相关结果，系统将给出相应提示。"
+      back:          "返回"
+    helpsearchbytype:
+      title:         "分类搜索"
+      line1:         "根据需求，点击页面右侧提供的分类索引。"
+      line2:         "系统将列出该类别下的所有书籍。"
+      line3:         "若暂无该类别的书籍，系统将给出相应的提示。"
+      back:          "返回"
+    helpaddtocart:
+      title:         "添加商品"
+      line1:         "首先，进入商品的详细信息页面。"
+      line2:         "点击商品旁的“添加至购物车”按钮。"
+      line3:         "添加成功，购物车中增加了该商品。"
+      back:          "返回"
+    helpdeletefromcart:
+      title:         "删除商品"
+      line1:         "在购物车中，点击商品旁的“删除”按钮。"
+      line2:         "删除成功，购物车中该商品被删去。"
+      back:          "返回"
+    helpclearcart:
+      title:         "清空购物车"
+      line1:         "在购物车中，点击“清空”按钮。"
+      line2:         "清空成功，购物车中的商品被清空。"
+      back:          "返回"
+    helpcheckout:
+      title:         "结账买单"
+      line1:         "在购物车中，点击“结账买单”按钮。"
+      line2:         "系统跳转至填写订单信息页面。"
+      line3:         "填写相关的信息并点击“提交订单”按钮。"
+      line4:         "提交订单成功，系统自动跳转至该订单的详细信息页面。"
+      back:          "返回"
+    helpvieworder:
+      title:         "查看订单"
+      line1:         "首先，点击页面上方导航栏里的“订单”链接，跳转到订单页面。"
+      line2:         "选择其中一个订单，进入订单详细信息页面。"
+      line3:         "在订单详细信息页面，即可详细了解该订单。"
+      back:          "返回"
+    helpchangeorder:
+      title:         "修改订单"
+      line1:         "首先，点击页面上方导航栏里的“我的订单”链接，跳转到订单页面。"
+      line2:         "点击订单旁的“修改”按钮，系统跳转至订单编辑页面。"
+      line3:         "修改相关信息。"
+      line4:         "点击“更新”按钮，系统跳转至该订单的详细信息页面。"
+      back:          "返回"
+    helpdeleteorder:
+      title:         "删除订单"
+      line1:         "首先，点击页面上方导航栏里的“我的订单”链接，跳转到订单页面。"
+      line2:         "点击订单旁的“删除”按钮。"
+      line3:         "系统弹出对话框，询问是否确定删除该订单。"
+      line4:         "点击“确定”按钮。"
+      line5:         "系统刷新订单页面。"
+      back:          "返回"
+    helpcreatecomment:
+      title:         "发表评论"
+      line1:         "首先，进入商品的详细信息页面。"
+      line2:         "在页面下方的评论框中填写自己对该书籍的看法。"
+      line3:         "点击“评论”按钮，即可成功评论。"
+      back:          "返回"
+    helpviewcomment:
+      title:         "查看评论"
+      line1:         "首先，进入商品的详细信息页面。"
+      line2:         "在页面下方的评论区域即可查看该书籍相关的评论。"
+      back:          "返回"
+    helpchangelanguage:
+      title:         "切换语言"
+      line1:         "在页面右上角选择语言即可。"
+      line2:         "系统会刷新当前页面。"
+      back:          "返回"
+
   number:
     currency:
       format:
@@ -138,73 +356,7 @@ ch:
       pay_type:    "支付方式"
       pay_prompt_html:  "请选择支付方式"
       submit:      "提交订单"
-    edit:
-      title:       "编辑订单"
-      legend:      "编辑你的订单"
-      show:        "显示"
-      back:        "返回"
-    index:
-      title:        "订单列表"
-      name:         "姓名"
-      address:      "地址"
-      email:        "Email"
-      pay_type:     "支付方式"
-      ship:         "发货"
-      show:         "显示"
-      edit:         "编辑"
-      destroy:      "删除"
-      confirm:      "你确定删除？"
-      neworder:     "新建订单"
-    ship:
-      title:        "E-mail 已经发送给顾客。"
-      back:         "返回"
-    show:
-      name:         "姓名"
-      address:      "地址"
-      email:        "Email"
-      pay_type:     "支付方式"
-      ship:         "发货"
-      items:        "项"
-      quantity:     "数量"
-      title:        "书名"
-      price:        "价格"
-      back:         "返回"
-      edit:         "编辑"
-      yes:          "是"
-      no:           "否"
       
-  products:
-    edit:
-      title:        "编辑产品信息" 
-      show:         "显示"
-      back:         "返回"
-    index:
-      title:        "商品列表"     
-      show:         "显示"
-      edit:         "编辑"
-      destroy:      "删除"
-      confirm:      "你确定删除？"
-      newproduct:   "添加商品" 
-    new:
-      title:        "添加商品"
-      back:         "返回"
-    show:
-      author:       "作者"
-      publisher:    "出版社"
-      price:        "价格"
-      category:     "分类"
-      description:  "描述"
-      comment:      "评论"
-      comment_action: "写评论"
-      edit:          "编辑"
-      back:          "返回"
-      add_html:      "加入购物车"
-  
-  comments:
-    comment:
-      delete:      "删除"
-      confirm:     "你确定删除？"
-       
   errors:
     template:
       body:      "以下方面有错误"
