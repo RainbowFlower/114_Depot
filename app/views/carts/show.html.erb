@@ -10,8 +10,4 @@
 
 <br />
 
-<% if session[:admin] %>
-	<%= link_to t('.edit'), edit_cart_path(@cart) %> |
-<% end %>
-
 <%= link_to t('.back'), request.referer %>
