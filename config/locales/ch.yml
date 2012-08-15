@@ -127,7 +127,7 @@ ch:
         separator: "."
         delimiter: "，"
         format: "%u%n"
-        
+       
   orders:
     new:
       legend: "请输入相关细节"
@@ -345,17 +345,6 @@ ch:
         separator: "."
         delimiter: "，"
         format:    "%u%n"
-        
-  orders:
-    new:
-      legend:    "请输入相关细节"
-    form:
-      name:        "姓名"
-      address_html:     "地址"
-      email:       "E-mail"
-      pay_type:    "支付方式"
-      pay_prompt_html:  "请选择支付方式"
-      submit:      "提交订单"
       
   errors:
     template:
