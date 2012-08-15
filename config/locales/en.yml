@@ -10,12 +10,24 @@ en:
       Ccategory: "Ccategory"
       newpcategory:  "New Pcategory"
       newccategory:  "New Ccategory"
+    new:
+      title:   "New pcategory"
+      back:    "Back"
+    form:
+      create:  "Create"
     show:
       add_html: "Add to Cart"
   
   ccategories:
+    new:
+      title:   "New ccategory"
+      back:    "Back"
     show:
       add_html: "Add to Cart"
+    form:
+      hint:    "Select a pcategory"
+      create:  "Create"
+      type:    "Classification"
       
   admin:
     index:
