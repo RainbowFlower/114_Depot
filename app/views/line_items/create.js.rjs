@@ -1,3 +1,7 @@
 page.select("#notice").each { |notice| notice.hide }
 
+<<<<<<< HEAD
 page.replace_html('cart' , render(@cart))
+=======
+page.replace_html('cart' , render(@cart))
+>>>>>>> 43107ae91ef47319b30e57e681574aaf542db6f7

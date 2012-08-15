@@ -1,7 +1,11 @@
 <h1>Listing users</h1>
 
 <% if notice %>
-	<p id="notice"><%= notice %></p>
+	<script type="text/javascript">
+  		$j(document).ready(function(){
+  			alertNotice("info", "<%= notice %>", 2000);
+  		});
+  	</script>
 <% end %>
 
 <table class="table">

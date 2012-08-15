@@ -12,10 +12,17 @@
 	var $j = jQuery.noConflict();
   </script>
   <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag "bootstrap.min" %>
+  <%= javascript_include_tag "bootstrap.min", "alertNotice" %>
   <%= csrf_meta_tag %>
 </head>
 <body id="store">
+  <% if notice %>
+  	<script type="text/javascript">
+  		$j(document).ready(function(){
+  			alertNotice("info", "<%= notice %>", 2000);
+  		});
+  	</script>
+  <% end %>
   <div class="navbar navbar-fixed-top" id="banner">
 	<div class="container">
 	  <div class="row">

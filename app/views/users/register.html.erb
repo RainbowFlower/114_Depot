@@ -15,20 +15,20 @@
 
 
   <fieldset>
-  <legend>Enter Your Details</legend>
+  <legend><%= t('.legend') %></legend>
 
   <div>
-    <%= f.label :name, 'Name:'%>
+    <%= f.label :name, t('.name')%>
     <%= f.text_field :name %>
   </div>
 
   <div>
-    <%= f.label :password, 'Password:' %>
+    <%= f.label :password, t('.password') %>
     <%= f.password_field :password %>
   </div>
 
   <div>
-    <%= f.label :password_confirmation, 'Confirm:' %>
+    <%= f.label :password_confirmation, t('.confirm') %>
     <%= f.password_field :password_confirmation %>
   </div>
 
