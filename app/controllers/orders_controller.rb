@@ -57,7 +57,13 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
-    @order = Order.find(params[:id])
+    order = Order.find(params[:id])
+    if order.ship
+    	flash[:notice] = "Order had shipped, Can't not be changed."
+    	redirect_to order_url
+  	else
+  		@order = order
+		end
   end
 
   # POST /orders
