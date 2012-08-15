@@ -4,6 +4,12 @@
 
 en:
   pcategories:
+    index:
+      title:   "Type Categories"
+      Pcategory: "Pcategory"
+      Ccategory: "Ccategory"
+      newpcategory:  "New Pcategory"
+      newccategory:  "New Ccategory"
     show:
       add_html: "Add to Cart"
   
@@ -30,7 +36,7 @@ en:
       title:          "Pragmatic Bookshelfs"
       home:           "Home"
       products:       "Products"
-      cart:           "Carts"
+      cart:           "Cart"
       orders:         "Orders"
       help:           "Helps"
       users:          "Users"
@@ -44,7 +50,7 @@ en:
       title:          "Pragmatic Bookshelfs"
       home:           "Home"
       products:       "Products"
-      cart:           "Carts"
+      cart:           "Cart"
       orders:         "Orders"
       help:           "Helps"
       users:          "Users"
@@ -57,7 +63,7 @@ en:
     
   store:
     index:
-      title_html: "Your Pragmatic Catalog"
+      title_html: "Book Catalog"
       add_html: "Add to Cart"
     
   search:
@@ -108,7 +114,7 @@ en:
       name:        "UserName"
       password:    "Password"
       confirm:     "Confirm"
-      create:        "Create User"   
+      create:        "Save"   
     edit:
       title:       "Edit User"
       show:          "Show"
@@ -190,7 +196,8 @@ en:
       address:      "Address"
       email:        "Email"
       pay_type:     "Pay_type"
-      ship:         "shipped"
+      ship:         "Shipped"
+      Ship:         "Ship"
       items:        "Items"
       quantity:     "Quantity"
       title:        "Title"
@@ -245,6 +252,7 @@ en:
       confirm:     "Are you sure?"
     form:
       comment:     "Comment"
+      hint:        "Add a comment..."
         
   thanks: "Thank you for your order" 
   

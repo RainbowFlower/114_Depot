@@ -10,16 +10,6 @@
 	<% end %>
 </p>
 
-<p>
-  <b><%= t('.hash_password') %></b>
-  <%= @user.hashed_password %>
-</p>
-
-<p>
-  <b>Salt:</b>
-  <%= @user.salt %>
-</p>
-
 
 <%= link_to t('.edit'), edit_user_path(@user) %> | 
 <%= link_to t('.back'), request.referer %>

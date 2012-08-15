@@ -1,16 +1,14 @@
-<h1>Listing categories</h1>
+<h1><%= t('.title') %></h1>
 
 <table>
   <tr>
-    <td><b>Pcategory</b></td>
-    <td>            </td>
-    <td><b>Ccategory</b></td>
+    <th><%= t('.Pcategory') %></th>
+    <th><%= t('.Ccategory')%></th>
   </tr>
 
 <% @pcategories.each do |pcategory| %>
   <tr>
     <td><%= link_to pcategory.title, edit_pcategory_path(pcategory) %></td>
-    <td>            </td>
     <td>
     <% pcategory.getchildcategories.each do |category| %>
         <%= link_to category.title, edit_ccategory_path(category) %><br />
@@ -32,5 +30,5 @@
 
 <br />
 
-<%= link_to 'New Pcategory', new_pcategory_path %> | 
-<%= link_to 'New Ccategory', new_ccategory_path %>
+<%= link_to t('.newpcategory'), new_pcategory_path %> | 
+<%= link_to t('.newccategory'), new_ccategory_path %>
