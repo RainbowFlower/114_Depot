@@ -41,4 +41,4 @@
 <% unless @order.ship %>
 	<%= link_to t('.edit'), edit_order_path(@order) %> |
 <% end %>
-<%= link_to t('.back'), request.referer %>
+<%= link_to t('.back'), orders_path %>
