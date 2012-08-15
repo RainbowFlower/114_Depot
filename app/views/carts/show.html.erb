@@ -14,4 +14,4 @@
 	<%= link_to t('.edit'), edit_cart_path(@cart) %> |
 <% end %>
 
-<%= link_to t('.back'), carts_path %>
+<%= link_to t('.back'), request.referer %>
