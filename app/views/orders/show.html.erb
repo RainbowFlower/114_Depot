@@ -21,7 +21,7 @@
 	<b><%= t('.ship')%>:</b>
 	<%= (@order.ship)?"Yes":"No" %>
 	<% if !@order.ship and session[:admin] %>
-		<span class="offset1"><%= link_to t('.ship'), ship_order_path, :confirm => 'Are you sure?', :class => 'btn btn-primary' %></span>
+		<span class="offset1"><%= link_to t('.Ship'), ship_order_path, :confirm => 'Are you sure?', :class => 'btn btn-primary' %></span>
 	<% end %>
 </p>
 <div>
