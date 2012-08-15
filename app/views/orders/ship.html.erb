@@ -1,2 +1,30 @@
 <h3><%= t('.title')%></h3>
+
+<div class="shipped-letter">
+	<h3>Dear <b><%= @order.name %></b></h3>
+	<p>We're The Pragmatic Store.</p>
+	<p>This is just to let you know that we've shipped your recent order:</p>
+
+	<table cellpadding="10" class="">
+		<tr>
+		    <td><b>Title</b></td>
+			<td><b>Quantity</b></td>	
+			<td><b>Price</b></td>
+		</tr>	
+		  <% (@order.line_items).each do |line_item| %>
+		  <tr>
+		    <td><%= line_item.product.title %></td>
+		    <td align="right"><%= line_item.quantity %></td>      
+		    <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
+		  </tr>
+		  <% end %>
+		  <tr class="total_line">
+		    <td colspan="2"><b>Total</b></td>
+		    <td class="total_cell"><b><%= number_to_currency(@order.total_price) %></b></td>
+		  </tr>
+	</table>
+
+	<p>You selected to pay with <b><%= @order.pay_type %></b>.</p>
+	<p>See you next time.</p>
+</div>
 <%= link_to t('.back'), request.referer %>

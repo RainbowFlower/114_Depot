@@ -107,7 +107,7 @@
 	  <div class="carts">
 		<% if @cart %>
 			<a id="cart-holder" href="<%= cart_path(@cart) %>">
-				<i class="icon-shopping-cart icon-white"></i> Cart
+				<i class="icon-shopping-cart icon-white"></i> <%= t('.cart')%>
 			</a>
 			<div class="cart-content" id="cart">
 				<%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%>
