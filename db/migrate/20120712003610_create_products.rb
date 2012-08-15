@@ -6,7 +6,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :image_url
       t.decimal :price
       t.string :author
-      t.integer :ISBN
+      t.string :ISBN
       t.string :category_title
       t.string :publisher
 
