@@ -5,6 +5,7 @@ class LineItemsController < ApplicationController
   # GET /line_items.xml
   def index
     @line_items = LineItem.all
+	@cart = current_cart
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,6 +17,7 @@ class LineItemsController < ApplicationController
   # GET /line_items/1.xml
   def show
     @line_item = LineItem.find(params[:id])
+	@cart = current_cart
 
     respond_to do |format|
       format.html # show.html.erb
@@ -94,14 +96,15 @@ class LineItemsController < ApplicationController
   def quantity
 	@line_item = LineItem.find(params[:id])
 	@line_item.quantity = params[:quantity]
+	@cart = current_cart
 	
 	respond_to do |format|
 		if 	@line_item.save
 			format.html { redirect_to(line_items_url) }
-			format.js {@cart = current_cart}
+			format.js {@status = "success"}
 			format.xml  { head :ok }
 		else
-			format.js {@cart = current_cart}
+			format.js {@status = "error"}
 		end
 	end
   end

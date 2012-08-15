@@ -5,121 +5,339 @@
 en:
   pcategories:
     show:
-      add_html:   "Add to Cart"
+      add_html: "Add to Cart"
   
   ccategories:
     show:
-      add_html:   "Add to Cart"
+      add_html: "Add to Cart"
       
   admin:
     index:
-      welcome:          "Welcome,"
-      edit:             "Edit"
-      name:             "Name"
-      address_html:     "Address"
-      email:            "E-mail"
-      pay_type:         "Pay_type"
-      more_details:     "More details"
-      show:             "Show"
-      its:              "It's"
-      we_have:          "We have "
-      order:            "order"
+      welcome: "Welcome,"
+      edit: "Edit"
+      name: "Name"
+      address_html: "Address"
+      email: "E-mail"
+      pay_type: "Pay_type"
+      more_details: "More details"
+      show: "Show"
+      its: "It's"
+      we_have: "We have "
+      order: "order"
   
   layouts:
-    application:   
-      title:          "Pragmatic Bookshelfs"
-      home:           "Home"
-      products:       "Products"
-      cart:           "Carts"
-      orders:         "Orders"
-      help:           "Helps"
-      users:          "Users"
-      profile:        "Profile"
-      login:          "Login"
-      register:       "Register"
-      logout:         "Logout"
-      searchhint:     "title/author/publisher"
+    application:
+      title: "Pragmatic Bookshelfs"
+      home: "Home"
+      products: "Products"
+      cart: "Carts"
+      orders: "Orders"
+      help: "Helps"
+      users: "Users"
+      profile: "Profile"
+      login: "Login"
+      register: "Register"
+      logout: "Logout"
+      searchhint: "title/author/publisher"
     store:
-      title:          "Pragmatic Bookshelfs"
-      home:           "Home"
-      products:       "Products"
-      cart:           "Carts"
-      orders:         "Orders"
-      help:           "Helps"
-      users:          "Users"
-      profile:        "Profile"
-      login:          "Login"
-      register:       "Register"
-      logout:         "Logout"
-      searchhint:     "title/author/publisher"
+      title: "Pragmatic Bookshelfs"
+      home: "Home"
+      products: "Products"
+      cart: "Carts"
+      orders: "Orders"
+      help: "Helps"
+      users: "Users"
+      profile: "Profile"
+      login: "Login"
+      register: "Register"
+      logout: "Logout"
+      searchhint: "title/author/publisher"
 
     
   store:
     index:
-      title_html:  "Your Pragmatic Catalog"
-      add_html:         "Add to Cart"
+      title_html: "Your Pragmatic Catalog"
+      add_html: "Add to Cart"
     
   search:
     index:
-      search:       "Search"
-      add:           "Add to Cart"
+      search: "Search"
+      add: "Add to Cart"
       
   carts:
     cart:
-      title:     "Your Cart"
-      empty:     "Empty cart"
-      confirm:   "Are you sure?"
-      checkout:  "Checkout"
+      title: "Your Cart"
+      empty: "Empty cart"
+      confirm: "Are you sure?"
+      checkout: "Checkout"
     edit:
-      title:     "Edit carts"
-      show:      "Show"
-      back:      "Back"
+      title: "Edit carts"
+      show: "Show"
+      back: "Back"
     index:
-      title:     "Listing carts"
-      cartid:    "Cart_ID"   
-      updatetime: "Updatetime" 
-      show:       "Show"
-      edit:       "Edit" 
-      destroy:    "Destroy"
-      confirm:    "Are you sure?"
-      newcart:    "New cart"
+      title: "Listing carts"
+      cartid: "Cart_ID"
+      updatetime: "Updatetime"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      confirm: "Are you sure?"
+      newcart: "New cart"
     new:
-      title:      "New cart"
-      back:        "Back"
+      title: "New cart"
+      back: "Back"
     show:
-      title:       "Your cart"
-      total:       "Total"
-      empty:       "Empty cart"
-      confirm:     "Are you sure?"
-      edit:        "Edit"
-      back:        "Back"
+      title: "Your cart"
+      total: "Total"
+      empty: "Empty cart"
+      confirm: "Are you sure?"
+      edit: "Edit"
+      back: "Back"
     advanced_cart:
-      title:       "Title"
-      quantity:    "Quantity"
-      prices:      "Price"
-      total:       "Total"
+      title: "Title"
+      quantity: "Quantity"
+      prices: "Price"
+      total: "Total"
 
   users:
     form:
-      legend:      "Enter User Details" 
-      name:        "UserName"
-      password:    "Password"
-      confirm:     "Confirm"
+      legend: "Enter User Details"
+      name: "UserName"
+      password: "Password"
+      confirm: "Confirm"
     register:
-      legend:      "Enter Your Details"  
-      name:        "UserName"
-      password:    "Password"
-      confirm:     "Confirm"
-      register:    "Register"
+      legend: "Enter Your Details"
+      name: "UserName"
+      password: "Password"
+      confirm: "Confirm"
+      register: "Register"
       
   sessions:
     new:
-      title:       "Please Login"
-      name:        "Name"
-      password:     "Password"
-      login:       "Login"
+      title: "Please Login"
+      name: "Name"
+      password: "Password"
+      login: "Login"
       
             
+  number:
+    currency:
+      format:
+        unit: "$"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%u%n"
+  
+  orders:
+    new:
+      legend: "Please Enter your Details"
+    form:
+      name: "Name"
+      address_html: "Address"
+      email: "E-mail"
+      pay_type: "Pay with"
+      pay_prompt_html: "Select a payment method"
+      submit: "Place Order"
+    edit:
+      title: "Edit order"
+      legend: "Edit your order"
+      show: "Show"
+      back: "Back"
+    index:
+      title: "Listing orders"
+      name: "Name"
+      address: "Address"
+      email: "Email"
+      pay_type: "Pay_type"
+      ship: "Shipped"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      confirm: "Are you sure?"
+      neworder: "New order"
+    ship:
+      title: "E-mail has been sent to customer."
+      back: "Back"
+    show:
+      name: "Name"
+      address: "Address"
+      email: "Email"
+      pay_type: "Pay_type"
+      ship: "ship"
+      items: "Items"
+      quantity: "Quantity"
+      title: "Title"
+      price: "Price"
+      back: "Back"
+      edit: "Edit"
+      yes: "Yes"
+      no: "No"
+
+  products:
+    edit:
+      title: "Edit product"
+      show: "Show"
+      back: "Back"
+    index:
+      title: "Listing products"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      confirm: "Are you sure?"
+      newproduct: "New product"
+    new:
+      title: "New product"
+      back: "Back"
+    show:
+      author: "Author"
+      publisher: "Publisher"
+      price: "Price"
+      category: "Category"
+      description: "Description"
+      comment: "Comments"
+      comment_action: "Leave a comment"
+      edit: "Edit"
+      back: "Back"
+      add_html: "Add to Cart"
+      
+  comments:
+    comment:
+      delete: "delete"
+      confirm: "Are you sure?"
+        
+  errors:
+    template:
+      body: "There are problems with the following fields"
+      header:
+        one: "1 error prohibited this order from being saved"
+        other: "%{count} errores prohibited this order from being saved"
+  
+  activerecord:
+    models:
+      order: "order"
+    attributes:
+      order:
+        address: "Address"
+        name: "Name"
+        email: "E-mail"
+        pay_type: "pay-type"
+    errors:
+      messages:
+        inclusion: "is not include in the list"
+        blank: "can't be blank"
+        
+  thanks: "Thank you for your order" 
+  
+  helps:
+    index: 
+      helpcenter:            "Help Center"	 
+      prompt:                "The following links may help you resolve the related issues:"
+      usermanagement:        "User Management"
+      findproduct:           "Find Product"
+      cart:                  "Cart"
+      ordermanagement:       "Order Management"
+      commentmanagement:     "Comment Management"
+      internationalization:  "Internationalization"
+      register:              "Register"
+      login:                 "Log In"
+      searchbykeyword:       "Search by Key Word"
+      searchbytype:          "Search by Type"
+      addtocart:             "Add to Cart"
+      deletefromcart:        "Delete from Cart"
+      clearcart:             "Clear Cart"
+      checkout:              "Check Out"
+      vieworder:             "View Order"
+      changeorder:           "Change Order"
+      deleteorder:           "Delete Order"
+      createcomment:         "Create Comment"
+      viewcomment:           "View Comment"
+      changelanguage:        "Change Language"
+    helpregister:
+      title:         "Register"
+      line1:         "First, click on the register link which is at the top to jump to the registration page."
+      line2:         "Fill in the registration information and click 'Register' button."
+      line3:         "The registration is successful. The system will automatically log in and give you a message about successful registration."
+      back:          "Back"
+    helplogin:
+      title:         "Log In"
+      line1:         "First, click on the login link which is at the top to jump to the login page."
+      line2:         "Fill in the appropriate account and password, then click 'Login' button."
+      line3:         "The login is successful. The system will automatically jump to the page which you want to go to before."
+      back:          "Back"
+    helpsearchbykeyword:
+      title:         "Search by Key Word"
+      line1:         "First of all, in the search box, enter the name of the books / author / publisher / keywords, and press Enter."
+      line2:         "The system will list the search results."
+      line3:         "If there is no result, the system will give the corresponding prompt."
+      back:          "Back"
+    helpsearchbytype:
+      title:         "Search by Type"
+      line1:         "Click on the classification index which is at the right side of the page."
+      line2:         "The system will list all the books in that category."
+      line3:         "If there is no result, the system will give the corresponding prompt."
+      back:          "Back"
+    helpaddtocart:
+      title:         "Add to Cart"
+      line1:         "First, enter the product details page."
+      line2:         "Click on the 'Add to Cart' button next to the product."
+      line3:         "Successfully add the product to the shopping cart."
+      back:          "Back"
+    helpdeletefromcart:
+      title:         "Delete from Cart"
+      line1:         "In the cart, click on the 'Delete' button next to the product."
+      line2:         "Successfully delete the product from the shopping cart."
+      back:          "Back"
+    helpclearcart:
+      title:         "Clear Cart"
+      line1:         "In the cart, click on the 'Clear' button."
+      line2:         "Successfully clear all the products of the shopping cart."
+      back:          "Back"
+    helpcheckout:
+      title:         "Check Out"
+      line1:         "In the cart, click on the 'Check Out' button."
+      line2:         "The system will jump to the order information filling page."
+      line3:         "Fill in the relevant information and click on the 'Place Order' button."
+      line4:         "Successfully submit an order. And the system automatically jump to the order details page."
+      back:          "Back"
+    helpvieworder:
+      title:         "View Order"
+      line1:         "First, click on the 'Orders' link which is at the navigation bar to jump to the order page."
+      line2:         "Select one of the orders into the order details page."
+      line3:         "In the order details page, you can learn more about the order."
+      back:          "Back"
+    helpchangeorder:
+      title:         "Change Order"
+      line1:         "First, click on the 'Orders' link which is at the navigation bar to jump to the order page."
+      line2:         "Click on the 'Edit' button next to the order. The system jumps to the order edit page."
+      line3:         "Modify the information."
+      line4:         "Click the 'Update' button. The system jumps to the order details page."
+      back:          "Back"
+    helpdeleteorder:
+      title:         "Delete Order"
+      line1:         "First, click on the 'Orders' link which is at the navigation bar to jump to the order page."
+      line2:         "Click on the 'Delete' button next to the order."
+      line3:         "The system pop-up a dialog box asking 'Are you sure to delete the order?'."
+      line4:         "Click the 'OK' button."
+      line5:         "The system refresh the order page."
+      back:          "Back"
+    helpcreatecomment:
+      title:         "Create Comment"
+      line1:         "First, enter the product details page."
+      line2:         "In the comment box at the bottom of the page, fill in your own views of the book."
+      line3:         "Click on the 'comments' button and you can successfully comment."
+      back:          "Back"
+    helpviewcomment:
+      title:         "View Comment"
+      line1:         "First, enter the product details page."
+      line2:         "In the comments area at the bottom of the page, you can see the comments related to the book."
+      back:          "Back"
+    helpchangelanguage:
+      title:         "Change Language"
+      line1:         "At the top right corner of the page, select the language."
+      line2:         "The system will refresh the current page."
+      back:          "Back"
+
   number:
     currency:
       format:
@@ -129,83 +347,6 @@ en:
         delimiter: ","
         format:    "%u%n"
   
-  orders:
-    new:
-      legend:    "Please Enter your Details"
-    form:
-      name:        "Name"
-      address_html:     "Address"
-      email:       "E-mail"
-      pay_type:    "Pay with"
-      pay_prompt_html:  "Select a payment method"
-      submit:      "Place Order"
-    edit:
-      title:       "Edit order"
-      legend:      "Edit your order"
-      show:        "Show"
-      back:        "Back"
-    index:
-      title:        "Listing orders"
-      name:         "Name"
-      address:      "Address"
-      email:        "Email"
-      pay_type:     "Pay_type"
-      ship:         "Shipped"
-      show:         "Show"
-      edit:         "Edit"
-      destroy:      "Destroy"
-      confirm:      "Are you sure?"
-      neworder:     "New order"
-    ship:
-      title:        "E-mail has been sent to customer."
-      back:         "Back"
-    show:
-      name:         "Name"
-      address:      "Address"
-      email:        "Email"
-      pay_type:     "Pay_type"
-      ship:         "ship"
-      items:        "Items"
-      quantity:     "Quantity"
-      title:        "Title"
-      price:        "Price"
-      back:         "Back"
-      edit:         "Edit"
-      yes:          "Yes"
-      no:           "No"
-
-  products:
-    edit:
-      title:        "Edit product" 
-      show:         "Show"
-      back:         "Back"
-    index:
-      title:         "Listing products"  
-      show:         "Show"
-      edit:         "Edit"
-      destroy:      "Destroy"
-      confirm:      "Are you sure?"
-      newproduct:   "New product"
-    new:
-      title:        "New product"
-      back:         "Back"
-    show:
-      author:       "Author"
-      publisher:    "Publisher"
-      price:        "Price"
-      category:     "Category"
-      description:  "Description"
-      comment:      "Comments"
-      comment_action: "Leave a comment"
-      edit:          "Edit"
-      back:          "Back"
-      add_html:      "Add to Cart"
-      
-  comments:
-    comment:
-      delete:      "delete"
-      confirm:     "Are you sure?"
-        
   errors:
     template:
       body:      "There are problems with the following fields"

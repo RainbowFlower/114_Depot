@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   # GET /orders.xml
   def index
   	@user = User.find_by_id(session[:user_id])
+	@cart = current_cart
   	if @user.admin == true
 	    @orders = Order.paginate :page => params[:page], :order => 'created_at desc',
   	    :per_page => 10

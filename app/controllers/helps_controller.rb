@@ -6,6 +6,7 @@ class HelpsController < ApplicationController
   # GET /helps.xml
   def index
     @helps = Help.find :all, :order => "tag ASC"
+	@cart = current_cart
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,6 +18,7 @@ class HelpsController < ApplicationController
   # GET /helps/1.xml
   def show
     @help = Help.find(params[:id])
+	@cart = current_cart
 
     respond_to do |format|
       format.html # show.html.erb
@@ -85,45 +87,59 @@ class HelpsController < ApplicationController
   end
   
   def helpregister
+	@cart = current_cart
   end
   
   def helplogin
+	@cart = current_cart
   end
   
   def helpsearchbykeyword
+	@cart = current_cart
   end
   
   def helpsearchbytype
+	@cart = current_cart
   end
   
   def helpaddtocart
+	@cart = current_cart
   end
   
   def helpdeletefromcart
+	@cart = current_cart
   end
   
   def helpclearcart
+	@cart = current_cart
   end
   
   def helpcheckout
+	@cart = current_cart
   end
   
   def helpvieworder
+	@cart = current_cart
   end
   
   def helpchangeorder
+	@cart = current_cart
   end
   
   def helpdeleteorder
+	@cart = current_cart
   end
   
   def helpcreatecomment
+	@cart = current_cart
   end
   
   def helpviewcomment
+	@cart = current_cart
   end
   
   def helpchangelanguage
+	@cart = current_cart
   end
   
 end

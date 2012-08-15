@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   # GET /users.xml
   def index
     @users = User.order(:admin)
+		@cart = current_cart
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,15 +22,12 @@ class UsersController < ApplicationController
   	else
   		@user = User.find(session[:user_id])
 		end
+		@cart = current_cart
 	  
 	  respond_to do |format|
-	  	if @user
-				format.html # show.html.erb
-				format.xml  { render :xml => @user }
-			else
-				format.html { redirect_to 404 }
-			end
-	  end
+			format.html # show.html.erb
+			format.xml  { render :xml => @user }
+		end
   end
 
   # GET /users/new
@@ -68,7 +66,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     
-
     respond_to do |format|
       if @user.save
       	session[:user_id] = @user.id
@@ -110,11 +107,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if !@user.admin
 		  begin
-				  @user.destroy
-				  flash[:notice] = "User #{@user.name} deleted"
+				@user.destroy
+				flash[:notice] = "User #{@user.name} deleted"
 
-				  rescue Exception => e
-				    flash[:notice] = e.message
+			  rescue Exception => e
+			    flash[:notice] = e.message
 	      end
 	  else
     	flash[:notice] = "You can't delete admin #{@user.name} !"
@@ -125,4 +122,5 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
 end

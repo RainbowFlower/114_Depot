@@ -6,6 +6,7 @@ class PcategoriesController < ApplicationController
   # GET /pcategories.xml
   def index
     @pcategories = Pcategory.all
+	@cart = current_cart
 
     respond_to do |format|
       format.html # index.html.erb
