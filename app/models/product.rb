@@ -28,13 +28,18 @@ class Product < ActiveRecord::Base
 
   # search stuff
   def self.search(search)
+    results = []
     if search
-      search_condition = "%#{search}%"
-      find(:all, :conditions => ['title LIKE ? OR category_title LIKE ? OR author LIKE ? OR 
-           publisher LIKE ?', search_condition, search_condition, search_condition,
-      search_condition])
+      search.split(' ').each do |keyword|
+        search_condition = "%#{keyword}%"
+        results = results + find(:all, :conditions => ['title LIKE ? OR 
+                      category_title LIKE ? OR author LIKE ? OR 
+                      publisher LIKE ?', search_condition, 
+                      search_condition, search_condition, search_condition])
+      end
     else
-      find(:all)
+      results = results + find(:all)
     end
+    results.uniq
   end
 end
