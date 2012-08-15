@@ -7,12 +7,10 @@ class CommentsController < ApplicationController
 		respond_to do |format|
 			if @comment.save
 				format.html { redirect_to product_path(@product) }
-				format.js		{ comment = @comment }
+				format.js		{ @product }
 				format.xml  { render :xml => @comment, :status => :created, :location => @comment }
 			end
 		end
-		#@comment.save
-		#redirect_to product_path(@product)
   end
   
   def destroy
@@ -22,10 +20,9 @@ class CommentsController < ApplicationController
     
     respond_to do |format|
       format.html { redirect_to product_path(@product) }
+      format.js		{ @product }
       format.xml  { head :ok }
     end
-    
-    #redirect_to product_path(@product)
   end
   
 end

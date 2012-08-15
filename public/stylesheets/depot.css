@@ -272,9 +272,15 @@
 	margin: 20px 0;
 }
 
+
+
 .field textarea {
 	width: 80%;
 	margin-top: 10px;
+}
+
+.new_comment .field textarea {
+	width: 99%;
 }
 
 .field input {

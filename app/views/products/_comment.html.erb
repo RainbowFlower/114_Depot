@@ -1,0 +1,6 @@
+<h3><%= @product.comments.count %> <%= t('.comment')%></h3>
+	<%= render @product.comments %>
+	<br />
+	<% if session[:user_id] %>
+		<%= render "comments/form" %>
+<% end %>
