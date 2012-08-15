@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       if user.admin == true
       	session[:admin] = user.admin
-      	redirect_to admin_url, :notice => "session[:admin]"
+      	redirect_to admin_url, :notice => "Admin login success"
       else
       	session[:admin] = false
       	redirect_to customer_url

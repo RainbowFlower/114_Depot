@@ -1,6 +1,10 @@
 <div class="depot_form">
   <% if flash[:alert] %>
-    <p id="notice"><%= flash[:alert] %></p>
+	<script type="text/javascript">
+  		$j(document).ready(function(){
+  			alertNotice("error", "<%= alert %>", 3000);
+  		});
+  	</script>
   <% end %>
   
   <%= form_tag do %>

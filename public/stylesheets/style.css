@@ -210,3 +210,17 @@
   color: black;
 }
 
+.noticeBox {
+	position: fixed;
+	top: 40%;
+	min-width: 300px;
+	z-index: 1024;
+	text-align: center;
+	box-shadow: 0 0 15px #CCC;
+	-moz-box-shadow: 0 0 15px #CCC;
+	-webkit-box-shadow: 0 0 15px #CCC;
+}
+
+.noticeContent {
+	font-weight: bold;
+}
