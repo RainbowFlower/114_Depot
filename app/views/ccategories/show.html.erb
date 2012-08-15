@@ -1,6 +1,4 @@
 <!--
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Title:</b>
   <%= @ccategory.title %>
@@ -29,3 +27,5 @@
       </div>
     </div>
 <% end %>
+
+<%= link_to t('.back'), request.referer %>

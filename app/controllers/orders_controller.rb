@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
   # GET /orders/1.xml
   def show
     @order = Order.find(params[:id])
+    @cart = current_cart
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	skip_before_filter :authorize, :only => [:register, :create]
+	before_filter	:admin_authorize, :only => [:index, :destroy, :new]
 	
   # GET /users
   # GET /users.xml
@@ -15,12 +16,20 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.xml
   def show
-    @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @user }
-    end
+  	if session[:admin]
+	  	@user = User.find(params[:id])
+  	else
+  		@user = User.find(session[:user_id])
+		end
+	  
+	  respond_to do |format|
+	  	if @user
+				format.html # show.html.erb
+				format.xml  { render :xml => @user }
+			else
+				format.html { redirect_to 404 }
+			end
+	  end
   end
 
   # GET /users/new
@@ -47,7 +56,11 @@ class UsersController < ApplicationController
   
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    if session[:admin]
+	  	@user = User.find(params[:id])
+  	else
+  		@user = User.find(session[:user_id])
+		end
   end
 
   # POST /users
@@ -81,7 +94,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to(users_url, 
+        format.html { redirect_to(user_url, 
           :notice => "User #{@user.name} was successfully updated.") }
         format.xml  { head :ok }
       else
