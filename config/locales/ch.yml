@@ -10,12 +10,24 @@ ch:
       Ccategory: "子目录"
       newpcategory:  "新建父目录"
       newccategory:  "新建子目录"
+    new:
+      title:   "新建父目录"
+      back:    "返回"
+    form:
+      create:  "创建"
     show:
       add_html: "加入购物车"
       
   ccategories:
+    new:
+      title:   "新建子目录"
+      back:    "返回"
     show:
       add_html: "加入购物车"
+    form:
+      hint:    "选择一个父目录"
+      create:  "创建"
+      type:    "类别"
   
   admin:
     index:
