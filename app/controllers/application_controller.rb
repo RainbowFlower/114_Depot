@@ -28,6 +28,15 @@ class ApplicationController < ActionController::Base
 			end
   	end
   		
+  protected
+    def item_in_cart
+      if params[:id]
+        item = LineItem.find(params[:id])
+        unless item.cart == current_cart
+          redirect_to request.referer, :notice => "can not do this."
+        end
+      end
+    end
   
 	protected
 	def set_i18n_locale_from_params
