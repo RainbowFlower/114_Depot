@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
-  skip_before_filter :authorize, :only => [:create, :destory, :quantity]
-  before_filter :item_in_cart
+  skip_before_filter :authorize
+  before_filter :item_in_cart, :only => [:destory, :quantity]
 
   # GET /line_items
   # GET /line_items.xml
