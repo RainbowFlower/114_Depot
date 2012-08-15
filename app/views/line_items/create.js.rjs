@@ -1,3 +1,5 @@
 page.select("#notice").each { |notice| notice.hide }
 
 page.replace_html('cart' , render(@cart))
+
+page << "alertNotice('success', 'successfully add to cart', 3000);"
