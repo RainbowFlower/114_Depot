@@ -22,9 +22,11 @@
 					<td><%= order.email %></td>
 					<td><%= order.pay_type %></td>
 					<td><%= (order.ship)? "Yes":"NO" %></td>
-					<td><%= link_to t('.show'), order %> |
-					<%= link_to t('.edit'), edit_order_path(order) %> |
-					<%= link_to t('.destroy'), order, :confirm => t('.confirm'), :method => :delete %></td>    
+					<td><%= link_to t('.show'), order %>
+					<% if !order.ship %>
+					 | <%= link_to t('.edit'), edit_order_path(order) %>
+					 | <%= link_to t('.destroy'), order, :confirm => t('.confirm'), :method => :delete %></td>    
+				  <% end %>
 				</tr>
 			<% end %>
 		</tbody>
