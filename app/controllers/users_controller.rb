@@ -108,13 +108,17 @@ class UsersController < ApplicationController
   # DELETE /users/1.xml
   def destroy
     @user = User.find(params[:id])
-    begin
-      @user.destroy
-      flash[:notice] = "User #{@user.name} deleted"
+    if !@user.admin
+		  begin
+				  @user.destroy
+				  flash[:notice] = "User #{@user.name} deleted"
 
-      rescue Exception => e
-        flash[:notice] = e.message
-      end
+				  rescue Exception => e
+				    flash[:notice] = e.message
+	      end
+	  else
+    	flash[:notice] = "You can't delete admin #{@user.name} !"
+    end
 
     respond_to do |format|
       format.html { redirect_to(users_url) }
