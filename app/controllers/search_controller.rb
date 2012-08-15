@@ -4,6 +4,7 @@ class SearchController < ApplicationController
     if params[:search]
       @results = Product.search(params[:search])
     end
+	@cart = current_cart
   end
 
 end

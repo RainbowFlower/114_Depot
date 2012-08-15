@@ -43,6 +43,27 @@ scope '(:locale)' do
     resources :comments
     get :who_bought, :on => :member
   end
+  
+  #User Management
+  match 'helps/helpregister' => 'helps#helpregister'
+  match 'helps/helplogin' => 'helps#helplogin'
+  #Find product
+  match 'helps/helpsearchbykeyword' => 'helps#helpsearchbykeyword'
+  match 'helps/helpsearchbytype' => 'helps#helpsearchbytype'
+  #Cart
+  match 'helps/helpaddtocart' => 'helps#helpaddtocart'
+  match 'helps/helpdeletefromcart' => 'helps#helpdeletefromcart'
+  match 'helps/helpclearcart' => 'helps#helpclearcart'
+  #Order Management
+  match 'helps/helpcheckout' => 'helps#helpcheckout'
+  match 'helps/helpvieworder' => 'helps#helpvieworder'
+  match 'helps/helpchangeorder' => 'helps#helpchangeorder'
+  match 'helps/helpdeleteorder' => 'helps#helpdeleteorder'
+  #Comment Management
+  match 'helps/helpcreatecomment' => 'helps#helpcreatecomment'
+  match 'helps/helpviewcomment' => 'helps#helpviewcomment'
+  #Internationalization
+  match 'helps/helpchangelanguage' => 'helps#helpchangelanguage'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
