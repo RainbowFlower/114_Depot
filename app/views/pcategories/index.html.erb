@@ -2,8 +2,8 @@
 
 <table>
   <tr>
-    <th><%= t('.Pcategory') %></th>
-    <th><%= t('.Ccategory')%></th>
+    <td><b><%= t('.Pcategory') %></b></td>
+    <td><b><%= t('.Ccategory')%></b></td>
   </tr>
 
 <% @pcategories.each do |pcategory| %>
@@ -17,6 +17,16 @@
   </tr>
 <% end %>
 </table>
+<br />
+
+<% if @ccategories.length > 0 %>
+<div>
+  <p><b>Ccategories without pcategories.</b></p>
+  <% @ccategories.each do |ccategory| %>
+    <%= link_to ccategory.title, edit_ccategory_path(ccategory) %><br />
+  <% end %>
+</div>
+<% end %>
 
 <br />
 

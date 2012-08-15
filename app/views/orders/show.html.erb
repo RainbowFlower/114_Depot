@@ -34,7 +34,7 @@
 			<th style="text-align:right"><%= t('.price')%></th>
 			</tr>
 		</thead>
-		<%= render(@order.line_items) %>
+		<%= render :partial => 'line_items/order_item', :collection => @order.line_items, :as => :line_item %>
 	</table>
 </div>
 

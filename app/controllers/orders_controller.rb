@@ -28,7 +28,7 @@ class OrdersController < ApplicationController
     @cart = current_cart
 
     respond_to do |format|
-    	if @order.user_id == session[:user_id]
+    	if session[:admin] or @order.user_id == session[:user_id]
 	      format.html # show.html.erb
 	      format.xml  { render :xml => @order }
       else
