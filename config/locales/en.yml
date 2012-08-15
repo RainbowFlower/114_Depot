@@ -34,7 +34,8 @@ en:
       orders:         "Orders"
       help:           "Helps"
       users:          "Users"
-      profile:        "Profile"
+      category:       "Category"
+      welcome:        "Welcome,"
       login:          "Login"
       register:       "Register"
       logout:         "Logout"
@@ -47,7 +48,8 @@ en:
       orders:         "Orders"
       help:           "Helps"
       users:          "Users"
-      profile:        "Profile"
+      category:       "Category"
+      welcome:        "Welcome,"
       login:          "Login"
       register:       "Register"
       logout:         "Logout"
@@ -70,6 +72,7 @@ en:
       empty:     "Empty cart"
       confirm:   "Are you sure?"
       checkout:  "Checkout"
+      total:     "Total"
     edit:
       title:     "Edit carts"
       show:      "Show"
@@ -93,6 +96,7 @@ en:
       confirm:     "Are you sure?"
       edit:        "Edit"
       back:        "Back"
+      checkout:    "Check Out"
     advanced_cart:
       title:       "Title"
       quantity:    "Quantity"
@@ -105,12 +109,34 @@ en:
       name:        "UserName"
       password:    "Password"
       confirm:     "Confirm"
+      create:        "Create User"   
+    edit:
+      title:       "Edit User"
+      show:          "Show"
+      back:          "Back"
+    index:
+      title:         "Listing users"
+      name:           "Name"
+      group:          "Group"
+      show:           "Show"
+      edit:           "Edit"
+      destroy:        "Delete"
+      new_user:       "New User"
+    new:
+      title:         "New User"
+      back:          "Back"
     register:
       legend:      "Enter Your Details"  
       name:        "UserName"
       password:    "Password"
       confirm:     "Confirm"
       register:    "Register"
+    show:
+      name:        "Name："
+      group:       "Group："
+      hash_password: "Hashed password："
+      edit:         "Edit"
+      back:         "Back"
       
   sessions:
     new:
@@ -156,6 +182,7 @@ en:
       destroy:      "Destroy"
       confirm:      "Are you sure?"
       neworder:     "New order"
+      show_cart:    "Show Cart"
     ship:
       title:        "E-mail has been sent to customer."
       back:         "Back"
@@ -164,7 +191,7 @@ en:
       address:      "Address"
       email:        "Email"
       pay_type:     "Pay_type"
-      ship:         "ship"
+      ship:         "shipped"
       items:        "Items"
       quantity:     "Quantity"
       title:        "Title"
@@ -199,12 +226,26 @@ en:
       comment_action: "Leave a comment"
       edit:          "Edit"
       back:          "Back"
+      quantity:      "Quantity"
       add_html:      "Add to Cart"
+    form:
+      title:        "Title"
+      description:  "Description"
+      image_url:    "Image url"
+      price:        "Price"
+      author:       "Author"
+      publisher:    "Publisher"
+      category_title:     "Category_title"
+      select_a_category:  "select a category:"
+      update:        "Update Product"
+
       
   comments:
     comment:
       delete:      "delete"
       confirm:     "Are you sure?"
+    form:
+      comment:     "Comment"
         
   errors:
     template:

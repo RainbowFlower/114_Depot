@@ -39,9 +39,9 @@
 		  <% end %>
 			<% if session[:user_id] %>
 				<% if session[:admin] %>
-					Welcome, <%=link_to User.find(session[:user_id]).name, admin_url %>
+					<%= t('.welcome')%><%=link_to User.find(session[:user_id]).name, admin_url %>
 				<% else %>
-					Welcome, <%=link_to User.find(session[:user_id]).name, customer_url %>
+					<%= t('.welcome')%><%=link_to User.find(session[:user_id]).name, customer_url %>
 				<% end %>
 				<%= link_to t('.logout'), logout_path, :method => :delete %>
 			<% else %>

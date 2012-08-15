@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
+    <%= f.label :title, t('.title') %>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description %>
+    <%= f.label :description, t('.description') %>
     <%= f.text_area :description, :rows => 12 %>
   </div>
   <div class="field">
-    <%= f.label :image_url %>
+    <%= f.label :image_url, t('.image_url') %>
     <%= f.text_field :image_url %>
   </div>
   <div class="field">
-    <%= f.label :price %>
+    <%= f.label :price, t('.price') %>
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :author %>
+    <%= f.label :author, t('.author') %>
     <%= f.text_field :author %>
   </div>
   <div class="field">
-    <%= f.label :publisher %>
+    <%= f.label :publisher, t('.publisher') %>
     <%= f.text_field :publisher %>
   </div>
   <div class="field">
@@ -40,12 +40,12 @@
     <%= f.text_field :ISBN %>
   </div>
   <div class="field">
-    <%= f.label :category_title %>
+    <%= f.label :category_title, t('.category_title') %>
     <%= f.select :category_title,
                  @titles,
-                 :prompt => "Select a category"%>
+                 :prompt => t('.select_a_category')%>
   </div>
   <div class="actions">
-    <%= f.submit :class => "btn" %>
+    <%= f.submit t('.update') , :class => "btn" %>
   </div>
 <% end %>

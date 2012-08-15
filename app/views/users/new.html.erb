@@ -1,10 +1,10 @@
 <div class="depot_form">
 	<fieldset>
-		<legend>New User</legend>
+		<legend><%= t('.title') %></legend>
 		<%= render 'form' %>
 	</fieldset>
 </div>
 
 <br />
 
-<%= link_to 'Back', users_path %>
+<%= link_to t('.back'), users_path %>

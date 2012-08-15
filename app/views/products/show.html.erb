@@ -19,7 +19,7 @@
 		<p><b><%= t('.category')%>: </b><%= @product.category_title %></p>
 	</div>
 	<div class="add-to-cart">
-		<b>Quantity</b><br />
+		<b><%= t('.quantity')%></b><br />
 		<%= form_tag line_items_path(:product_id => @product), :remote=>true do %>
 			<%= hidden_field_tag :product_id, @product.id %>
 			<%= number_field_tag :quantity, 1, :class => "span1", :min => 1 %>

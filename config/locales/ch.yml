@@ -34,7 +34,8 @@ ch:
       orders:       "订单"
       helps:        "帮助"
       users:        "用户"
-      profile:      "个人页面"
+      category:     "分类"
+      welcome:      "欢迎你，"
       login:        "登录"
       register:     "注册"
       logout:       "退出"
@@ -47,7 +48,8 @@ ch:
       orders:       "订单"
       helps:        "帮助"
       users:        "用户"
-      profile:      "个人页面"
+      category:     "分类"
+      welcome:      "欢迎你，"
       login:        "登录"
       register:     "注册"
       logout:       "退出"
@@ -70,6 +72,7 @@ ch:
       empty:     "清空购物车"
       confirm:   "你确定清空?"
       checkout:  "结账"
+      total:     "总价"
     edit:
       title:     "编辑购物车"
       show:      "显示"
@@ -93,6 +96,7 @@ ch:
       confirm:     "你确定清空?"
       edit:        "编辑"
       back:        "返回"
+      checkout:    "结账"
     advanced_cart:
       title:       "书名"
       quantity:    "数量"
@@ -105,12 +109,34 @@ ch:
       name:        "用户名"
       password:    "密码"
       confirm:     "确认密码"
+      create:       "添加新用户"  
+    edit:
+      title:       "编辑用户信息"
+      show:          "显示"
+      back:          "返回"
+    index:
+      title:         "用户列表"
+      name:           "姓名"
+      group:          "类别"
+      show:           "显示"
+      edit:           "编辑"
+      destroy:        "删除"
+      new_user:       "添加新用户"
+    new:
+      title:         "添加新用户"
+      back:          "返回"     
     register:
       legend:      "请输入你的信息"  
       name:        "用户名"
       password:    "密码"
       confirm:     "确认密码"
       register:    "注册"
+    show:
+      name:        "姓名："
+      group:       "类别："
+      hash_password: "哈希密码："
+      edit:          "编辑"
+      back:          "返回"
 
   sessions:
     new:
@@ -155,6 +181,7 @@ ch:
       destroy:      "删除"
       confirm:      "你确定删除？"
       neworder:     "新建订单"
+      show_cart:    "显示购物车"
     ship:
       title:        "E-mail 已经发送给顾客。"
       back:         "返回"
@@ -198,12 +225,25 @@ ch:
       comment_action: "写评论"
       edit:          "编辑"
       back:          "返回"
+      quantity:      "数量"
       add_html:      "加入购物车"
+    form:
+      title:        "书名"
+      description:  "描述"
+      image_url:    "图像url"
+      price:        "价格"
+      author:       "作者"
+      publisher:    "出版社"
+      category_title:     "分类目录"
+      select_a_category:  "选择一个分类"
+      update:        "更新商品"
   
   comments:
     comment:
       delete:      "删除"
       confirm:     "你确定删除？"
+    form:
+      comment:     "评论"
        
   errors:
     template:
