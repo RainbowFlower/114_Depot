@@ -26,7 +26,6 @@ en:
       order: "order"
   
   layouts:
-<<<<<<< HEAD
     application:   
       title:          "Pragmatic Bookshelfs"
       home:           "Home"
@@ -55,35 +54,6 @@ en:
       register:       "Register"
       logout:         "Logout"
       searchhint:     "title/author/publisher"
-=======
-    application:
-      title: "Pragmatic Bookshelfs"
-      home: "Home"
-      products: "Products"
-      cart: "Carts"
-      orders: "Orders"
-      help: "Helps"
-      users: "Users"
-      profile: "Profile"
-      login: "Login"
-      register: "Register"
-      logout: "Logout"
-      searchhint: "title/author/publisher"
-    store:
-      title: "Pragmatic Bookshelfs"
-      home: "Home"
-      products: "Products"
-      cart: "Carts"
-      orders: "Orders"
-      help: "Helps"
-      users: "Users"
-      profile: "Profile"
-      login: "Login"
-      register: "Register"
-      logout: "Logout"
-      searchhint: "title/author/publisher"
->>>>>>> f585a7575286945095ce5af0a3fb305d066e1e65
-
     
   store:
     index:
@@ -97,18 +67,11 @@ en:
       
   carts:
     cart:
-<<<<<<< HEAD
       title:     "Your Cart"
       empty:     "Empty cart"
       confirm:   "Are you sure?"
       checkout:  "Checkout"
       total:     "Total"
-=======
-      title: "Your Cart"
-      empty: "Empty cart"
-      confirm: "Are you sure?"
-      checkout: "Checkout"
->>>>>>> f585a7575286945095ce5af0a3fb305d066e1e65
     edit:
       title: "Edit carts"
       show: "Show"
@@ -126,7 +89,6 @@ en:
       title: "New cart"
       back: "Back"
     show:
-<<<<<<< HEAD
       title:       "Your cart"
       total:       "Total"
       empty:       "Empty cart"
@@ -134,14 +96,6 @@ en:
       edit:        "Edit"
       back:        "Back"
       checkout:    "Check Out"
-=======
-      title: "Your cart"
-      total: "Total"
-      empty: "Empty cart"
-      confirm: "Are you sure?"
-      edit: "Edit"
-      back: "Back"
->>>>>>> f585a7575286945095ce5af0a3fb305d066e1e65
     advanced_cart:
       title: "Title"
       quantity: "Quantity"
@@ -150,7 +104,6 @@ en:
 
   users:
     form:
-<<<<<<< HEAD
       legend:      "Enter User Details" 
       name:        "UserName"
       password:    "Password"
@@ -183,18 +136,6 @@ en:
       hash_password: "Hashed password："
       edit:         "Edit"
       back:         "Back"
-=======
-      legend: "Enter User Details"
-      name: "UserName"
-      password: "Password"
-      confirm: "Confirm"
-    register:
-      legend: "Enter Your Details"
-      name: "UserName"
-      password: "Password"
-      confirm: "Confirm"
-      register: "Register"
->>>>>>> f585a7575286945095ce5af0a3fb305d066e1e65
       
   sessions:
     new:
@@ -229,7 +170,6 @@ en:
       show: "Show"
       back: "Back"
     index:
-<<<<<<< HEAD
       title:        "Listing orders"
       name:         "Name"
       address:      "Address"
@@ -242,24 +182,10 @@ en:
       confirm:      "Are you sure?"
       neworder:     "New order"
       show_cart:    "Show Cart"
-=======
-      title: "Listing orders"
-      name: "Name"
-      address: "Address"
-      email: "Email"
-      pay_type: "Pay_type"
-      ship: "Shipped"
-      show: "Show"
-      edit: "Edit"
-      destroy: "Destroy"
-      confirm: "Are you sure?"
-      neworder: "New order"
->>>>>>> f585a7575286945095ce5af0a3fb305d066e1e65
     ship:
       title: "E-mail has been sent to customer."
       back: "Back"
     show:
-<<<<<<< HEAD
       name:         "Name"
       address:      "Address"
       email:        "Email"
@@ -273,21 +199,6 @@ en:
       edit:         "Edit"
       yes:          "Yes"
       no:           "No"
-=======
-      name: "Name"
-      address: "Address"
-      email: "Email"
-      pay_type: "Pay_type"
-      ship: "ship"
-      items: "Items"
-      quantity: "Quantity"
-      title: "Title"
-      price: "Price"
-      back: "Back"
-      edit: "Edit"
-      yes: "Yes"
-      no: "No"
->>>>>>> f585a7575286945095ce5af0a3fb305d066e1e65
 
   products:
     edit:
@@ -312,7 +223,6 @@ en:
       description: "Description"
       comment: "Comments"
       comment_action: "Leave a comment"
-<<<<<<< HEAD
       edit:          "Edit"
       back:          "Back"
       quantity:      "Quantity"
@@ -335,37 +245,6 @@ en:
       confirm:     "Are you sure?"
     form:
       comment:     "Comment"
-=======
-      edit: "Edit"
-      back: "Back"
-      add_html: "Add to Cart"
-      
-  comments:
-    comment:
-      delete: "delete"
-      confirm: "Are you sure?"
-        
-  errors:
-    template:
-      body: "There are problems with the following fields"
-      header:
-        one: "1 error prohibited this order from being saved"
-        other: "%{count} errores prohibited this order from being saved"
-  
-  activerecord:
-    models:
-      order: "order"
-    attributes:
-      order:
-        address: "Address"
-        name: "Name"
-        email: "E-mail"
-        pay_type: "pay-type"
-    errors:
-      messages:
-        inclusion: "is not include in the list"
-        blank: "can't be blank"
->>>>>>> f585a7575286945095ce5af0a3fb305d066e1e65
         
   thanks: "Thank you for your order" 
   
