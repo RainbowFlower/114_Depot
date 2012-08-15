@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :classification %><br />
+    <%= f.label :classification, t('.type') %>
     <%= f.select :ptitle,
                  @titles,
-                 :prompt => "Select a pcategory"%>
+                 :prompt => t('.hint')%>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t('.create') %>
   </div>
 <% end %>
