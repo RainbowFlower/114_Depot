@@ -20,9 +20,11 @@
 <p>
 	<b><%= t('.ship')%>:</b>
 	<%= (@order.ship)?"Yes":"No" %>
+	<% if !@order.ship and session[:admin] %>
+		<span class="offset1"><%= link_to t('.Ship'), ship_order_path, :confirm => 'Are you sure?', :class => 'btn btn-primary' %></span>
+	<% end %>
 </p>
-
-<div style="width:50%">
+<div>
 	<b><%= t('.items')%>:</b>
 	<table class="table table-striped table-bordered">
 		<thead>
@@ -34,9 +36,6 @@
 		</thead>
 		<%= render(@order.line_items) %>
 	</table>
-	<% if !@order.ship %>
-    <p><%= link_to t('.ship'), ship_order_path, :confirm => 'Are you sure?' %></p><br />
-  <% end %>
 </div>
 
 <% unless @order.ship %>

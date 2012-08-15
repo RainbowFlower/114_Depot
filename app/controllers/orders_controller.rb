@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   # GET /orders.xml
   def index
   	@user = User.find_by_id(session[:user_id])
-	@cart = current_cart
+		@cart = current_cart
   	if @user.admin == true
 	    @orders = Order.paginate :page => params[:page], :order => 'created_at desc',
   	    :per_page => 10
@@ -28,8 +28,13 @@ class OrdersController < ApplicationController
     @cart = current_cart
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @order }
+    	if @order.user_id == session[:user_id]
+	      format.html # show.html.erb
+	      format.xml  { render :xml => @order }
+      else
+      	flash[:notice] = "Order does not exist!"
+      	format.html { redirect_to orders_url }
+      end
     end
   end
 
