@@ -9,3 +9,9 @@ else
 		page.replace_html('advanced-cart' , render(:partial => "carts/advanced_cart", :locals => {:cart => @cart}))
 	end
 end
+
+if (@status == "success")
+	page << "alertNotice('success', 'cart updated!', 3000)"
+else
+	page << "alertNotice('error', 'invalid quantity!!', 3000)"
+end
